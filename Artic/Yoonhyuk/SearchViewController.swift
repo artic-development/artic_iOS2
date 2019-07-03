@@ -29,18 +29,24 @@ class SearchViewController: UIViewController, TagListViewDelegate {
         
         
         Taglist.addTags(["UX/UI 디자인","BX 디자인","브랜딩"])
-        Taglist.textFont = UIFont.systemFont(ofSize: 14)
-        Taglist.borderWidth = 1
+        
+        Taglist.textFont = UIFont(name: "NanumBarunGothic", size: 14.0)!
+        Taglist.paddingX = 18
+        Taglist.paddingY = 13
         
         
         
         Taglist_2.addTags(["서비스 디자인","편집디자인","브랜딩"])
-        Taglist_2.textFont = UIFont.systemFont(ofSize: 14)
+        Taglist_2.textFont = UIFont(name: "NanumBarunGothic", size: 14.0)!
+        Taglist_2.paddingX = 18
+        Taglist_2.paddingY = 13
         
         
         
         Taglist_3.addTags(["안드","아요","할로"])
-        Taglist_3.textFont = UIFont.systemFont(ofSize: 14)
+        Taglist_3.textFont = UIFont(name: "NanumBarunGothic", size: 14.0)!
+        Taglist_3.paddingX = 18
+        Taglist_3.paddingY = 13
         
      
         
