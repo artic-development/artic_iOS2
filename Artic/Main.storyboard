@@ -19,7 +19,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="uo1-c2-o38" kind="relationship" relationship="viewControllers" id="4sB-s5-jQa"/>
+                        <segue destination="4bJ-6w-nY7" kind="relationship" relationship="viewControllers" id="Xd3-zC-HMp"/>
+                        <segue destination="uo1-c2-o38" kind="relationship" relationship="viewControllers" id="8Ty-Rs-3bM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="keo-FF-24q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -30,11 +31,21 @@
         <scene sceneID="z2v-8S-wfF">
             <objects>
                 <viewControllerPlaceholder storyboardName="categorySB" id="uo1-c2-o38" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="QFQ-iT-Mbb"/>
+                    <tabBarItem key="tabBarItem" title="카테고리" id="QFQ-iT-Mbb"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LNg-mr-BZC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-785" y="157"/>
+            <point key="canvasLocation" x="-12" y="141"/>
+        </scene>
+        <!--homeSB-->
+        <scene sceneID="V5P-PI-IPg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="homeSB" id="4bJ-6w-nY7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="홈" id="pLg-G3-WtM"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lbn-5U-91f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-586" y="151"/>
         </scene>
     </scenes>
 </document>

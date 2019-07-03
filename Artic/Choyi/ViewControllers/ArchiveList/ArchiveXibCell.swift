@@ -1,17 +1,15 @@
 //
-//  CategoryListCell.swift
+//  ArchiveXibCell.swift
 //  Artic
 //
-//  Created by admin on 02/07/2019.
+//  Created by admin on 04/07/2019.
 //  Copyright © 2019 choyi. All rights reserved.
 //
 
 import UIKit
 
-class CategoryListCell: UITableViewCell {
+class ArchiveXibCell: UITableViewCell {
 
-    @IBOutlet weak var titleLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,5 +20,5 @@ class CategoryListCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

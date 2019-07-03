@@ -10,7 +10,7 @@ import UIKit
 
 class ArchiveList: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    //public var archiveTableViewData = [archiveData]()
+    
 
     @IBOutlet weak var archiveTable: UITableView!
     
@@ -22,6 +22,8 @@ class ArchiveList: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
         archiveTable.delegate = self
         archiveTable.dataSource = self
+        
+        
         
     }
     
@@ -37,9 +39,9 @@ class ArchiveList: UIViewController, UITableViewDelegate, UITableViewDataSource 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ArchiveListCell", for: indexPath) as? ArchiveListCell else {return UITableViewCell()}
         cell.titleLabel.text = archiveTableViewData[indexPath.row].title
         if (archiveTableViewData[indexPath.row].stored == true){
-            cell.storedImageView.image = UIImage.init(named: "btnScrapFilledBig")
+//            cell.storedImageView.image = UIImage.init(named: "btnScrapFilledBig")
         }else{
-            cell.storedImageView.image = UIImage.init(named: "btnScrapBig")
+//            cell.storedImageView.image = UIImage.init(named: "btnScrapBig")
         }
         cell.articleNumLabel.text = "\(archiveTableViewData[indexPath.row].articleNum)개"
         return cell
