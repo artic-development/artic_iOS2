@@ -22,6 +22,10 @@ class ArchiveList: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
         archiveTable.delegate = self
         archiveTable.dataSource = self
+        let nibName = UINib(nibName: "ArchiveXibCell", bundle: nil)
+        
+        
+        archiveTable.register(nibName, forCellReuseIdentifier: "ArchiveXibCell")
         
         
         
@@ -36,14 +40,14 @@ class ArchiveList: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ArchiveListCell", for: indexPath) as? ArchiveListCell else {return UITableViewCell()}
-        cell.titleLabel.text = archiveTableViewData[indexPath.row].title
-        if (archiveTableViewData[indexPath.row].stored == true){
-//            cell.storedImageView.image = UIImage.init(named: "btnScrapFilledBig")
-        }else{
-//            cell.storedImageView.image = UIImage.init(named: "btnScrapBig")
-        }
-        cell.articleNumLabel.text = "\(archiveTableViewData[indexPath.row].articleNum)개"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ArchiveXibCell", for: indexPath) as? ArchiveXibCell else {return UITableViewCell()}
+//        cell.titleLabel.text = archiveTableViewData[indexPath.row].title
+//        if (archiveTableViewData[indexPath.row].stored == true){
+////            cell.storedImageView.image = UIImage.init(named: "btnScrapFilledBig")
+//        }else{
+////            cell.storedImageView.image = UIImage.init(named: "btnScrapBig")
+//        }
+//        cell.articleNumLabel.text = "\(archiveTableViewData[indexPath.row].articleNum)개"
         return cell
     }
 

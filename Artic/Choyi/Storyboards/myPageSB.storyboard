@@ -33,7 +33,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="I6O-Im-UFp">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="324"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="334"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 소개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVT-KQ-iRf">
@@ -103,27 +103,34 @@
                                                 <constraint firstAttribute="height" constant="1" id="HI1-8K-jOZ"/>
                                             </constraints>
                                         </view>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bO9-G2-TNb">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bO9-G2-TNb">
                                             <rect key="frame" x="11" y="288" width="55" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="32" id="EdH-6K-XDg"/>
                                                 <constraint firstAttribute="width" constant="55" id="NPd-A7-YJ0"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
+                                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" title="스크랩" backgroundImage="dotScrap">
                                                 <color key="titleColor" red="0.30980392159999998" green="0.50196078430000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="scrapBtnClicked:" destination="8nC-Fi-1Tn" eventType="touchUpInside" id="0yQ-q5-cob"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hj-Jx-u76">
-                                            <rect key="frame" x="69" y="288" width="55" height="32"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hj-Jx-u76">
+                                            <rect key="frame" x="69" y="288" width="44" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="32" id="H3G-hx-Z9r"/>
-                                                <constraint firstAttribute="width" constant="55" id="mjS-i2-jAc"/>
+                                                <constraint firstAttribute="width" constant="44" id="mjS-i2-jAc"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
                                             <state key="normal" title="나" backgroundImage="blankMy">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <connections>
+                                                <action selector="myBtnClicked:" destination="8nC-Fi-1Tn" eventType="touchUpInside" id="Npe-TJ-3KN"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdW-vp-Ufg">
                                             <rect key="frame" x="368" y="293.5" width="21" height="21"/>
@@ -152,24 +159,14 @@
                                         <constraint firstItem="Ulh-l9-p9G" firstAttribute="top" secondItem="bVT-KQ-iRf" secondAttribute="bottom" constant="11" id="drG-ay-EpP"/>
                                         <constraint firstAttribute="trailing" secondItem="CdW-vp-Ufg" secondAttribute="trailing" constant="25" id="drG-xc-6nM"/>
                                         <constraint firstItem="Mig-TS-UYo" firstAttribute="centerY" secondItem="F1z-eV-eXy" secondAttribute="centerY" id="gir-Sa-06q"/>
-                                        <constraint firstAttribute="bottom" secondItem="qp4-2a-0Jm" secondAttribute="bottom" constant="44" id="hjP-T4-64r"/>
-                                        <constraint firstAttribute="bottom" secondItem="aco-0x-dtF" secondAttribute="bottom" id="m1R-Ec-zDD"/>
+                                        <constraint firstAttribute="bottom" secondItem="qp4-2a-0Jm" secondAttribute="bottom" constant="54" id="hjP-T4-64r"/>
+                                        <constraint firstAttribute="bottom" secondItem="aco-0x-dtF" secondAttribute="bottom" constant="10" id="m1R-Ec-zDD"/>
                                         <constraint firstItem="bO9-G2-TNb" firstAttribute="top" secondItem="qp4-2a-0Jm" secondAttribute="bottom" constant="8" id="nMN-Mc-cUf"/>
                                         <constraint firstItem="bO9-G2-TNb" firstAttribute="leading" secondItem="I6O-Im-UFp" secondAttribute="leading" constant="11" id="nnr-N8-Ii7"/>
                                         <constraint firstItem="5hj-Jx-u76" firstAttribute="centerY" secondItem="bO9-G2-TNb" secondAttribute="centerY" id="p6n-Hb-VgS"/>
                                         <constraint firstItem="e7t-K5-qyQ" firstAttribute="top" secondItem="I6O-Im-UFp" secondAttribute="top" constant="32" id="ssW-KN-ohS"/>
                                     </constraints>
                                 </view>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ekq-lh-F1P">
-                                        <rect key="frame" x="0.0" y="352" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ekq-lh-F1P" id="bfT-hx-htX">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -182,12 +179,16 @@
                         <viewLayoutGuide key="safeArea" id="YXx-zH-BXV"/>
                     </view>
                     <connections>
+                        <outlet property="myBtn" destination="5hj-Jx-u76" id="zza-Pb-cvF"/>
                         <outlet property="myEmailLabel" destination="bpx-ye-pG1" id="Bjc-U0-hII"/>
                         <outlet property="myInfoView" destination="hIz-p5-T3c" id="tgf-S8-Zyf"/>
                         <outlet property="myNameLabel" destination="HrG-RJ-Pcl" id="KPM-rU-8XD"/>
+                        <outlet property="myPageTableView" destination="uXF-g5-NvJ" id="2VV-Sh-DTJ"/>
                         <outlet property="myProfilePicImg" destination="F1z-eV-eXy" id="i50-nw-YAA"/>
                         <outlet property="myProfilePicView" destination="e7t-K5-qyQ" id="Woc-1T-2Yb"/>
                         <outlet property="myTextView" destination="Ulh-l9-p9G" id="REt-Xv-veJ"/>
+                        <outlet property="plusBtn" destination="CdW-vp-Ufg" id="jON-Bh-yic"/>
+                        <outlet property="scrapBtn" destination="bO9-G2-TNb" id="9SM-uu-Qaj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o00-bF-Qop" userLabel="First Responder" sceneMemberID="firstResponder"/>
