@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumBarunGothic.ttf">
+            <string>NanumBarunGothic</string>
+        </array>
+        <array key="NanumBarunGothicLight.ttf">
+            <string>NanumBarunGothicLight</string>
+        </array>
+        <array key="NanumSquareExtraBold.ttf">
+            <string>NanumSquareEB</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArchiveXibCell" id="KGk-i7-Jjw" customClass="ArchiveXibCell" customModule="Artic" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="169.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아티클" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zpv-lf-jKm">
+                        <rect key="frame" x="274.5" y="127.5" width="38" height="17"/>
+                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYD-jg-eVX">
+                        <rect key="frame" x="323" y="21" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="7lN-UG-Nmg"/>
+                            <constraint firstAttribute="height" constant="24" id="qFA-ge-1sH"/>
+                        </constraints>
+                        <state key="normal" image="btnScrapBig"/>
+                        <connections>
+                            <action selector="storeBtnClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="DJo-zf-2vF"/>
+                        </connections>
+                    </button>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="PM과 디자이너가 서로 잘 소통하는 법을 알려주세요" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tw6-PX-4ir">
+                        <rect key="frame" x="28" y="21" width="233" height="62"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="233" id="1Js-97-70q"/>
+                            <constraint firstAttribute="height" priority="500" constant="62" id="936-Pk-IHE"/>
+                        </constraints>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="21"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTM-46-Wcd">
+                        <rect key="frame" x="316.5" y="128.5" width="30.5" height="15.5"/>
+                        <fontDescription key="fontDescription" name="NanumSquareEB" family="NanumSquare" pointSize="14"/>
+                        <color key="textColor" red="0.30980392159999998" green="0.50196078430000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xux-nw-zTT" customClass="TagListView" customModule="TagListView">
+                        <rect key="frame" x="28" y="130" width="233" height="12"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                <color key="value" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tagBackgroundColor">
+                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="selectedTextColor">
+                                <color key="value" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="11"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="paddingY">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="paddingX">
+                                <real key="value" value="11"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gzl-Ky-sDA">
+                        <rect key="frame" x="0.0" y="159.5" width="375" height="10"/>
+                        <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="oaZ-Pq-8ir"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="tw6-PX-4ir" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21" id="3kM-cU-Nsx"/>
+                    <constraint firstItem="Zpv-lf-jKm" firstAttribute="centerY" secondItem="Xux-nw-zTT" secondAttribute="centerY" id="KO5-bc-qPL"/>
+                    <constraint firstItem="jTM-46-Wcd" firstAttribute="leading" secondItem="Zpv-lf-jKm" secondAttribute="trailing" constant="4" id="Mdm-ay-7Ax"/>
+                    <constraint firstAttribute="bottom" secondItem="Xux-nw-zTT" secondAttribute="bottom" constant="27.5" id="Mki-0v-6yS"/>
+                    <constraint firstItem="WYD-jg-eVX" firstAttribute="top" secondItem="tw6-PX-4ir" secondAttribute="top" id="RNJ-ae-fgO"/>
+                    <constraint firstItem="Xux-nw-zTT" firstAttribute="trailing" secondItem="tw6-PX-4ir" secondAttribute="trailing" id="Rxn-yM-OP8"/>
+                    <constraint firstItem="Zpv-lf-jKm" firstAttribute="centerY" secondItem="jTM-46-Wcd" secondAttribute="centerY" id="U51-8B-1Pf"/>
+                    <constraint firstItem="jTM-46-Wcd" firstAttribute="trailing" secondItem="WYD-jg-eVX" secondAttribute="trailing" id="XUU-ee-XsC"/>
+                    <constraint firstItem="tw6-PX-4ir" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="28" id="iry-vm-mmb"/>
+                    <constraint firstItem="Xux-nw-zTT" firstAttribute="leading" secondItem="tw6-PX-4ir" secondAttribute="leading" id="kYH-Nv-281"/>
+                    <constraint firstItem="Xux-nw-zTT" firstAttribute="top" secondItem="tw6-PX-4ir" secondAttribute="bottom" constant="47" id="mcY-Ih-RgY"/>
+                    <constraint firstAttribute="trailing" secondItem="gzl-Ky-sDA" secondAttribute="trailing" id="mow-WG-GJs"/>
+                    <constraint firstAttribute="bottom" secondItem="gzl-Ky-sDA" secondAttribute="bottom" id="uxH-JD-9CP"/>
+                    <constraint firstItem="gzl-Ky-sDA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="vOZ-S4-3MU"/>
+                    <constraint firstAttribute="trailing" secondItem="WYD-jg-eVX" secondAttribute="trailing" constant="28" id="wKL-3h-w7i"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="archiveTitle" destination="tw6-PX-4ir" id="3dw-OX-gzE"/>
+                <outlet property="articleNumLabel" destination="jTM-46-Wcd" id="T09-PP-0lO"/>
+                <outlet property="storeBtn" destination="WYD-jg-eVX" id="q2h-La-GKn"/>
+                <outlet property="tagListView" destination="Xux-nw-zTT" id="iwS-Ui-TiC"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="btnScrapBig" width="24" height="24"/>
+    </resources>
+</document>
