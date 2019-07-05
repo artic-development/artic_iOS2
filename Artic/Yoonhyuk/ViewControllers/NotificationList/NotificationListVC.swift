@@ -1,14 +1,14 @@
 //
-//  searchLinkResultViewController.swift
+//  NotificationListVC.swift
 //  Artic
 //
-//  Created by Jung Yoon Hyuk on 02/07/2019.
+//  Created by Jung Yoon Hyuk on 05/07/2019.
 //  Copyright © 2019 choyi. All rights reserved.
 //
 
 import UIKit
 
-class searchLinkResultViewController: UIViewController {
+class NotificationListVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
