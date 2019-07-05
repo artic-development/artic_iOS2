@@ -1,14 +1,14 @@
 //
-//  HomeNewLink.swift
+//  HomeNewLinkAbout.swift
 //  Artic
 //
-//  Created by admin on 04/07/2019.
+//  Created by admin on 05/07/2019.
 //  Copyright © 2019 choyi. All rights reserved.
 //
 
 import UIKit
 
-class HomeNewLink: UIViewController {
+class HomeNewLinkAbout: UIViewController {
     @IBOutlet var superView: UIView!
     @IBOutlet weak var archiveTitle: UITextView!
     @IBOutlet weak var archiveTitleView: UIView!
@@ -60,7 +60,7 @@ class HomeNewLink: UIViewController {
         articleTitle.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
         
-       //아티클 읽기 버튼 경계, 둥글게
+        //아티클 읽기 버튼 경계, 둥글게
         buttonView.makeRounded(cornerRadius: 6)
         buttonView.setBorder(borderColor: UIColor.colorWithRGBHex(hex: 0x4f80ff), borderWidth: 1)
         
@@ -83,7 +83,7 @@ class HomeNewLink: UIViewController {
         otherArticleTitle4.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
     }
-
+    
     @IBAction func readArticleBtnClicked(_ sender: Any) {
         //아티클 읽기 버튼 클릭시
         
