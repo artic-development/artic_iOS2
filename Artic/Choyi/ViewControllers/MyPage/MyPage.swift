@@ -45,13 +45,9 @@ class MyPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
         myPageTableView.dataSource = self
         
         let nibName = UINib(nibName: "ScrapXibCell", bundle: nil)
-        
-        
         myPageTableView.register(nibName, forCellReuseIdentifier: "ScrapXibCell")
         
         let nibName2 = UINib(nibName: "MyXibCell", bundle: nil)
-        
-        
         myPageTableView.register(nibName2, forCellReuseIdentifier: "MyXibCell")
         
     }

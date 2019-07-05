@@ -18,14 +18,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner">
-            <connections>
-                <outlet property="homeArticleImg" destination="qtz-1I-Vyu" id="l9a-rd-x67"/>
-                <outlet property="homeArticleTitle" destination="ea3-jt-rff" id="x56-xj-KE6"/>
-                <outlet property="homeArticleView" destination="2PC-bx-sEW" id="JO2-cQ-DDI"/>
-                <outlet property="homeArticleWebLabel" destination="8Ne-6I-Bzs" id="xRJ-fI-PVw"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeArcitleXibCell" id="KGk-i7-Jjw" customClass="homeArcitleXibCell" customModule="Artic" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="293"/>
@@ -45,28 +38,28 @@
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ea3-jt-rff">
-                                <rect key="frame" x="20" y="191" width="291" height="48.5"/>
+                                <rect key="frame" x="15" y="186" width="296" height="48.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ne-6I-Bzs">
-                                <rect key="frame" x="20" y="254.5" width="291" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="brunch.co.kr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ne-6I-Bzs">
+                                <rect key="frame" x="20" y="249.5" width="291" height="17"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.61568627450000002" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="8Ne-6I-Bzs" secondAttribute="bottom" constant="11" id="1pl-53-TS0"/>
+                            <constraint firstAttribute="bottom" secondItem="8Ne-6I-Bzs" secondAttribute="bottom" constant="16" id="1pl-53-TS0"/>
                             <constraint firstAttribute="trailing" secondItem="qtz-1I-Vyu" secondAttribute="trailing" id="BRF-Y6-fwe"/>
-                            <constraint firstItem="ea3-jt-rff" firstAttribute="leading" secondItem="2PC-bx-sEW" secondAttribute="leading" constant="20" id="C5D-9a-1iy"/>
-                            <constraint firstItem="8Ne-6I-Bzs" firstAttribute="leading" secondItem="ea3-jt-rff" secondAttribute="leading" id="CNr-kY-8pB"/>
-                            <constraint firstItem="ea3-jt-rff" firstAttribute="top" secondItem="qtz-1I-Vyu" secondAttribute="bottom" constant="18" id="FA1-JP-QBB"/>
+                            <constraint firstItem="ea3-jt-rff" firstAttribute="leading" secondItem="2PC-bx-sEW" secondAttribute="leading" constant="15" id="C5D-9a-1iy"/>
+                            <constraint firstItem="ea3-jt-rff" firstAttribute="top" secondItem="qtz-1I-Vyu" secondAttribute="bottom" constant="13" id="FA1-JP-QBB"/>
                             <constraint firstItem="qtz-1I-Vyu" firstAttribute="leading" secondItem="2PC-bx-sEW" secondAttribute="leading" id="Qib-gf-qOK"/>
                             <constraint firstItem="qtz-1I-Vyu" firstAttribute="top" secondItem="2PC-bx-sEW" secondAttribute="top" id="YfR-CS-byg"/>
                             <constraint firstItem="8Ne-6I-Bzs" firstAttribute="trailing" secondItem="ea3-jt-rff" secondAttribute="trailing" id="d5a-wk-riq"/>
+                            <constraint firstItem="8Ne-6I-Bzs" firstAttribute="leading" secondItem="2PC-bx-sEW" secondAttribute="leading" constant="20" id="fKO-F9-r01"/>
                             <constraint firstAttribute="trailing" secondItem="ea3-jt-rff" secondAttribute="trailing" constant="20" id="uhz-1L-xXG"/>
                             <constraint firstItem="8Ne-6I-Bzs" firstAttribute="top" secondItem="ea3-jt-rff" secondAttribute="bottom" constant="15" id="wGs-Ed-9aS"/>
                         </constraints>
@@ -80,6 +73,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="homeArticleImg" destination="qtz-1I-Vyu" id="yD1-1f-8ne"/>
+                <outlet property="homeArticleTitle" destination="ea3-jt-rff" id="wFl-Uz-oZK"/>
+                <outlet property="homeArticleView" destination="2PC-bx-sEW" id="VLe-qt-HMC"/>
+                <outlet property="homeArticleWebLabel" destination="8Ne-6I-Bzs" id="YqA-Lk-m8a"/>
+            </connections>
             <point key="canvasLocation" x="138.40579710144928" y="140.95982142857142"/>
         </tableViewCell>
     </objects>

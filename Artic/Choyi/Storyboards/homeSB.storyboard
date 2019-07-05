@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Sb-vg-DgR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vVQ-wK-61D">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -280,7 +280,7 @@
                                         <rect key="frame" x="0.0" y="820" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aJV-hc-ZNy" id="OQg-QE-UOL">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label.co.kr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="90E-Kp-byV">
@@ -339,7 +339,7 @@
                                         <rect key="frame" x="0.0" y="910" width="414" height="343"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="edw-cg-QZN" id="GmM-sB-MYD">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="343"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="342.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BIZ-Cl-5OC">
@@ -434,7 +434,7 @@
                                         <rect key="frame" x="0.0" y="1253" width="414" height="287"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uT3-ca-PEa" id="Yib-yL-lbS">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="287"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="286.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NcT-vi-mrV">
@@ -547,7 +547,7 @@
         <!--Home New Link About-->
         <scene sceneID="Zdd-10-sXu">
             <objects>
-                <viewController storyboardIdentifier="HomeNewLinkAbout" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Sb-vg-DgR" customClass="HomeNewLinkAbout" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeNewLinkAbout" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Sb-vg-DgR" customClass="HomeNewLinkAbout" customModule="Artic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pJj-KW-sKL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -555,8 +555,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="veH-MQ-oPf">
                                 <rect key="frame" x="0.0" y="44" width="414" height="1072"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PzK-Jg-lWO">
-                                        <rect key="frame" x="0.0" y="38" width="414" height="1112"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PzK-Jg-lWO">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1153"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nIS-M8-zg4">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
@@ -606,6 +606,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="46"/>
                                                         <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="15"/>
                                                         <state key="normal" title="아티클 읽기"/>
+                                                        <connections>
+                                                            <action selector="readArticleBtnClicked:" destination="0Sb-vg-DgR" eventType="touchUpInside" id="ldN-ke-mLt"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -913,21 +916,60 @@
                         <viewLayoutGuide key="safeArea" id="CaU-2G-hei"/>
                     </view>
                     <size key="freeformSize" width="414" height="1150"/>
+                    <connections>
+                        <outlet property="archiveTitle" destination="acE-LK-lDr" id="P6x-Hr-rQD"/>
+                        <outlet property="archiveTitleView" destination="nIS-M8-zg4" id="GMc-SG-7cd"/>
+                        <outlet property="articleTitle" destination="POu-zq-jMo" id="joW-DC-1lY"/>
+                        <outlet property="backView1" destination="fTc-uJ-rko" id="c5b-tg-iO0"/>
+                        <outlet property="backView2" destination="4x4-cf-81K" id="dnf-0o-4m5"/>
+                        <outlet property="backView3" destination="Vj6-96-S6K" id="bQQ-Uq-hk4"/>
+                        <outlet property="backView4" destination="bt8-oN-OlO" id="wsG-P4-b30"/>
+                        <outlet property="buttonView" destination="0hO-5f-zKT" id="lwQ-Bd-1pr"/>
+                        <outlet property="otherArticleImg1" destination="QGk-To-oQW" id="LwJ-hi-bVk"/>
+                        <outlet property="otherArticleImg2" destination="wkD-af-oP3" id="4qM-Cl-hMy"/>
+                        <outlet property="otherArticleImg3" destination="RAi-Yp-Gck" id="1Bh-g5-zKa"/>
+                        <outlet property="otherArticleImg4" destination="gde-gA-Gde" id="d7d-qt-Vs1"/>
+                        <outlet property="otherArticleTitle1" destination="0iW-mo-bgG" id="VO0-eX-kRN"/>
+                        <outlet property="otherArticleTitle2" destination="P1w-Vo-p72" id="Uuw-m9-5pj"/>
+                        <outlet property="otherArticleTitle3" destination="VmO-d3-7XZ" id="npy-df-cqO"/>
+                        <outlet property="otherArticleTitle4" destination="NI8-Ov-OF5" id="edR-oO-qcJ"/>
+                        <outlet property="otherWebLabel1" destination="H7A-NV-Gz1" id="y71-J8-YC9"/>
+                        <outlet property="otherWebLabel2" destination="Hbz-GU-gKp" id="3Ij-QF-cfT"/>
+                        <outlet property="otherWebLabel3" destination="EmA-wF-6jn" id="pmE-iH-tgj"/>
+                        <outlet property="otherWebLabel4" destination="iZi-J5-Emi" id="3C4-sX-38c"/>
+                        <outlet property="superView" destination="PzK-Jg-lWO" id="mkq-c9-BE4"/>
+                        <outlet property="webLabel" destination="dit-Qn-pDY" id="Phd-VE-1I8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DGj-ee-e47" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2439" y="-350"/>
+            <point key="canvasLocation" x="2448" y="-351"/>
         </scene>
-        <!--View Controller-->
+        <!--Home New Link-->
         <scene sceneID="gXK-uA-bA6">
             <objects>
-                <viewController id="vVQ-wK-61D" sceneMemberID="viewController">
+                <viewController id="vVQ-wK-61D" customClass="HomeNewLink" customModule="Artic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NED-Qh-Wcb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ozt-Og-mhi">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ozt-Og-mhi" firstAttribute="top" secondItem="BSk-lN-hri" secondAttribute="top" id="MOQ-zf-Ofh"/>
+                            <constraint firstItem="BSk-lN-hri" firstAttribute="bottom" secondItem="ozt-Og-mhi" secondAttribute="bottom" id="Qni-Ds-1oE"/>
+                            <constraint firstItem="BSk-lN-hri" firstAttribute="trailing" secondItem="ozt-Og-mhi" secondAttribute="trailing" id="Wnr-nl-cGz"/>
+                            <constraint firstItem="ozt-Og-mhi" firstAttribute="leading" secondItem="BSk-lN-hri" secondAttribute="leading" id="nDp-5F-Q2J"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BSk-lN-hri"/>
                     </view>
+                    <connections>
+                        <outlet property="newLinkTableView" destination="ozt-Og-mhi" id="0vc-rF-hey"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUN-eW-oVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
