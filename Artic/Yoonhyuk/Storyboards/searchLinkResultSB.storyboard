@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F0v-IK-t24">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,21 +9,148 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumBarunGothic.ttf">
+            <string>NanumBarunGothic</string>
+        </array>
+        <array key="NanumBarunGothicBold.ttf">
+            <string>NanumBarunGothicBold</string>
+        </array>
+        <array key="NanumBarunGothicLight.ttf">
+            <string>NanumBarunGothicLight</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--Search Link Result View Controller-->
-        <scene sceneID="UKI-mt-kMs">
+        <!--searchLinkResultSB-->
+        <scene sceneID="Agj-jH-8gA">
             <objects>
-                <viewController id="arO-Yi-KRt" customClass="searchLinkResultViewController" customModule="Artic" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TRe-BH-n79">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7zt-vR-DHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController title="searchLinkResultSB" id="F0v-IK-t24" customClass="searchLinkResultTableVC" customModule="Artic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SSh-px-lKN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fg-mb-3Ee">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="GSY-Vz-xpe"/>
+                                </constraints>
+                                <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem id="gr4-Fo-nU6">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="commonBackBlack" id="G8J-Qv-mxX">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8uc-tG-AQT">
+                                <rect key="frame" x="0.0" y="88" width="414" height="140"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="디자인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFy-9H-ztd">
+                                        <rect key="frame" x="20" y="32" width="192" height="25"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFd-UW-Ohd">
+                                        <rect key="frame" x="20" y="67" width="9" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="개의 검색 결과가 있습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cck-8K-g5D">
+                                        <rect key="frame" x="33" y="67" width="147" height="16"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qY-kb-5qQ">
+                                        <rect key="frame" x="320" y="103" width="38" height="29"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
+                                        <state key="normal" title="아티클">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="articlePressed:" destination="F0v-IK-t24" eventType="touchUpInside" id="A3y-rj-3mN"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SSo-R6-dq5" userLabel="Line">
+                                        <rect key="frame" x="0.0" y="146" width="414" height="0.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.61568627450980395" green="0.61568627450980395" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4B9-oB-etS">
+                                        <rect key="frame" x="57" y="104" width="50" height="29"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
+                                        <state key="normal" title="아카이브">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="archivePressed:" destination="F0v-IK-t24" eventType="touchUpInside" id="Jha-6I-z5j"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="4B9-oB-etS" firstAttribute="leading" secondItem="8uc-tG-AQT" secondAttribute="leading" constant="57" id="5IK-cS-ANG"/>
+                                    <constraint firstItem="wFy-9H-ztd" firstAttribute="top" secondItem="8uc-tG-AQT" secondAttribute="top" constant="32" id="A0p-Ph-4zm"/>
+                                    <constraint firstItem="cck-8K-g5D" firstAttribute="top" secondItem="sFd-UW-Ohd" secondAttribute="top" id="CZ1-XX-AsZ"/>
+                                    <constraint firstItem="4B9-oB-etS" firstAttribute="top" secondItem="cck-8K-g5D" secondAttribute="bottom" constant="21" id="DP0-dU-4E2"/>
+                                    <constraint firstItem="cck-8K-g5D" firstAttribute="leading" secondItem="sFd-UW-Ohd" secondAttribute="trailing" constant="4" id="R62-9g-ZUs"/>
+                                    <constraint firstAttribute="trailing" secondItem="8qY-kb-5qQ" secondAttribute="trailing" constant="56" id="SFL-ss-ArA"/>
+                                    <constraint firstAttribute="trailing" secondItem="wFy-9H-ztd" secondAttribute="trailing" constant="202" id="XPm-oM-E53"/>
+                                    <constraint firstAttribute="height" constant="140" id="dAc-lc-enu"/>
+                                    <constraint firstItem="8qY-kb-5qQ" firstAttribute="top" secondItem="8uc-tG-AQT" secondAttribute="top" constant="103" id="fWo-P9-uyV"/>
+                                    <constraint firstItem="wFy-9H-ztd" firstAttribute="leading" secondItem="8uc-tG-AQT" secondAttribute="leading" constant="20" id="lie-rV-kwI"/>
+                                    <constraint firstItem="sFd-UW-Ohd" firstAttribute="leading" secondItem="8uc-tG-AQT" secondAttribute="leading" constant="20" id="qtT-Me-TgM"/>
+                                    <constraint firstItem="sFd-UW-Ohd" firstAttribute="top" secondItem="wFy-9H-ztd" secondAttribute="bottom" constant="10" id="uls-Hl-Don"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CS5-Tg-6R0">
+                                <rect key="frame" x="0.0" y="228" width="414" height="634"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="a6D-3w-2P1"/>
+                        <constraints>
+                            <constraint firstItem="8uc-tG-AQT" firstAttribute="leading" secondItem="SSh-px-lKN" secondAttribute="leading" id="2L0-CE-XBN"/>
+                            <constraint firstItem="8fg-mb-3Ee" firstAttribute="trailing" secondItem="6yj-rX-5cZ" secondAttribute="trailing" id="8za-Tw-N3C"/>
+                            <constraint firstItem="CS5-Tg-6R0" firstAttribute="top" secondItem="8uc-tG-AQT" secondAttribute="bottom" id="L5P-4O-eDV"/>
+                            <constraint firstItem="6yj-rX-5cZ" firstAttribute="bottom" secondItem="CS5-Tg-6R0" secondAttribute="bottom" id="Nuc-o3-cmi"/>
+                            <constraint firstItem="6yj-rX-5cZ" firstAttribute="trailing" secondItem="CS5-Tg-6R0" secondAttribute="trailing" id="SrX-Yg-Vpe"/>
+                            <constraint firstItem="CS5-Tg-6R0" firstAttribute="leading" secondItem="6yj-rX-5cZ" secondAttribute="leading" id="Yey-U2-6Iu"/>
+                            <constraint firstItem="8fg-mb-3Ee" firstAttribute="leading" secondItem="6yj-rX-5cZ" secondAttribute="leading" id="b2t-z2-ijk"/>
+                            <constraint firstItem="6yj-rX-5cZ" firstAttribute="trailing" secondItem="8uc-tG-AQT" secondAttribute="trailing" id="brQ-rW-D8S"/>
+                            <constraint firstItem="8uc-tG-AQT" firstAttribute="top" secondItem="6yj-rX-5cZ" secondAttribute="top" constant="44" id="g2m-IX-RM5"/>
+                            <constraint firstItem="8fg-mb-3Ee" firstAttribute="top" secondItem="6yj-rX-5cZ" secondAttribute="top" id="qUa-Od-Dc6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6yj-rX-5cZ"/>
                     </view>
+                    <connections>
+                        <outlet property="searchArchive" destination="4B9-oB-etS" id="sFQ-tQ-eC9"/>
+                        <outlet property="searchArticle" destination="8qY-kb-5qQ" id="Bgc-OK-Ze1"/>
+                        <outlet property="searchResult" destination="CS5-Tg-6R0" id="GPg-FK-grs"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dAb-tC-yM2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3" y="76"/>
+            <point key="canvasLocation" x="2259" y="182"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="440-L3-LLp">
+            <objects>
+                <navigationController id="Mc9-Od-jfR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XtA-91-ypP">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2iH-w1-Lfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-435" y="117"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="commonBackBlack" width="24" height="24"/>
+    </resources>
 </document>
