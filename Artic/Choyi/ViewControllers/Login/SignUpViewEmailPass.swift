@@ -12,19 +12,32 @@ class SignUpViewEmailPass: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "commonBackBlack")
+        //addNavigationBarButton(imageName: "commonBackBlack", direction:.left)
 
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func addNavigationBarButton(imageName:String,direction:direction){
+        var image = UIImage(named: imageName)
+        image = image?.withRenderingMode(.alwaysOriginal)
+        switch direction {
+        case .left:
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style:.plain, target: nil, action: #selector(goBack))
+        case .right:
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style:.plain, target: nil, action: #selector(goBack))
+        }
     }
-    */
+    
+    @objc func goBack() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    enum direction {
+        case right
+        case left
+    }
 
 }

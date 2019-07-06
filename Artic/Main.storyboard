@@ -18,6 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="GK3-ia-PYa" kind="relationship" relationship="viewControllers" id="IBG-8p-lU8"/>
@@ -54,14 +61,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hJZ-5K-PwS"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="tabHome" id="g2z-99-d5e"/>
+                    <tabBarItem key="tabBarItem" title="" image="tabHome" selectedImage="tabHomeFilled" id="g2z-99-d5e"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzP-jr-R0E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1364" y="438"/>
         </scene>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="rUs-kS-nMR">
             <objects>
                 <viewController id="eck-We-vcF" sceneMemberID="viewController">
@@ -85,13 +92,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jlq-Gb-tl6"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="tabCategory" id="Ic6-u2-abm"/>
+                    <tabBarItem key="tabBarItem" title="" image="tabCategory" selectedImage="tabCategoryFilled" id="Ic6-u2-abm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aL2-9k-2qc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-555" y="438"/>
         </scene>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="1NI-gF-kiO">
             <objects>
                 <viewController id="M3O-oH-cgB" sceneMemberID="viewController">
@@ -112,13 +119,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Ky-wB-dDc"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="My0-Mn-64W"/>
+                    <tabBarItem key="tabBarItem" title="" image="tabNotice" selectedImage="tabNoticeFilled" id="mmz-kX-NiI"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MYq-Ai-gb4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="264" y="438"/>
         </scene>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="Gmf-6O-0ZD">
             <objects>
                 <viewController id="szp-Wi-3Qn" sceneMemberID="viewController">
@@ -142,7 +150,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ldW-YI-kSB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Ok0-tt-edm"/>
+                    <tabBarItem key="tabBarItem" title="" image="tabProfile" selectedImage="tabProfileFilled" id="Ok0-tt-edm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3A-gW-UYn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -180,9 +188,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tabCategory" width="48" height="48"/>
-        <image name="tabHome" width="48" height="48"/>
-        <image name="tabHomeFilled" width="48" height="48"/>
-        <image name="tabNotice" width="48" height="48"/>
+        <image name="tabCategory" width="50" height="50"/>
+        <image name="tabCategoryFilled" width="50" height="50"/>
+        <image name="tabHome" width="50" height="50"/>
+        <image name="tabHomeFilled" width="50" height="50"/>
+        <image name="tabNotice" width="50" height="50"/>
+        <image name="tabNoticeFilled" width="50" height="50"/>
+        <image name="tabProfile" width="50" height="50"/>
+        <image name="tabProfileFilled" width="50" height="50"/>
     </resources>
+    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

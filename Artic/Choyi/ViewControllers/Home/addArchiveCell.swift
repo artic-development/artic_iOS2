@@ -9,5 +9,10 @@
 import UIKit
 
 class addArchiveCell: UICollectionViewCell {
+    @IBOutlet weak var archiveImgView: UIView!
+    
+    override func awakeFromNib() {
+        archiveImgView.makeRounded(cornerRadius: 6)
+    }
     
 }

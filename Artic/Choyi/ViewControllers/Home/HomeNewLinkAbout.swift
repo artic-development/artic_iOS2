@@ -56,8 +56,8 @@ class HomeNewLinkAbout: UIViewController {
         
         //아티클 제목에 따라 높이 늘어나기
         articleTitle.text = "아티클제목입니다아티클"
-        articleTitle.sizeToFit()
         articleTitle.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        articleTitle.sizeToFit()
         
         
         //아티클 읽기 버튼 경계, 둥글게
@@ -78,9 +78,13 @@ class HomeNewLinkAbout: UIViewController {
         
         //다른 아티클 textView 상하좌우간격
         otherArticleTitle1.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        otherArticleTitle1.sizeToFit()
         otherArticleTitle2.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        otherArticleTitle2.sizeToFit()
         otherArticleTitle3.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        otherArticleTitle3.sizeToFit()
         otherArticleTitle4.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        otherArticleTitle4.sizeToFit()
         
     }
     

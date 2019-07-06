@@ -195,6 +195,114 @@
             </objects>
             <point key="canvasLocation" x="-130.43478260869566" y="25.446428571428569"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="HvG-ki-qTD">
+            <objects>
+                <viewController id="QVF-Vn-JSo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dNI-it-9WC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BtR-4c-ouG">
+                                <rect key="frame" x="154" y="69" width="106" height="106"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" translatesAutoresizingMaskIntoConstraints="NO" id="Tc6-B8-n3Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="106" height="106"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Tc6-B8-n3Q" firstAttribute="leading" secondItem="BtR-4c-ouG" secondAttribute="leading" id="3le-Tu-Ui6"/>
+                                    <constraint firstAttribute="bottom" secondItem="Tc6-B8-n3Q" secondAttribute="bottom" id="7WI-vF-2mj"/>
+                                    <constraint firstAttribute="height" constant="106" id="C7V-jY-Wjc"/>
+                                    <constraint firstItem="Tc6-B8-n3Q" firstAttribute="top" secondItem="BtR-4c-ouG" secondAttribute="top" id="Pcf-dd-mEr"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tc6-B8-n3Q" secondAttribute="trailing" id="eF2-yH-uVh"/>
+                                    <constraint firstAttribute="width" constant="106" id="jLl-fG-eWV"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFc-qO-CN3">
+                                <rect key="frame" x="151" y="190" width="112" height="30"/>
+                                <state key="normal" title="프로필 사진 바꾸기"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NSR-yr-HwT">
+                                <rect key="frame" x="0.0" y="255" width="414" height="1"/>
+                                <color key="backgroundColor" red="0.80392156859999997" green="0.80392156859999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="KGz-iS-ndx"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tss-eR-PcO">
+                                <rect key="frame" x="20" y="276" width="25" height="17"/>
+                                <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이름" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sdG-hX-9eZ">
+                                <rect key="frame" x="85" y="276" width="293" height="15"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dqv-zK-XSZ">
+                                <rect key="frame" x="85" y="306" width="293" height="1"/>
+                                <color key="backgroundColor" red="0.80392156859999997" green="0.80392156859999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="0Ks-yb-pJL"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 소개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvp-xV-RiR">
+                                <rect key="frame" x="20" y="323" width="41" height="17"/>
+                                <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="소개를 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4gC-or-eTa">
+                                <rect key="frame" x="85" y="323" width="293" height="15"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aPX-7k-nHv">
+                                <rect key="frame" x="0.0" y="374" width="414" height="1"/>
+                                <color key="backgroundColor" red="0.80392156859999997" green="0.80392156859999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="ahf-Ez-xxR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Dqv-zK-XSZ" firstAttribute="top" secondItem="sdG-hX-9eZ" secondAttribute="bottom" constant="15" id="0b3-XE-q4o"/>
+                            <constraint firstItem="HFc-qO-CN3" firstAttribute="top" secondItem="BtR-4c-ouG" secondAttribute="bottom" constant="15" id="4NJ-38-Av8"/>
+                            <constraint firstItem="tss-eR-PcO" firstAttribute="top" secondItem="NSR-yr-HwT" secondAttribute="bottom" constant="20" id="75j-39-c55"/>
+                            <constraint firstItem="tss-eR-PcO" firstAttribute="leading" secondItem="Qt5-yI-c8o" secondAttribute="leading" constant="20" id="9IH-pn-89B"/>
+                            <constraint firstItem="NSR-yr-HwT" firstAttribute="leading" secondItem="Qt5-yI-c8o" secondAttribute="leading" id="C1q-fz-nqb"/>
+                            <constraint firstItem="Dqv-zK-XSZ" firstAttribute="leading" secondItem="sdG-hX-9eZ" secondAttribute="leading" id="MTW-kS-ai0"/>
+                            <constraint firstItem="BtR-4c-ouG" firstAttribute="centerX" secondItem="Qt5-yI-c8o" secondAttribute="centerX" id="OFh-Dt-2Yi"/>
+                            <constraint firstItem="yvp-xV-RiR" firstAttribute="leading" secondItem="Qt5-yI-c8o" secondAttribute="leading" constant="20" id="StA-dJ-fq7"/>
+                            <constraint firstItem="sdG-hX-9eZ" firstAttribute="leading" secondItem="tss-eR-PcO" secondAttribute="trailing" constant="40" id="V1o-VK-nzX"/>
+                            <constraint firstItem="Qt5-yI-c8o" firstAttribute="trailing" secondItem="sdG-hX-9eZ" secondAttribute="trailing" constant="36" id="YqM-9h-Sf0"/>
+                            <constraint firstItem="Dqv-zK-XSZ" firstAttribute="trailing" secondItem="sdG-hX-9eZ" secondAttribute="trailing" id="avE-tI-evv"/>
+                            <constraint firstItem="aPX-7k-nHv" firstAttribute="leading" secondItem="dNI-it-9WC" secondAttribute="leading" id="bJm-l9-wUT"/>
+                            <constraint firstItem="Qt5-yI-c8o" firstAttribute="trailing" secondItem="NSR-yr-HwT" secondAttribute="trailing" id="bXc-Sp-2R7"/>
+                            <constraint firstItem="BtR-4c-ouG" firstAttribute="top" secondItem="Qt5-yI-c8o" secondAttribute="top" constant="25" id="c9B-M7-tOc"/>
+                            <constraint firstItem="HFc-qO-CN3" firstAttribute="centerX" secondItem="Qt5-yI-c8o" secondAttribute="centerX" id="h5L-8I-thi"/>
+                            <constraint firstAttribute="trailing" secondItem="aPX-7k-nHv" secondAttribute="trailing" id="jtF-3b-pdS"/>
+                            <constraint firstItem="yvp-xV-RiR" firstAttribute="top" secondItem="tss-eR-PcO" secondAttribute="bottom" constant="30" id="lYF-Hw-v8Z"/>
+                            <constraint firstItem="aPX-7k-nHv" firstAttribute="top" secondItem="4gC-or-eTa" secondAttribute="bottom" constant="36" id="mJO-We-WPn"/>
+                            <constraint firstItem="4gC-or-eTa" firstAttribute="leading" secondItem="sdG-hX-9eZ" secondAttribute="leading" id="uC1-mS-ZGF"/>
+                            <constraint firstItem="4gC-or-eTa" firstAttribute="top" secondItem="yvp-xV-RiR" secondAttribute="top" id="uLU-tq-HqG"/>
+                            <constraint firstItem="4gC-or-eTa" firstAttribute="trailing" secondItem="sdG-hX-9eZ" secondAttribute="trailing" id="vCt-3e-tXJ"/>
+                            <constraint firstItem="sdG-hX-9eZ" firstAttribute="top" secondItem="tss-eR-PcO" secondAttribute="top" id="vFK-wq-FcS"/>
+                            <constraint firstItem="NSR-yr-HwT" firstAttribute="top" secondItem="HFc-qO-CN3" secondAttribute="bottom" constant="35" id="wcL-rx-6yg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qt5-yI-c8o"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ijS-AR-L7H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="670" y="23"/>
+        </scene>
     </scenes>
     <resources>
         <image name="blankMy" width="44" height="32"/>

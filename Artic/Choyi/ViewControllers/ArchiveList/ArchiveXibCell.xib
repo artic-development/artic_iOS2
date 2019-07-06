@@ -51,7 +51,6 @@
                         <rect key="frame" x="28" y="21" width="233" height="62"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="233" id="1Js-97-70q"/>
                             <constraint firstAttribute="height" priority="500" constant="62" id="936-Pk-IHE"/>
                         </constraints>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -105,14 +104,15 @@
                 <constraints>
                     <constraint firstItem="tw6-PX-4ir" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21" id="3kM-cU-Nsx"/>
                     <constraint firstItem="Zpv-lf-jKm" firstAttribute="centerY" secondItem="Xux-nw-zTT" secondAttribute="centerY" id="KO5-bc-qPL"/>
+                    <constraint firstItem="WYD-jg-eVX" firstAttribute="leading" secondItem="tw6-PX-4ir" secondAttribute="trailing" constant="62" id="KlV-nU-Hvk"/>
                     <constraint firstItem="jTM-46-Wcd" firstAttribute="leading" secondItem="Zpv-lf-jKm" secondAttribute="trailing" constant="4" id="Mdm-ay-7Ax"/>
                     <constraint firstAttribute="bottom" secondItem="Xux-nw-zTT" secondAttribute="bottom" constant="27.5" id="Mki-0v-6yS"/>
                     <constraint firstItem="WYD-jg-eVX" firstAttribute="top" secondItem="tw6-PX-4ir" secondAttribute="top" id="RNJ-ae-fgO"/>
-                    <constraint firstItem="Xux-nw-zTT" firstAttribute="trailing" secondItem="tw6-PX-4ir" secondAttribute="trailing" id="Rxn-yM-OP8"/>
                     <constraint firstItem="Zpv-lf-jKm" firstAttribute="centerY" secondItem="jTM-46-Wcd" secondAttribute="centerY" id="U51-8B-1Pf"/>
                     <constraint firstItem="jTM-46-Wcd" firstAttribute="trailing" secondItem="WYD-jg-eVX" secondAttribute="trailing" id="XUU-ee-XsC"/>
                     <constraint firstItem="tw6-PX-4ir" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="28" id="iry-vm-mmb"/>
                     <constraint firstItem="Xux-nw-zTT" firstAttribute="leading" secondItem="tw6-PX-4ir" secondAttribute="leading" id="kYH-Nv-281"/>
+                    <constraint firstItem="Xux-nw-zTT" firstAttribute="trailing" secondItem="tw6-PX-4ir" secondAttribute="trailing" id="ldo-46-dpb"/>
                     <constraint firstItem="Xux-nw-zTT" firstAttribute="top" secondItem="tw6-PX-4ir" secondAttribute="bottom" constant="47" id="mcY-Ih-RgY"/>
                     <constraint firstAttribute="trailing" secondItem="gzl-Ky-sDA" secondAttribute="trailing" id="mow-WG-GJs"/>
                     <constraint firstAttribute="bottom" secondItem="gzl-Ky-sDA" secondAttribute="bottom" id="uxH-JD-9CP"/>

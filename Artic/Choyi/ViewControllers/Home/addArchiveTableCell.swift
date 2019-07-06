@@ -10,6 +10,7 @@ import UIKit
 
 class addArchiveTableCell: UITableViewCell {
 
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +22,16 @@ class addArchiveTableCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+
+extension addArchiveTableCell: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        //개수
+        return 12
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addArchiveCell", for: indexPath) as! addArchiveCell
+        return cell
+    }
 }
