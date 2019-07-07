@@ -22,7 +22,8 @@ class homeArcitleXibCell: UITableViewCell {
         homeArticleView.makeRounded(cornerRadius: 6)
         homeArticleView.setBorder(borderColor: UIColor.colorWithRGBHex(hex: 0xcdcdcd), borderWidth: 1)
         
-        homeArticleTitle.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        homeArticleTitle.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        homeArticleTitle.sizeToFit()
         
         
         
