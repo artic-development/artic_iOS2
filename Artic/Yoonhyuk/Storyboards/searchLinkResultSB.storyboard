@@ -19,12 +19,14 @@
         <array key="NanumBarunGothicLight.ttf">
             <string>NanumBarunGothicLight</string>
         </array>
+        <array key="NanumSquareRegular.ttf">
+            <string>NanumSquareR</string>
+        </array>
     </customFonts>
     <scenes>
         <!--searchLinkResultSB-->
         <scene sceneID="Agj-jH-8gA">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7zt-vR-DHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="searchLinkResultSB" id="F0v-IK-t24" customClass="searchLinkResultTableVC" customModule="Artic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SSh-px-lKN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -54,13 +56,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFd-UW-Ohd">
-                                        <rect key="frame" x="20" y="67" width="9" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="20" y="67" width="8" height="15.5"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
+                                        <color key="textColor" red="0.30980392156862746" green="0.50196078431372548" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="개의 검색 결과가 있습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cck-8K-g5D">
-                                        <rect key="frame" x="33" y="67" width="147" height="16"/>
+                                        <rect key="frame" x="32" y="67" width="147" height="16.5"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -81,7 +83,7 @@
                                         <color key="backgroundColor" red="0.61568627450980395" green="0.61568627450980395" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4B9-oB-etS">
-                                        <rect key="frame" x="57" y="104" width="50" height="29"/>
+                                        <rect key="frame" x="57" y="104.5" width="50" height="29"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
                                         <state key="normal" title="아카이브">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -131,8 +133,10 @@
                         <outlet property="searchArchive" destination="4B9-oB-etS" id="sFQ-tQ-eC9"/>
                         <outlet property="searchArticle" destination="8qY-kb-5qQ" id="Bgc-OK-Ze1"/>
                         <outlet property="searchResult" destination="CS5-Tg-6R0" id="GPg-FK-grs"/>
+                        <outlet property="searchResultNum" destination="sFd-UW-Ohd" id="nMK-Am-4sr"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7zt-vR-DHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2259" y="182"/>
         </scene>

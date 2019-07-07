@@ -7,18 +7,23 @@
 //
 
 import UIKit
+import SafariServices
+import WebKit
 
 class searchLinkResultTableVC: UIViewController,UITableViewDelegate, UITableViewDataSource{
+    
+    
     
     
 
     var isClicked : Bool = true
     @IBOutlet weak var searchResult: UITableView!
     
+    @IBOutlet weak var searchResultNum: UILabel!
     @IBOutlet weak var searchArchive: UIButton!
     @IBOutlet weak var searchArticle: UIButton!
     
-    
+    var searchNum : Int = 13
     
     override func viewDidLoad() {
         
@@ -26,11 +31,14 @@ class searchLinkResultTableVC: UIViewController,UITableViewDelegate, UITableView
         searchResult.delegate = self
         searchResult.dataSource = self
         
+        searchResultNum.text = "\(searchNum)"
        
         let nibName = UINib(nibName: "ArticleCell", bundle: nil)
         
         searchResult.register(nibName, forCellReuseIdentifier: "ArticleCell")
         
+        let nibName2 = UINib(nibName: "ArchiveXibCell", bundle: nil)
+        searchResult.register(nibName2, forCellReuseIdentifier: "ArchiveXibCell")
       
         
         //검색결과 default
@@ -78,7 +86,6 @@ class searchLinkResultTableVC: UIViewController,UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if isClicked == false {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
@@ -86,13 +93,35 @@ class searchLinkResultTableVC: UIViewController,UITableViewDelegate, UITableView
             
             return cell
         }else{
-            return UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ArchiveXibCell", for: indexPath) as! ArchiveXibCell
+            return cell
             
         }
         
     }
+    func tableView(_ tableview: UITableView,didSelectRowAt indexPath: IndexPath) {
+        guard let url = URL(string: "https://brunch.co.kr/@candits/43") else {
+            return
+        }
+        let safariview = SFSafariViewController(url: url)
+        present(safariview, animated: true, completion: nil)
+
+       
+        
+        
+        
+        
+      
+ }
+    
+    
+        
+    
+    
+    }
+    
    
-}
+
 
 
 
