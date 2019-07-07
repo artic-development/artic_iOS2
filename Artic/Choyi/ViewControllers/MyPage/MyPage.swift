@@ -61,7 +61,7 @@ class MyPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 isScrapBtnClicked = true
                 
                 myBtn.setTitleColor(UIColor.colorWithRGBHex(hex: 0x000000, alpha: 1), for: .normal)
-                myBtn.setBackgroundImage(UIImage(named: "blackMy"), for: .normal)
+                myBtn.setBackgroundImage(UIImage(named: "blankMyarchive"), for: .normal)
                 scrapBtn.setTitleColor(UIColor.colorWithRGBHex(hex: 0x4f80ff, alpha: 1), for: .normal)
                 scrapBtn.setBackgroundImage(UIImage(named: "dotScrap"), for: .normal)
         
@@ -90,7 +90,7 @@ class MyPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 scrapBtn.setTitleColor(UIColor.colorWithRGBHex(hex: 0x000000, alpha: 1), for: .normal)
                 scrapBtn.setBackgroundImage(UIImage(named: "blackScrap"), for: .normal)
                 myBtn.setTitleColor(UIColor.colorWithRGBHex(hex: 0x4f80ff, alpha: 1), for: .normal)
-                myBtn.setBackgroundImage(UIImage(named: "dotMy"), for: .normal)
+                myBtn.setBackgroundImage(UIImage(named: "dotMyarchive"), for: .normal)
         
         myPageTableView.reloadData()
         

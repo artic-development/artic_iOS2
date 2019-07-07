@@ -84,16 +84,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="fjZ-dr-bik">
-                                                    <rect key="frame" x="39.5" y="11" width="335" height="226"/>
+                                                    <rect key="frame" x="25.5" y="11" width="363" height="239"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDy-3t-aka">
-                                                            <rect key="frame" x="0.0" y="0.0" width="163" height="226"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="177" height="239"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" translatesAutoresizingMaskIntoConstraints="NO" id="ws7-k0-RmQ">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="163" height="226"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="177" height="239.00000000000011"/>
                                                                 </imageView>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHm-BE-80W">
-                                                                    <rect key="frame" x="16" y="20" width="122" height="82"/>
+                                                                    <rect key="frame" x="16" y="20" width="136" height="82"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="82" id="G4v-RQ-kDI"/>
                                                                     </constraints>
@@ -110,7 +110,7 @@
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                 </textView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아티클 13개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKr-PD-AQC">
-                                                                    <rect key="frame" x="18" y="195.5" width="63.5" height="15.5"/>
+                                                                    <rect key="frame" x="18" y="209.5" width="67" height="14.5"/>
                                                                     <fontDescription key="fontDescription" name="NanumSquareEB" family="NanumSquare" pointSize="13"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -124,21 +124,21 @@
                                                                 <constraint firstAttribute="trailing" secondItem="tHm-BE-80W" secondAttribute="trailing" constant="25" id="gLI-Fj-sjb"/>
                                                                 <constraint firstItem="tHm-BE-80W" firstAttribute="leading" secondItem="pDy-3t-aka" secondAttribute="leading" constant="16" id="hFF-gp-XuO"/>
                                                                 <constraint firstAttribute="trailing" secondItem="ws7-k0-RmQ" secondAttribute="trailing" id="m22-DW-2rF"/>
-                                                                <constraint firstAttribute="width" constant="163" id="mEY-gn-XGl"/>
+                                                                <constraint firstAttribute="width" constant="177" id="mEY-gn-XGl"/>
                                                                 <constraint firstAttribute="bottom" secondItem="eKr-PD-AQC" secondAttribute="bottom" constant="15" id="n3C-4T-ImI"/>
                                                                 <constraint firstItem="tHm-BE-80W" firstAttribute="top" secondItem="pDy-3t-aka" secondAttribute="top" constant="20" id="nFo-ml-dOD"/>
                                                                 <constraint firstItem="ws7-k0-RmQ" firstAttribute="top" secondItem="pDy-3t-aka" secondAttribute="top" id="pfs-4C-TIH"/>
-                                                                <constraint firstAttribute="height" constant="226" id="yYI-iq-m5u"/>
+                                                                <constraint firstAttribute="height" constant="239" id="yYI-iq-m5u"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2k-Js-sDt">
-                                                            <rect key="frame" x="172" y="0.0" width="163" height="226"/>
+                                                            <rect key="frame" x="186" y="0.0" width="177" height="239"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" translatesAutoresizingMaskIntoConstraints="NO" id="fhy-OV-Qvo">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="163" height="226"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="177" height="239.00000000000011"/>
                                                                 </imageView>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="f2K-gZ-Ek0">
-                                                                    <rect key="frame" x="16" y="20" width="122" height="82"/>
+                                                                    <rect key="frame" x="16" y="20" width="136" height="82"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="82" id="Qy2-XF-Ndl"/>
                                                                     </constraints>
@@ -147,7 +147,7 @@
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                 </textView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아티클 13개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGg-aA-zsw">
-                                                                    <rect key="frame" x="18" y="195.5" width="63.5" height="15.5"/>
+                                                                    <rect key="frame" x="18" y="209.5" width="67" height="14.5"/>
                                                                     <fontDescription key="fontDescription" name="NanumSquareEB" family="NanumSquare" pointSize="13"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -156,10 +156,10 @@
                                                             <color key="backgroundColor" red="0.30980392159999998" green="0.50196078430000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstItem="XGg-aA-zsw" firstAttribute="leading" secondItem="H2k-Js-sDt" secondAttribute="leading" constant="18" id="1Lq-Lj-uoZ"/>
-                                                                <constraint firstAttribute="height" constant="226" id="93o-mG-38m"/>
+                                                                <constraint firstAttribute="height" constant="239" id="93o-mG-38m"/>
                                                                 <constraint firstAttribute="trailing" secondItem="f2K-gZ-Ek0" secondAttribute="trailing" constant="25" id="9YP-8V-VxT"/>
                                                                 <constraint firstItem="f2K-gZ-Ek0" firstAttribute="leading" secondItem="H2k-Js-sDt" secondAttribute="leading" constant="16" id="POl-sJ-lhS"/>
-                                                                <constraint firstAttribute="width" constant="163" id="X62-8T-0AK"/>
+                                                                <constraint firstAttribute="width" constant="177" id="X62-8T-0AK"/>
                                                                 <constraint firstItem="f2K-gZ-Ek0" firstAttribute="top" secondItem="H2k-Js-sDt" secondAttribute="top" constant="20" id="arI-u7-XRt"/>
                                                                 <constraint firstAttribute="trailing" secondItem="fhy-OV-Qvo" secondAttribute="trailing" id="bYw-lK-kpe"/>
                                                                 <constraint firstAttribute="bottom" secondItem="XGg-aA-zsw" secondAttribute="bottom" constant="15" id="cYg-Sj-YYw"/>
@@ -171,16 +171,16 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="3Tc-bU-lKE">
-                                                    <rect key="frame" x="39.5" y="247" width="335" height="226"/>
+                                                    <rect key="frame" x="25.5" y="260" width="363" height="239"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XA5-8W-O2f">
-                                                            <rect key="frame" x="0.0" y="0.0" width="163" height="226"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="177" height="239"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" translatesAutoresizingMaskIntoConstraints="NO" id="xEc-l0-hfP">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="163" height="226"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="177" height="239.00000000000011"/>
                                                                 </imageView>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xVT-2d-88C">
-                                                                    <rect key="frame" x="16" y="20" width="122" height="82"/>
+                                                                    <rect key="frame" x="16" y="20" width="136" height="82"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="82" id="fin-xT-a9t"/>
                                                                     </constraints>
@@ -189,7 +189,7 @@
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                 </textView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아티클 13개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJ2-gN-e6Z">
-                                                                    <rect key="frame" x="18" y="195.5" width="63.5" height="15.5"/>
+                                                                    <rect key="frame" x="18" y="209.5" width="67" height="14.5"/>
                                                                     <fontDescription key="fontDescription" name="NanumSquareEB" family="NanumSquare" pointSize="13"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -203,21 +203,21 @@
                                                                 <constraint firstItem="KJ2-gN-e6Z" firstAttribute="leading" secondItem="XA5-8W-O2f" secondAttribute="leading" constant="18" id="9Wt-t4-doO"/>
                                                                 <constraint firstItem="xVT-2d-88C" firstAttribute="leading" secondItem="XA5-8W-O2f" secondAttribute="leading" constant="16" id="GcT-GU-6H4"/>
                                                                 <constraint firstItem="xVT-2d-88C" firstAttribute="top" secondItem="XA5-8W-O2f" secondAttribute="top" constant="20" id="Vpn-RR-NHG"/>
-                                                                <constraint firstAttribute="height" constant="226" id="dav-jZ-bfJ"/>
+                                                                <constraint firstAttribute="height" constant="239" id="dav-jZ-bfJ"/>
                                                                 <constraint firstAttribute="bottom" secondItem="KJ2-gN-e6Z" secondAttribute="bottom" constant="15" id="ebd-5Z-yTt"/>
                                                                 <constraint firstAttribute="trailing" secondItem="xEc-l0-hfP" secondAttribute="trailing" id="nqf-gd-oHO"/>
-                                                                <constraint firstAttribute="width" constant="163" id="q6a-CV-Q2R"/>
+                                                                <constraint firstAttribute="width" constant="177" id="q6a-CV-Q2R"/>
                                                                 <constraint firstItem="xEc-l0-hfP" firstAttribute="leading" secondItem="XA5-8W-O2f" secondAttribute="leading" id="wED-GD-HpS"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPC-ak-2Hx">
-                                                            <rect key="frame" x="172" y="0.0" width="163" height="226"/>
+                                                            <rect key="frame" x="186" y="0.0" width="177" height="239"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" translatesAutoresizingMaskIntoConstraints="NO" id="DAs-Xq-BSn">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="163" height="226"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="177" height="239.00000000000011"/>
                                                                 </imageView>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="L54-3L-GjU">
-                                                                    <rect key="frame" x="16" y="20" width="122" height="82"/>
+                                                                    <rect key="frame" x="16" y="20" width="136" height="82"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="82" id="eNu-HQ-kUF"/>
                                                                     </constraints>
@@ -226,7 +226,7 @@
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                 </textView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아티클 13개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjo-WR-CnG">
-                                                                    <rect key="frame" x="18" y="195.5" width="63.5" height="15.5"/>
+                                                                    <rect key="frame" x="18" y="209.5" width="67" height="14.5"/>
                                                                     <fontDescription key="fontDescription" name="NanumSquareEB" family="NanumSquare" pointSize="13"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -242,9 +242,9 @@
                                                                 <constraint firstItem="L54-3L-GjU" firstAttribute="leading" secondItem="WPC-ak-2Hx" secondAttribute="leading" constant="16" id="TNX-4d-aCz"/>
                                                                 <constraint firstItem="DAs-Xq-BSn" firstAttribute="top" secondItem="WPC-ak-2Hx" secondAttribute="top" id="VYw-bx-z4i"/>
                                                                 <constraint firstAttribute="bottom" secondItem="DAs-Xq-BSn" secondAttribute="bottom" id="asz-m5-wM0"/>
-                                                                <constraint firstAttribute="height" constant="226" id="jXN-OR-bRR"/>
+                                                                <constraint firstAttribute="height" constant="239" id="jXN-OR-bRR"/>
                                                                 <constraint firstAttribute="bottom" secondItem="gjo-WR-CnG" secondAttribute="bottom" constant="15" id="oOc-2Q-gEB"/>
-                                                                <constraint firstAttribute="width" constant="163" id="omg-ce-uvB"/>
+                                                                <constraint firstAttribute="width" constant="177" id="omg-ce-uvB"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -280,7 +280,7 @@
                                         <rect key="frame" x="0.0" y="820" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aJV-hc-ZNy" id="OQg-QE-UOL">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label.co.kr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="90E-Kp-byV">
@@ -290,7 +290,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEW-BT-qnY">
-                                                    <rect key="frame" x="17" y="26" width="255" height="49.5"/>
+                                                    <rect key="frame" x="17" y="26" width="255" height="48.5"/>
                                                     <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
@@ -298,7 +298,7 @@
                                                     <rect key="frame" x="322" y="0.0" width="70" height="70.5"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" translatesAutoresizingMaskIntoConstraints="NO" id="iEx-gY-7be">
-                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="70.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="70.500000000000114"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="70" id="Y6t-rY-sBt"/>
                                                                 <constraint firstAttribute="height" constant="70" id="hRO-9P-YMg"/>
@@ -339,7 +339,7 @@
                                         <rect key="frame" x="0.0" y="910" width="414" height="343"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="edw-cg-QZN" id="GmM-sB-MYD">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="342.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="343"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BIZ-Cl-5OC">
@@ -366,7 +366,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="273"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" translatesAutoresizingMaskIntoConstraints="NO" id="tzv-lb-ODd">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="300" height="173"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="300" height="173.00000000000011"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="173" id="bnX-Pl-0eU"/>
                                                                                 </constraints>
@@ -461,7 +461,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="177" height="239"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" translatesAutoresizingMaskIntoConstraints="NO" id="lPz-rS-OEE">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="177" height="239"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="177" height="239.00000000000011"/>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ymq-9J-FOy">
                                                                                 <rect key="frame" x="12" y="14" width="42" height="21"/>
@@ -556,13 +556,13 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="1072"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PzK-Jg-lWO">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1153"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1150"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nIS-M8-zg4">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="122"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acE-LK-lDr">
-                                                        <rect key="frame" x="23" y="30" width="311" height="64"/>
+                                                        <rect key="frame" x="23" y="30" width="311" height="62"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Lorem ipsum dolor sit er elit lamet, consecteta">
                                                                 <attributes>
@@ -583,24 +583,24 @@
                                                 </constraints>
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" translatesAutoresizingMaskIntoConstraints="NO" id="rWD-b6-1A1">
-                                                <rect key="frame" x="0.0" y="124" width="414" height="223"/>
+                                                <rect key="frame" x="0.0" y="122" width="414" height="223.00000000000011"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="223" id="qr0-1e-bXP"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label.co.kr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dit-Qn-pDY">
-                                                <rect key="frame" x="30" y="368" width="354" height="16.5"/>
+                                                <rect key="frame" x="30" y="366" width="354" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
                                                 <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Lorem ipsum dolor si" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POu-zq-jMo">
-                                                <rect key="frame" x="24" y="392.5" width="359" height="35.5"/>
+                                                <rect key="frame" x="24" y="390.5" width="359" height="34.5"/>
                                                 <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQx-xO-xeT">
-                                                <rect key="frame" x="20" y="455" width="374" height="46"/>
+                                                <rect key="frame" x="20" y="452" width="374" height="46"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hO-5f-zKT">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="46"/>
@@ -621,7 +621,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QUg-mr-mZ9">
-                                                <rect key="frame" x="0.0" y="521" width="414" height="607"/>
+                                                <rect key="frame" x="0.0" y="518" width="414" height="607"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아카이브의 다른 아티클" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h5-I0-8SU">
                                                         <rect key="frame" x="23" y="25" width="368" height="16.5"/>
@@ -636,7 +636,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="179" height="184.5"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" translatesAutoresizingMaskIntoConstraints="NO" id="QGk-To-oQW">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="179" height="104.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="179" height="104.50000000000011"/>
                                                                     </imageView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jCg-Ud-tAl">
                                                                         <rect key="frame" x="0.0" y="104.5" width="179" height="80"/>
@@ -687,7 +687,7 @@
                                                                 <rect key="frame" x="189" y="0.0" width="179" height="184.5"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" translatesAutoresizingMaskIntoConstraints="NO" id="wkD-af-oP3">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="179" height="104.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="179" height="104.50000000000011"/>
                                                                     </imageView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0LJ-pU-GYi">
                                                                         <rect key="frame" x="0.0" y="104.5" width="179" height="80"/>
@@ -746,7 +746,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="179" height="184.5"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" translatesAutoresizingMaskIntoConstraints="NO" id="RAi-Yp-Gck">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="179" height="104.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="179" height="104.50000000000011"/>
                                                                     </imageView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0h3-vx-6Fq">
                                                                         <rect key="frame" x="0.0" y="104.5" width="179" height="80"/>
@@ -797,7 +797,7 @@
                                                                 <rect key="frame" x="189" y="0.0" width="179" height="184.5"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" translatesAutoresizingMaskIntoConstraints="NO" id="gde-gA-Gde">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="179" height="104.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="179" height="104.50000000000011"/>
                                                                     </imageView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="buQ-0y-H66">
                                                                         <rect key="frame" x="0.0" y="104.5" width="179" height="80"/>
@@ -1076,7 +1076,6 @@
                                 <subviews>
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhU-MC-FIj">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="530"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zdf-8u-e0f">
                                         <rect key="frame" x="0.0" y="530" width="414" height="288"/>
@@ -1113,6 +1112,9 @@
                                                 <state key="normal" title="취소">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="cancelBtnClicked:" destination="ujN-ps-D8M" eventType="touchUpInside" id="dvx-oV-OSZ"/>
+                                                </connections>
                                             </button>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K3q-LP-wqq">
                                                 <rect key="frame" x="0.0" y="76" width="414" height="124"/>
@@ -1153,7 +1155,6 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KOL-9s-10L" firstAttribute="top" secondItem="CyT-yM-wUM" secondAttribute="top" id="1mU-Cb-1wY"/>
                             <constraint firstItem="KOL-9s-10L" firstAttribute="bottom" secondItem="CyT-yM-wUM" secondAttribute="bottom" id="a4F-NL-YQP"/>
@@ -1207,7 +1208,7 @@
                                                                         <rect key="frame" x="20" y="0.0" width="78" height="78"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" translatesAutoresizingMaskIntoConstraints="NO" id="Rqa-pf-bBV">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="78" height="78.000000000000114"/>
                                                                             </imageView>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
