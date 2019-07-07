@@ -10,6 +10,7 @@ import UIKit
 
 class NotificationTableVC:UIViewController,UITableViewDelegate, UITableViewDataSource{
     
+   
     @IBOutlet weak var notiTable: UITableView!
     let arr = ["a","b","c"]
     var isImageCell = true
@@ -20,6 +21,12 @@ class NotificationTableVC:UIViewController,UITableViewDelegate, UITableViewDataS
         
          notiTable.delegate = self
          notiTable.dataSource = self
+        
+        notiTable.estimatedRowHeight = 150.0
+        notiTable.rowHeight = UITableView.automaticDimension
+        
+        
+      
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,6 +36,7 @@ class NotificationTableVC:UIViewController,UITableViewDelegate, UITableViewDataS
         
         
     }
+    
 
     // MARK: - Table view data source
 
@@ -59,7 +67,8 @@ class NotificationTableVC:UIViewController,UITableViewDelegate, UITableViewDataS
             //cell.textLabel?.text = arr[indexPath.row]
             
             return cell
-        }else{
+        }
+        else {
             
             if isImageCell == true{
                 let cell3 = tableView.dequeueReusableCell(withIdentifier: "recoNotification", for: indexPath) as! recoNotificationCell

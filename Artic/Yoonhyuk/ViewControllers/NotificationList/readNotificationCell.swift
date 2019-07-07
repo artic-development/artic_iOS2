@@ -9,10 +9,14 @@
 import UIKit
 
 class readNotificationCell: UITableViewCell {
-
+    @IBOutlet weak var ReadNotiTitle: UITextView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        ReadNotiTitle.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        ReadNotiTitle.sizeToFit()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
