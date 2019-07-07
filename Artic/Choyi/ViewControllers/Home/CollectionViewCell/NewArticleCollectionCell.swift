@@ -17,6 +17,8 @@ class NewArticleCollectionCell: UICollectionViewCell {
     override func awakeFromNib() {
         backView.makeRounded(cornerRadius: 6)
         backView.setBorder(borderColor: UIColor(red: CGFloat(205 / 255.0), green: CGFloat(205 / 255.0), blue:CGFloat(205 / 255.0), alpha: CGFloat(alpha)), borderWidth: 0.5)
+        
+        
     }
     
 }
