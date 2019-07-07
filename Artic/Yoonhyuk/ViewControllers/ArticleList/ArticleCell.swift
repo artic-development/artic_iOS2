@@ -31,6 +31,7 @@ class ArticleCell: UITableViewCell {
         
         viewRounding.makeRounded(cornerRadius: 6)
         
+      
         //아티클 제목 자동 줄바꿈
         
         //articleTitle.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
