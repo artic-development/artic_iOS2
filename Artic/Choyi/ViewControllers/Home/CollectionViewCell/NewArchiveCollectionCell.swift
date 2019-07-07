@@ -18,6 +18,9 @@ class NewArchiveCollectionCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         backView.makeRounded(cornerRadius: 6)
+        
+        articleTitle.sizeToFit()
+        articleTitle.frame.size.height = 
     }
     
 }

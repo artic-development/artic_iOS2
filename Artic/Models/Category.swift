@@ -9,5 +9,5 @@
 import Foundation
 
 struct CategoryAll: Codable {
-    let category_title: String?
+    let category_title: String
 }
