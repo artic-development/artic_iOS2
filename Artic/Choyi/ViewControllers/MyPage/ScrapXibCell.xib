@@ -25,16 +25,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="gkR-oB-4gC">
-                        <rect key="frame" x="20" y="10" width="335" height="226"/>
+                        <rect key="frame" x="20" y="10" width="335" height="220"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1K6-Ca-rUN">
-                                <rect key="frame" x="0.0" y="0.0" width="163" height="226"/>
+                                <rect key="frame" x="0.0" y="0.0" width="163" height="220"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" translatesAutoresizingMaskIntoConstraints="NO" id="7WH-ab-Tfo">
-                                        <rect key="frame" x="0.0" y="0.0" width="163" height="226"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="163" height="220"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="163" id="gkM-IA-hdg"/>
-                                            <constraint firstAttribute="height" constant="226" id="sXf-Er-XJD"/>
+                                            <constraint firstAttribute="height" constant="220" id="sXf-Er-XJD"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CmJ-qr-pQx">
@@ -50,7 +50,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, adipisicing " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBq-GB-hrx">
-                                        <rect key="frame" x="16" y="126" width="111" height="83"/>
+                                        <rect key="frame" x="16" y="120" width="111" height="83"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -67,19 +67,19 @@
                                     <constraint firstAttribute="bottom" secondItem="7WH-ab-Tfo" secondAttribute="bottom" id="eVZ-TI-3ri"/>
                                     <constraint firstAttribute="bottom" secondItem="kBq-GB-hrx" secondAttribute="bottom" constant="17" id="guv-fR-ldO"/>
                                     <constraint firstAttribute="trailing" secondItem="kBq-GB-hrx" secondAttribute="trailing" constant="36" id="luI-jq-b14"/>
-                                    <constraint firstAttribute="width" secondItem="1K6-Ca-rUN" secondAttribute="height" multiplier="163:226" id="pQ8-qa-B8Y"/>
+                                    <constraint firstAttribute="width" secondItem="1K6-Ca-rUN" secondAttribute="height" multiplier="163:220" id="pQ8-qa-B8Y"/>
                                     <constraint firstItem="CmJ-qr-pQx" firstAttribute="leading" secondItem="1K6-Ca-rUN" secondAttribute="leading" constant="12" id="qKx-yz-DXZ"/>
                                     <constraint firstItem="aa5-JQ-xbK" firstAttribute="leading" secondItem="CmJ-qr-pQx" secondAttribute="leading" id="zwG-v0-HFU"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e4r-Rs-VaN">
-                                <rect key="frame" x="172" y="0.0" width="163" height="226"/>
+                                <rect key="frame" x="172" y="0.0" width="163" height="220"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" translatesAutoresizingMaskIntoConstraints="NO" id="Dug-va-MCY">
-                                        <rect key="frame" x="0.0" y="0.0" width="163" height="226"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="163" height="220"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="163" id="lRP-Fn-9Y1"/>
-                                            <constraint firstAttribute="height" constant="226" id="xh4-Uh-boM"/>
+                                            <constraint firstAttribute="height" constant="220" id="xh4-Uh-boM"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cz6-rP-noU">
@@ -95,7 +95,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, adipisicing " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q65-qU-Kf5">
-                                        <rect key="frame" x="16" y="126" width="111" height="83"/>
+                                        <rect key="frame" x="16" y="120" width="111" height="83"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -113,7 +113,7 @@
                                     <constraint firstItem="Dug-va-MCY" firstAttribute="leading" secondItem="e4r-Rs-VaN" secondAttribute="leading" id="k6k-Ng-BfH"/>
                                     <constraint firstAttribute="trailing" secondItem="Q65-qU-Kf5" secondAttribute="trailing" constant="36" id="ljp-gq-gN6"/>
                                     <constraint firstItem="Cz6-rP-noU" firstAttribute="top" secondItem="e4r-Rs-VaN" secondAttribute="top" constant="14" id="o8h-ax-Adg"/>
-                                    <constraint firstAttribute="width" secondItem="e4r-Rs-VaN" secondAttribute="height" multiplier="163:226" id="vbx-6o-HON"/>
+                                    <constraint firstAttribute="width" secondItem="e4r-Rs-VaN" secondAttribute="height" multiplier="163:220" id="vbx-6o-HON"/>
                                     <constraint firstItem="Dug-va-MCY" firstAttribute="top" secondItem="e4r-Rs-VaN" secondAttribute="top" id="wjY-6i-ntg"/>
                                 </constraints>
                             </view>

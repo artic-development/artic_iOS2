@@ -13,7 +13,7 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var homeTableView: UITableView!
     var categories = ["새로운 아카이브", "새로운 아티클", "최근 읽은 아티클", "UI/UX", "브랜딩"]
     
-    
+    public var newArchiveList: [NewArchive] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,42 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource {
         homeTableView.separatorStyle = .none
         homeTableView.sectionIndexBackgroundColor = UIColor.white
         
+        
+    }
+    
+    func getNewArchive() {
+        
+        NewArchiveService.shared.getNewArchive() {
+            [weak self]
+            data in
+            
+            guard let `self` = self else { return }
+            
+            switch data {
+            case .success(let res):
+                
+                self.newArchiveList = res as! [NewArchive]
+                self.homeTableView.reloadData()
+                
+                break
+            case .requestErr(let err):
+                print(".requestErr(\(err))")
+                break
+            case .pathErr:
+                // 대체로 경로를 잘못 쓴 경우입니다.
+                // 오타를 확인해보세요.
+                print("경로 에러")
+                break
+            case .serverErr:
+                // 서버의 문제인 경우입니다.
+                // 여기에서 동작할 행동을 정의해주시면 됩니다.
+                print("서버 에러")
+                break
+            case .networkFail:
+                self.simpleAlert(title: "통신 실패", message: "네트워크 상태를 확인하세요.")
+                break
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,6 +91,7 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             //새로운 아카이브
             let cell = tableView.dequeueReusableCell(withIdentifier: "NewArchiveCell") as! NewArchiveCell
+            
             return cell
         }else if indexPath.section == 1{
             //새로운 아티클

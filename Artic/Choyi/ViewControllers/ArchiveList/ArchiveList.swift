@@ -14,7 +14,7 @@ class ArchiveList: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
     @IBOutlet weak var archiveTable: UITableView!
     
-    var archiveTableViewData = archiveDataSample.generateArchiveData()
+    //var archiveTableViewData = archiveDataSample.generateArchiveData()
     
     
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ class ArchiveList: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return archiveTableViewData.count
+       return 10
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

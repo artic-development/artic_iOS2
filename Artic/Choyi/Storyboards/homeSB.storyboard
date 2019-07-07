@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gJt-ue-wO7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jg3-uo-ldq">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -434,7 +434,7 @@
                                         <rect key="frame" x="0.0" y="1253" width="414" height="287"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uT3-ca-PEa" id="Yib-yL-lbS">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="286.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="287"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NcT-vi-mrV">
@@ -464,8 +464,8 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="177" height="239.00000000000011"/>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ymq-9J-FOy">
-                                                                                <rect key="frame" x="12" y="14" width="42" height="21"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                <rect key="frame" x="12" y="14" width="153" height="18"/>
+                                                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
                                                                                 <color key="textColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
@@ -479,18 +479,28 @@
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                             </textView>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqx-dH-aoe">
+                                                                                <rect key="frame" x="12" y="35" width="153" height="18"/>
+                                                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
+                                                                                <color key="textColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstItem="Ymq-9J-FOy" firstAttribute="leading" secondItem="P3j-BI-Emx" secondAttribute="leading" constant="12" id="0kv-RT-QEX"/>
                                                                             <constraint firstAttribute="bottom" secondItem="lPz-rS-OEE" secondAttribute="bottom" id="5Pa-ma-X64"/>
                                                                             <constraint firstAttribute="bottom" secondItem="EI1-g2-zQO" secondAttribute="bottom" constant="17" id="9Lh-69-CJG"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="Ymq-9J-FOy" secondAttribute="trailing" constant="12" id="HEg-1X-7Gu"/>
                                                                             <constraint firstItem="lPz-rS-OEE" firstAttribute="leading" secondItem="P3j-BI-Emx" secondAttribute="leading" id="NSS-Ff-rU5"/>
                                                                             <constraint firstAttribute="trailing" secondItem="lPz-rS-OEE" secondAttribute="trailing" id="UoV-c2-nMV"/>
                                                                             <constraint firstItem="EI1-g2-zQO" firstAttribute="leading" secondItem="P3j-BI-Emx" secondAttribute="leading" constant="16" id="aQE-3T-Iyn"/>
                                                                             <constraint firstItem="lPz-rS-OEE" firstAttribute="top" secondItem="P3j-BI-Emx" secondAttribute="top" id="gm5-ey-C2F"/>
+                                                                            <constraint firstItem="Zqx-dH-aoe" firstAttribute="leading" secondItem="Ymq-9J-FOy" secondAttribute="leading" id="kw7-1b-Q92"/>
                                                                             <constraint firstAttribute="trailing" secondItem="EI1-g2-zQO" secondAttribute="trailing" constant="16" id="lDF-wb-lKI"/>
                                                                             <constraint firstItem="Ymq-9J-FOy" firstAttribute="top" secondItem="P3j-BI-Emx" secondAttribute="top" constant="14" id="lnG-Vl-ECU"/>
+                                                                            <constraint firstItem="Zqx-dH-aoe" firstAttribute="top" secondItem="Ymq-9J-FOy" secondAttribute="bottom" constant="3" id="xBl-i2-MWN"/>
+                                                                            <constraint firstItem="Zqx-dH-aoe" firstAttribute="trailing" secondItem="Ymq-9J-FOy" secondAttribute="trailing" id="xbx-Yn-0OW"/>
                                                                         </constraints>
                                                                     </view>
                                                                 </subviews>
@@ -507,6 +517,7 @@
                                                                 <outlet property="backView" destination="P3j-BI-Emx" id="4QV-1c-g5s"/>
                                                                 <outlet property="backgroundImg" destination="lPz-rS-OEE" id="tS3-8e-ZSf"/>
                                                                 <outlet property="categoryName" destination="Ymq-9J-FOy" id="Y1p-ui-Gfp"/>
+                                                                <outlet property="categoryName2" destination="Zqx-dH-aoe" id="Myv-CX-AKD"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
