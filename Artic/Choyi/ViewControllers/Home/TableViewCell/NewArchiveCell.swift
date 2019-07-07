@@ -76,6 +76,9 @@ extension NewArchiveCell: UICollectionViewDataSource {
         //아카이브 제목
         let newArchive = newArchiveList[indexPath.row]
         cell.articleTitle.text = "\(newArchive.archive_title)"
+        cell.articleTitle.translatesAutoresizingMaskIntoConstraints = true
+        cell.articleTitle.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        cell.articleTitle.sizeToFit()
 
         //카테고리 이름
         if newArchive.category_all.count == 2{
