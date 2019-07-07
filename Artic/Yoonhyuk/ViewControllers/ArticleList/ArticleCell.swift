@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class ArticleCell: UITableViewCell {
     @IBOutlet weak var webLabel: UILabel!
@@ -27,7 +28,14 @@ class ArticleCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        //
+        
+        viewRounding.makeRounded(cornerRadius: 6)
+        
+        //아티클 제목 자동 줄바꿈
+        
+        //articleTitle.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        //articleTitle.sizeToFit()
+        
         
     }
 
@@ -49,15 +57,32 @@ class ArticleCell: UITableViewCell {
         
     }
     
+    
     @IBAction func pressedLikeFolder(_ sender: Any) {
        //색 안변하고 밑에서 토스트
-        
+       
     }
+    
+        
+    
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+     
+        
+      
+            
+            
+            
+        
+        
 
-        // Configure the view for the selected state
+        
     }
+    
+    
+   
+        // Configure the view for the selected state
+    
     
 }
