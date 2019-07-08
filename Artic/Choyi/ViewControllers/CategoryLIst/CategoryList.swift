@@ -73,6 +73,10 @@ class CategoryList: UIViewController, UITableViewDelegate, UITableViewDataSource
         let Category = categories[indexPath.row]
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryListCell", for: indexPath) as? CategoryListCell else {return UITableViewCell()}
             cell.titleLabel.text = "\(Category.category_title)"
+        //cell 선택시 배경 색 지정
+        var bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.white
+        cell.selectedBackgroundView = bgColorView
             return cell
         }
     
