@@ -21,6 +21,7 @@ class MyPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var scrapBtn: UIButton!
     @IBOutlet weak var myBtn: UIButton!
     @IBOutlet weak var plusBtn: UIButton!
+    var MypageList: MyPageData!
     
     
     override func viewDidLoad() {
@@ -34,7 +35,8 @@ class MyPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         myProfilePicView.makeRounded(cornerRadius: 36)
         //self.view.addSubview(myTextView)
-        myTextView.text = "안녕하세요아틱입니다저는하세요아틱입니다저는하세요아틱입니다저는하세요아틱입니다저는하세요아틱입니다저는하세요아틱입니다저는하세요아틱입니다저는하세요아틱입니다저는"
+        myTextView.text = "\(MypageList.user_intro)"
+        
         
 //        myTextView.translatesAutoresizingMaskIntoConstraints = true
 //        myTextView.sizeToFit()
@@ -51,9 +53,38 @@ class MyPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let nibName2 = UINib(nibName: "MyXibCell", bundle: nil)
         myPageTableView.register(nibName2, forCellReuseIdentifier: "MyXibCell")
         
+    
+       getMyPage()
     }
     
-
+    func getMyPage() {
+        
+        MyPageService.shared.getMyPage() {
+            
+            [weak self]
+            (data) in
+            
+            guard let `self` = self else { return }
+            
+            switch data {
+                
+            case .success(let result):
+                let _result = result as! MyPageData
+                self.MypageList = _result
+                self.myInfoView.reloadData()
+                print(result)
+                
+            case .requestErr(let message):
+                print(message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
     
     
     @IBAction func scrapBtnClicked(_ sender: UIButton) {

@@ -74,11 +74,22 @@ class CategoryList: UIViewController, UITableViewDelegate, UITableViewDataSource
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryListCell", for: indexPath) as? CategoryListCell else {return UITableViewCell()}
             cell.titleLabel.text = "\(Category.category_title)"
         //cell 선택시 배경 색 지정
-        var bgColorView = UIView()
+        let bgColorView = UIView()
         bgColorView.backgroundColor = UIColor.white
         cell.selectedBackgroundView = bgColorView
+        
             return cell
+
+ }
+     override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+       
+        
+        if let index = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: index, animated: true)
         }
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 }

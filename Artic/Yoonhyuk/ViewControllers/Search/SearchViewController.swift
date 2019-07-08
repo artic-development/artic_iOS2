@@ -55,5 +55,9 @@ class SearchViewController: UIViewController, TagListViewDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }//화면터치하여 키보드 내리기
+    @IBAction func onBack(_ sender: Any) {
+         self.dismiss(animated: true)
+    }
+    //뒤로 가기
     
 }

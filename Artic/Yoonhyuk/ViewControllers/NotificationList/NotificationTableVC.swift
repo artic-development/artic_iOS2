@@ -36,7 +36,16 @@ class NotificationTableVC:UIViewController,UITableViewDelegate, UITableViewDataS
         
         
     }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
     
+ 
+        
+        if let index = notiTable.indexPathForSelectedRow {
+            notiTable.deselectRow(at: index, animated: true)
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -65,7 +74,9 @@ class NotificationTableVC:UIViewController,UITableViewDelegate, UITableViewDataS
             let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationCell", for: indexPath)
             
             //cell.textLabel?.text = arr[indexPath.row]
-            
+            let bgColorView = UIView()
+            bgColorView.backgroundColor = UIColor.white
+            cell.selectedBackgroundView = bgColorView
             return cell
         }
         else {
@@ -73,13 +84,22 @@ class NotificationTableVC:UIViewController,UITableViewDelegate, UITableViewDataS
             if isImageCell == true{
                 let cell3 = tableView.dequeueReusableCell(withIdentifier: "recoNotification", for: indexPath) as! recoNotificationCell
                 
+                let bgColorView = UIView()
+                bgColorView.backgroundColor = UIColor.white
+                cell3.selectedBackgroundView = bgColorView
                 return cell3
             }else{
                 let cell2 = tableView.dequeueReusableCell(withIdentifier: "readNotification", for: indexPath) as! readNotificationCell
+                
+                let bgColorView = UIView()
+                bgColorView.backgroundColor = UIColor.white
+                cell2.selectedBackgroundView = bgColorView
                 return cell2
             }
             
         }
+        
+        
         
         
     }

@@ -1,5 +1,5 @@
 //
-//  CategoryService.swift
+//  MyPageService.swift
 //  Artic
 //
 //  Created by Jung Yoon Hyuk on 08/07/2019.
@@ -9,14 +9,14 @@
 import Foundation
 import Alamofire
 
-struct CategoryService {
+struct MyPageService {
     
-    static let shared = CategoryService()
+    static let shared = MyPageService()
     
     // App Auth API
-    func getCategory(completion: @escaping (NetworkResult<Any>) -> Void) {
+    func getMyPage(completion: @escaping (NetworkResult<Any>) -> Void) {
         
-        let URL = "http://15.164.11.203:3000/category"
+        let URL = APIConstants.MyPageURL
         
         let header: HTTPHeaders = [
             "Content-Type" : "application/json"

@@ -37,22 +37,22 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 소개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVT-KQ-iRf">
-                                            <rect key="frame" x="20" y="129" width="37.5" height="15.5"/>
+                                            <rect key="frame" x="20" y="129" width="38" height="15"/>
                                             <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Mig-TS-UYo">
-                                            <rect key="frame" x="112" y="48.5" width="102.5" height="39.5"/>
+                                            <rect key="frame" x="112" y="48" width="108.5" height="40"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이아틱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrG-RJ-Pcl">
-                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="19"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="이아틱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrG-RJ-Pcl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="43" height="20"/>
                                                     <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label@naver.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpx-ye-pG1">
-                                                    <rect key="frame" x="0.0" y="24" width="102.5" height="15.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label@naver.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpx-ye-pG1">
+                                                    <rect key="frame" x="0.0" y="25" width="108.5" height="15"/>
                                                     <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -63,7 +63,7 @@
                                             <rect key="frame" x="20" y="32" width="72" height="72"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" translatesAutoresizingMaskIntoConstraints="NO" id="F1z-eV-eXy">
-                                                    <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="72" height="72.000000000000114"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -84,7 +84,7 @@
                                             </constraints>
                                         </view>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" contentInsetAdjustmentBehavior="never" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ulh-l9-p9G">
-                                            <rect key="frame" x="15" y="155.5" width="312" height="58.5"/>
+                                            <rect key="frame" x="15" y="155" width="312" height="77"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="안녕하세요아틱입니다저는아틱입니fcuytsxijrzktㅏㅕㅅ타ㅕㅅ체ㅣㅑㅕ치ㅛㅕㅅ타ㅡㅛㅅㅎ치ㅑㅕㅊ피ㅑ.ㅛ타,ㅕㅣㅛ차ㅕㅐ,ㅣㅏㅡㅔㅐㅣㅡㅔㅣㅐㅡㅔㅐㅡㅔㅐㅡㅔㅐ">
@@ -143,7 +143,6 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="qp4-2a-0Jm" firstAttribute="top" secondItem="Ulh-l9-p9G" secondAttribute="bottom" constant="10" id="1K3-As-DKQ"/>
                                         <constraint firstItem="Mig-TS-UYo" firstAttribute="leading" secondItem="e7t-K5-qyQ" secondAttribute="trailing" constant="20" id="3Py-UQ-oWf"/>
                                         <constraint firstAttribute="trailing" secondItem="Ulh-l9-p9G" secondAttribute="trailing" constant="87" id="5Cx-6D-G1a"/>
                                         <constraint firstItem="CdW-vp-Ufg" firstAttribute="centerY" secondItem="5hj-Jx-u76" secondAttribute="centerY" id="92R-Op-DTj"/>
@@ -164,7 +163,9 @@
                                         <constraint firstItem="bO9-G2-TNb" firstAttribute="top" secondItem="qp4-2a-0Jm" secondAttribute="bottom" constant="8" id="nMN-Mc-cUf"/>
                                         <constraint firstItem="bO9-G2-TNb" firstAttribute="leading" secondItem="I6O-Im-UFp" secondAttribute="leading" constant="11" id="nnr-N8-Ii7"/>
                                         <constraint firstItem="5hj-Jx-u76" firstAttribute="centerY" secondItem="bO9-G2-TNb" secondAttribute="centerY" id="p6n-Hb-VgS"/>
+                                        <constraint firstItem="Ulh-l9-p9G" firstAttribute="top" secondItem="Mig-TS-UYo" secondAttribute="bottom" constant="67" id="pY3-a7-MNX"/>
                                         <constraint firstItem="e7t-K5-qyQ" firstAttribute="top" secondItem="I6O-Im-UFp" secondAttribute="top" constant="32" id="ssW-KN-ohS"/>
+                                        <constraint firstItem="5hj-Jx-u76" firstAttribute="top" secondItem="Ulh-l9-p9G" secondAttribute="bottom" constant="10" id="z6I-2C-yGQ"/>
                                     </constraints>
                                 </view>
                             </tableView>
@@ -350,7 +351,7 @@
                                 <rect key="frame" x="154" y="113" width="106" height="106"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" translatesAutoresizingMaskIntoConstraints="NO" id="Tc6-B8-n3Q">
-                                        <rect key="frame" x="0.0" y="0.0" width="106" height="106"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="106" height="106.00000000000011"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -364,7 +365,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFc-qO-CN3">
-                                <rect key="frame" x="154.5" y="234" width="105" height="29"/>
+                                <rect key="frame" x="153.5" y="234" width="107" height="29"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
                                 <state key="normal" title="프로필 사진 바꾸기">
                                     <color key="titleColor" red="0.30980392159999998" green="0.50196078430000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>

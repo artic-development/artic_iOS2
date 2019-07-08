@@ -108,6 +108,9 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ms8-S8-7Nx">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <connections>
+                                    <segue destination="cf7-CO-bEw" kind="embed" id="gkC-rv-51r"/>
+                                </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -125,6 +128,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MYq-Ai-gb4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="264" y="438"/>
+        </scene>
+        <!--notiListSB-->
+        <scene sceneID="ZDK-v0-LyG">
+            <objects>
+                <viewControllerPlaceholder storyboardName="notiListSB" id="cf7-CO-bEw" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f9D-Wh-d7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="264" y="842"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Gmf-6O-0ZD">
