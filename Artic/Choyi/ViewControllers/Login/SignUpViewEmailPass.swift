@@ -76,4 +76,13 @@ class SignUpViewEmailPass: UIViewController, UITextFieldDelegate {
         case left
     }
 
+    @IBAction func nextBtnClicked(_ sender: Any) {
+        guard let dvc = storyboard?.instantiateViewController(withIdentifier: "SignUpViewNameBirth") as? SignUpViewNameBirth
+            else {return}
+        
+        dvc.emailText = emailTextField.text
+        dvc.passText = passTextField.text
+        
+        navigationController?.pushViewController(dvc, animated: true)
+    }
 }

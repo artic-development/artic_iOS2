@@ -274,7 +274,7 @@
                         <barButtonItem key="rightBarButtonItem" title="다음" id="K5Z-Zh-Uxz">
                             <color key="tintColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="B5l-jB-D4e" kind="show" id="NTc-cc-Y25"/>
+                                <action selector="nextBtnClicked:" destination="PUQ-zh-8YT" id="3Vk-hC-aEU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -352,6 +352,9 @@
                                         <state key="normal" title="로그인">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginBtnClicked:" destination="gOy-JT-caa" eventType="touchUpInside" id="fNw-Ad-9Tm"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -392,7 +395,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="TuN-cr-kAw"/>
                     <connections>
+                        <outlet property="emailTextField" destination="oUm-Al-uWo" id="esc-iZ-NdT"/>
                         <outlet property="loginBtnView" destination="hR1-a2-fdH" id="lEE-ty-u8O"/>
+                        <outlet property="passTextField" destination="bsL-Ll-lfm" id="DaQ-6T-l0O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gs4-67-w2D" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -420,13 +425,13 @@
         <!--Sign Up View Name Birth-->
         <scene sceneID="V7W-rN-6JC">
             <objects>
-                <viewController id="B5l-jB-D4e" customClass="SignUpViewNameBirth" customModule="Artic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewNameBirth" useStoryboardIdentifierAsRestorationIdentifier="YES" id="B5l-jB-D4e" customClass="SignUpViewNameBirth" customModule="Artic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qZ1-nD-hR4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ug6-6o-vlD">
-                                <rect key="frame" x="20" y="120" width="155.5" height="24.5"/>
+                                <rect key="frame" x="20" y="76" width="155.5" height="24.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7T-Kq-NvR">
                                         <rect key="frame" x="0.0" y="0.0" width="37.5" height="24.5"/>
@@ -455,57 +460,57 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알려주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cra-CM-teA">
-                                <rect key="frame" x="20" y="152.5" width="103.5" height="24.5"/>
+                                <rect key="frame" x="20" y="108.5" width="103.5" height="24.5"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름 (닉네임)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lp4-gs-7cz">
-                                <rect key="frame" x="20" y="251" width="89.5" height="18.5"/>
+                                <rect key="frame" x="20" y="207" width="89.5" height="18.5"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="김아틱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bgK-0U-kx3">
-                                <rect key="frame" x="20" y="288.5" width="358" height="17"/>
+                                <rect key="frame" x="20" y="244.5" width="358" height="17"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1mc-70-MdD">
-                                <rect key="frame" x="20" y="312.5" width="358" height="1"/>
+                                <rect key="frame" x="20" y="268.5" width="358" height="1"/>
                                 <color key="backgroundColor" red="0.80392156859999997" green="0.80392156859999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="zMk-Q9-NcG"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생년월일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQq-nt-jhq">
-                                <rect key="frame" x="20" y="367.5" width="57.5" height="18.5"/>
+                                <rect key="frame" x="20" y="323.5" width="57.5" height="18.5"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="YY MM DD" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SzX-fD-KcW">
-                                <rect key="frame" x="20" y="405" width="358" height="17"/>
+                                <rect key="frame" x="20" y="361" width="358" height="17"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PNx-Wd-gUr">
-                                <rect key="frame" x="20" y="429" width="358" height="1"/>
+                                <rect key="frame" x="20" y="385" width="358" height="1"/>
                                 <color key="backgroundColor" red="0.80392156859999997" green="0.80392156859999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="htl-dC-K1v"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7Y-er-Ich">
-                                <rect key="frame" x="20" y="321.5" width="358" height="14"/>
+                                <rect key="frame" x="20" y="277.5" width="358" height="14"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Vm-rG-dmg">
-                                <rect key="frame" x="20" y="438" width="358" height="14"/>
+                                <rect key="frame" x="20" y="394" width="358" height="14"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -546,6 +551,9 @@
                     <navigationItem key="navigationItem" id="gBc-qs-uBG">
                         <barButtonItem key="rightBarButtonItem" title="완료" id="xpD-G0-0Z3">
                             <color key="tintColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="completeBtnClicked:" destination="B5l-jB-D4e" id="7cP-Js-oXm"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

@@ -10,7 +10,7 @@ struct APIConstants {
     static let BaseURL = "http://15.164.11.203:3000"
     
     static let AuthURL = BaseURL + "/auth"
-    static let SigninURL = AuthURL + "/signup"
+    static let SignupURL = AuthURL + "/signup"
     static let LoginURL = AuthURL + "/signin"
     
     static let SearchURL = BaseURL + "/search"

@@ -8,7 +8,19 @@
 
 import UIKit
 
-class Home: UIViewController,UITableViewDelegate, UITableViewDataSource {
+
+class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArchiveProtocol {
+    
+    func pushToNewView(withData:Int) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "homeSB", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(withIdentifier: "HomeNewArchiveDetail") as? HomeNewArchiveDetail
+            else {return}
+        //self.present(dvc, animated: true, completion: nil)
+        //self.navigationController?.navigationBar.isHidden = false
+        //navigationController?.pushViewController(dvc, animated: true)
+        //self.push(dvc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(dvc, animated: true)
+    }
     
     @IBOutlet weak var homeTableView: UITableView!
     var categoriesAll = ["새로운 아카이브", "새로운 아티클", "최근 읽은 아티클"]
@@ -72,7 +84,7 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource {
             bgColorView.backgroundColor = UIColor.white
             cell.selectedBackgroundView = bgColorView
             
-            //cell.delegate = self
+            cell.delegate = self
             
             return cell
         }else if indexPath.section == 1{
