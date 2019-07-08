@@ -8,6 +8,12 @@
 
 import UIKit
 
+//protocol NewArchiveCellDelegate:class {
+//    func cellTapped()
+//}
+
+//weak var delegate:NewArchiveCellDelegate? 
+
 class NewArchiveCollectionCell: UICollectionViewCell {
 
     @IBOutlet weak var backView: UIView!

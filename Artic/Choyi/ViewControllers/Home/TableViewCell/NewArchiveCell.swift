@@ -9,7 +9,12 @@
 import UIKit
 import Kingfisher
 
+protocol NewArchiveCellDelegate: class {
+    func cellTapped(selectedObject: AnyObject)
+}
+
 class NewArchiveCell: UITableViewCell {
+//    weak var delegates :NewArchiveCellDelegate?
     
     @IBOutlet weak var newArchiveCV: UICollectionView!
     var newArchiveList: [NewArchive] = []
@@ -17,7 +22,6 @@ class NewArchiveCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         getNewArchive()
-        print("\(newArchiveList.count)ss")
     }
     
 
@@ -36,7 +40,7 @@ class NewArchiveCell: UITableViewCell {
                 let _result = result as! [NewArchive]
                 self.newArchiveList = _result
                 self.newArchiveCV.reloadData()
-                print(result)
+                //print(result)
                 
             case .requestErr(let message):
                 print(message)
@@ -54,9 +58,10 @@ class NewArchiveCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        
     }
-
     
+
     
     
 }
@@ -65,7 +70,6 @@ extension NewArchiveCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //개수
 
-        print(newArchiveList.count)
         return newArchiveList.count
     }
 
@@ -79,6 +83,8 @@ extension NewArchiveCell: UICollectionViewDataSource {
         cell.articleTitle.translatesAutoresizingMaskIntoConstraints = true
         cell.articleTitle.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         cell.articleTitle.sizeToFit()
+        cell.articleTitle.frame = CGRect(x: cell.articleTitle.frame.origin.x, y: cell.backView.frame.origin.y + 222 - cell.articleTitle.frame.height, width: cell.articleTitle.frame.width, height: cell.articleTitle.frame.height)
+        
 
         //카테고리 이름
         if newArchive.category_all.count == 2{
@@ -107,5 +113,20 @@ extension NewArchiveCell: UICollectionViewDataSource {
         let itemHeight = 239
         return CGSize(width: itemWidth, height: itemHeight)
     }
+    
+    
+}
 
+extension NewArchiveCell: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+//        let storyboard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+//        guard let dvc = storyboard.instantiateViewController(withIdentifier: "HomeNewArchiveDetail") as? HomeNewArchiveDetail
+//            else {return}
+//        self.present(dvc, animated: true)
+        
+//        if delegate != nil {
+//            delegate?.cellTapped()
+        
+    }
 }

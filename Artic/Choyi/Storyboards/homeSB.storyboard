@@ -137,7 +137,7 @@
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" translatesAutoresizingMaskIntoConstraints="NO" id="fhy-OV-Qvo">
                                                                     <rect key="frame" x="0.0" y="0.0" width="177" height="239"/>
                                                                 </imageView>
-                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="f2K-gZ-Ek0">
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2K-gZ-Ek0">
                                                                     <rect key="frame" x="16" y="20" width="136" height="82"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="82" id="Qy2-XF-Ndl"/>
@@ -179,7 +179,7 @@
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" translatesAutoresizingMaskIntoConstraints="NO" id="xEc-l0-hfP">
                                                                     <rect key="frame" x="0.0" y="0.0" width="177" height="239"/>
                                                                 </imageView>
-                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xVT-2d-88C">
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVT-2d-88C">
                                                                     <rect key="frame" x="16" y="20" width="136" height="82"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="82" id="fin-xT-a9t"/>
@@ -216,7 +216,7 @@
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" translatesAutoresizingMaskIntoConstraints="NO" id="DAs-Xq-BSn">
                                                                     <rect key="frame" x="0.0" y="0.0" width="177" height="239"/>
                                                                 </imageView>
-                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="L54-3L-GjU">
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L54-3L-GjU">
                                                                     <rect key="frame" x="16" y="20" width="136" height="82"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="82" id="eNu-HQ-kUF"/>
@@ -280,7 +280,7 @@
                                         <rect key="frame" x="0.0" y="820" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aJV-hc-ZNy" id="OQg-QE-UOL">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label.co.kr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="90E-Kp-byV">
@@ -339,7 +339,7 @@
                                         <rect key="frame" x="0.0" y="910" width="414" height="343"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="edw-cg-QZN" id="GmM-sB-MYD">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="343"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="342.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BIZ-Cl-5OC">
@@ -371,7 +371,7 @@
                                                                                     <constraint firstAttribute="height" constant="173" id="bnX-Pl-0eU"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Com-VR-yDJ">
+                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Com-VR-yDJ">
                                                                                 <rect key="frame" x="20" y="191" width="260" height="49"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
@@ -417,6 +417,10 @@
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="edw-cg-QZN" id="ED2-d4-Rg4"/>
+                                                        <outlet property="delegate" destination="edw-cg-QZN" id="x6x-BO-njc"/>
+                                                    </connections>
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
@@ -425,12 +429,15 @@
                                                 <constraint firstAttribute="trailing" secondItem="BIZ-Cl-5OC" secondAttribute="trailing" id="F1a-8E-Nex"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="newArticleCV" destination="BIZ-Cl-5OC" id="hZb-vY-s52"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewArchiveCell" rowHeight="287" id="uT3-ca-PEa" customClass="NewArchiveCell" customModule="Artic" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1253" width="414" height="287"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uT3-ca-PEa" id="Yib-yL-lbS">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="287"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="286.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NcT-vi-mrV">
@@ -465,8 +472,8 @@
                                                                                 <color key="textColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Lorem ipsum dociviuda." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EI1-g2-zQO">
-                                                                                <rect key="frame" x="16" y="172.5" width="145" height="49.5"/>
+                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="Lorem ipsum dociviuda." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EI1-g2-zQO">
+                                                                                <rect key="frame" x="16" y="202" width="153" height="20"/>
                                                                                 <color key="textColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -489,7 +496,6 @@
                                                                             <constraint firstItem="EI1-g2-zQO" firstAttribute="leading" secondItem="P3j-BI-Emx" secondAttribute="leading" constant="16" id="aQE-3T-Iyn"/>
                                                                             <constraint firstItem="lPz-rS-OEE" firstAttribute="top" secondItem="P3j-BI-Emx" secondAttribute="top" id="gm5-ey-C2F"/>
                                                                             <constraint firstItem="Zqx-dH-aoe" firstAttribute="leading" secondItem="Ymq-9J-FOy" secondAttribute="leading" id="kw7-1b-Q92"/>
-                                                                            <constraint firstAttribute="trailing" secondItem="EI1-g2-zQO" secondAttribute="trailing" constant="16" id="lDF-wb-lKI"/>
                                                                             <constraint firstItem="Ymq-9J-FOy" firstAttribute="top" secondItem="P3j-BI-Emx" secondAttribute="top" constant="14" id="lnG-Vl-ECU"/>
                                                                             <constraint firstItem="Zqx-dH-aoe" firstAttribute="top" secondItem="Ymq-9J-FOy" secondAttribute="bottom" constant="3" id="xBl-i2-MWN"/>
                                                                             <constraint firstItem="Zqx-dH-aoe" firstAttribute="trailing" secondItem="Ymq-9J-FOy" secondAttribute="trailing" id="xbx-Yn-0OW"/>
@@ -984,7 +990,7 @@
         <!--Home New Archive Detail-->
         <scene sceneID="UKP-GY-CaK">
             <objects>
-                <viewController id="gJt-ue-wO7" customClass="HomeNewArchiveDetail" customModule="Artic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeNewArchiveDetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gJt-ue-wO7" customClass="HomeNewArchiveDetail" customModule="Artic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f7r-BR-IEz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

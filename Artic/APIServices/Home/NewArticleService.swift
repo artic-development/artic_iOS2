@@ -1,22 +1,22 @@
 //
-//  ArchiveService.swift
+//  NewArticleService.swift
 //  Artic
 //
-//  Created by admin on 07/07/2019.
+//  Created by admin on 08/07/2019.
 //  Copyright © 2019 choyi. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-struct NewArchiveService {
+struct NewArticleService {
     
-    static let shared = NewArchiveService()
+    static let shared = NewArticleService()
     
     // App Auth API
-    func getNewArchive(completion: @escaping (NetworkResult<Any>) -> Void) {
+    func getNewArticle(completion: @escaping (NetworkResult<Any>) -> Void) {
         
-        let URL = "http://15.164.11.203:3000/home/archive/archives/new"
+        let URL = "http://15.164.11.203:3000/home/article/articles/new"
         
         let header: HTTPHeaders = [
             "Content-Type" : "application/json"
@@ -34,14 +34,14 @@ struct NewArchiveService {
                             switch status {
                             case 200:
                                 do {
-                                    print("do")
+                                    //print("do")
                                     print(value)
                                     
                                     let decoder = JSONDecoder()
-                                    let result = try decoder.decode(ResponseArray<NewArchive>.self, from: value)
+                                    let result = try decoder.decode(ResponseArray<NewArticle>.self, from: value)
                                     
-                                    print("try")
-                                    print(result)
+                                    //print("try")
+                                    //print(result)
                                     
                                     switch result.success {
                                     case true:
