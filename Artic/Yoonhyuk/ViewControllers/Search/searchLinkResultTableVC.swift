@@ -14,7 +14,7 @@ class searchLinkResultTableVC: UIViewController,UITableViewDelegate, UITableView
     
     
     
-    
+    var blackview: UIView!
 
     var isClicked : Bool = true
     @IBOutlet weak var searchResult: UITableView!
@@ -22,11 +22,16 @@ class searchLinkResultTableVC: UIViewController,UITableViewDelegate, UITableView
     @IBOutlet weak var searchResultNum: UILabel!
     @IBOutlet weak var searchArchive: UIButton!
     @IBOutlet weak var searchArticle: UIButton!
+    @IBOutlet weak var Container: UIStackView!
+    
+    @IBOutlet weak var cancelBtn: UIButton!
     
     var searchNum : Int = 13
     
     override func viewDidLoad() {
-        
+       
+        setBlackView()
+        Container.transform = CGAffineTransform(translationX: 0, y: Container.frame.height)
         super.viewDidLoad()
         searchResult.delegate = self
         searchResult.dataSource = self
@@ -55,17 +60,10 @@ class searchLinkResultTableVC: UIViewController,UITableViewDelegate, UITableView
         
     }
     
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        
-        // 이 부분은 아래 부분의 didSelectRowAt 부분을 먼저 읽고 다시 와주세요!
-        
-        /*
-         didSelectRowAt 함수에서 해당 셀을 선택하고 음악 상세정보 뷰로 전환되었다가 다시 돌아오면
-         그 셀이 선택된 상태로 남아 있는 현상을 해결합니다. (궁금하다면 이 부분을 주석처리하고 실행해보세요!)
-         viewDidDisappear 안에 선언되어 뷰가 다시 나타날 때 아래 코드가 실행되고
-         현재 선택된 row 의 인덱스를 가져와 그 인덱스에 해당하는 row 를 이용해 deslect 를 해줍니다.
-         */
+
         if let index = searchResult.indexPathForSelectedRow {
             searchResult.deselectRow(at: index, animated: true)
         }
@@ -106,17 +104,23 @@ class searchLinkResultTableVC: UIViewController,UITableViewDelegate, UITableView
         return 10
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         if isClicked == false {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
-            
+            cell.likeFolder.tag = indexPath.row
+            cell.likeFolder.addTarget(self, action: #selector(self.book(_:)), for: .touchUpInside);
             
             return cell
-        }else{
+        }
+        else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "ArchiveXibCell", for: indexPath) as! ArchiveXibCell
             return cell
             
         }
-        
+      
+    }
+    @objc func book(_ sender: UIButton){
+        showContainer()
     }
     func tableView(_ tableview: UITableView,didSelectRowAt indexPath: IndexPath) {
         guard let url = URL(string: "https://brunch.co.kr/@candits/43") else {
@@ -125,13 +129,39 @@ class searchLinkResultTableVC: UIViewController,UITableViewDelegate, UITableView
         let safariview = SFSafariViewController(url: url)
         present(safariview, animated: true, completion: nil)
 
-       
-        
-        
-        
-        
+
       
  }
+    func setBlackView() {
+        
+        blackview = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+        blackview.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5)
+        
+        
+        view.addSubview(blackview)
+        view.bringSubviewToFront(Container)
+        blackview.alpha = 0
+    }
+    
+    func showContainer() {
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
+            
+            self.Container.transform = .identity
+            self.blackview.alpha = 1
+        })
+    }
+    
+    func hideContainer() {
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
+            
+            self.Container.transform = CGAffineTransform(translationX: 0, y: self.Container.frame.height)
+            self.blackview.alpha = 0
+        })
+    }
+    
+    @IBAction func cancelAction(_ sender: Any) {
+        hideContainer()
+    }
     
     
         

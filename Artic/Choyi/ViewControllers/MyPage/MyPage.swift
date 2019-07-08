@@ -71,7 +71,7 @@ class MyPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
             case .success(let result):
                 let _result = result as! MyPageData
                 self.MypageList = _result
-                self.myInfoView.reloadData()
+               // self.myInfoView.reloadData()
                 print(result)
                 
             case .requestErr(let message):

@@ -84,9 +84,6 @@
                             <constraint firstAttribute="width" constant="20" id="nOM-oG-uF9"/>
                         </constraints>
                         <state key="normal" title="B" image="btnFolder"/>
-                        <connections>
-                            <action selector="pressedLikeFolder:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Unw-cy-JIx"/>
-                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="담기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35y-Ar-SvJ">
                         <rect key="frame" x="124" y="134.33333333333334" width="23" height="15"/>
