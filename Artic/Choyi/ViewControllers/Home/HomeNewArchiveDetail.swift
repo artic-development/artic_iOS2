@@ -14,6 +14,7 @@ class HomeNewArchiveDetail: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var archiveTitle: UITextView!
     @IBOutlet weak var storeBtn: UIButton!
     var isStored = false
+    var archive_idx = 0
     
     //위 레이어 뷰
     

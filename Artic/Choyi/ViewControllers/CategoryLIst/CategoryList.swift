@@ -12,7 +12,7 @@ class CategoryList: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     
     @IBOutlet weak var tableView: UITableView!
-    var categories = ["Design", "Plan", "Management", "Branding", "HR", "Design", "Plan", "Management", "Branding", "HR"]
+    var categories: [Category] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +26,39 @@ class CategoryList: UIViewController, UITableViewDelegate, UITableViewDataSource
         tableView.cellLayoutMarginsFollowReadableWidth = false
         tableView.separatorInset.left = 0
         
-        
+        getCategory()
     }
+    
+    func getCategory() {
+        
+        CategoryService.shared.getCategory() {
+            
+            [weak self]
+            (data) in
+            
+            guard let `self` = self else { return }
+            
+            switch data {
+                
+            case .success(let result):
+                let _result = result as! [Category]
+                self.categories = _result
+                self.tableView.reloadData()
+                //print(result)
+                
+            case .requestErr(let message):
+                print(message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+    
+
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -38,17 +69,23 @@ class CategoryList: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let Category = categories[indexPath.row]
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryListCell", for: indexPath) as? CategoryListCell else {return UITableViewCell()}
-            cell.titleLabel.text = categories[indexPath.row]
+            cell.titleLabel.text = "\(Category.category_title)"
+        //cell 선택시 배경 색 지정
+        var bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.white
+        cell.selectedBackgroundView = bgColorView
             return cell
         }
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 55;
+}
 }
 
     

@@ -10,6 +10,7 @@ import UIKit
 //킥플립
 
 class CateArchiveCell: UITableViewCell {
+    
     @IBOutlet weak var backView1: UIView!
     @IBOutlet weak var backView2: UIView!
     @IBOutlet weak var backView3: UIView!
@@ -42,6 +43,7 @@ class CateArchiveCell: UITableViewCell {
 //        archiveTitle1.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
     }
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

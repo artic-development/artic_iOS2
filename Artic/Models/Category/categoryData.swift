@@ -8,8 +8,7 @@
 
 import Foundation
 
-struct category: Codable {
-    
+struct Category: Codable {
     let category_idx : Int
     let category_title: String
 }
