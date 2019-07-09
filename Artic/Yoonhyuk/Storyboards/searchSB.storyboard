@@ -37,6 +37,9 @@
                                     <navigationItem id="LvD-fP-ev7">
                                         <barButtonItem key="leftBarButtonItem" title="BackBtn" image="commonBackBlack" id="WGx-pf-msI">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="onBack:" destination="8oz-qR-aUW" id="boU-Lj-SQJ"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>

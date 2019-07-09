@@ -9,6 +9,7 @@
 import UIKit
 import SafariServices
 
+
 class ArticleCell: UITableViewCell {
     @IBOutlet weak var webLabel: UILabel!
     @IBOutlet weak var articleTitle: UITextView!
@@ -58,13 +59,15 @@ class ArticleCell: UITableViewCell {
         
     }
     
-    
+   /*
     @IBAction func pressedLikeFolder(_ sender: Any) {
        //색 안변하고 밑에서 토스트
-       
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "HomeNewArchiveDetail") as UIViewController
+        .presentViewController(vc, animated: true, completion: nil)
     }
     
-        
+    */
     
     
     override func setSelected(_ selected: Bool, animated: Bool) {
