@@ -19,7 +19,8 @@ struct NewArchiveService {
         let URL = "http://15.164.11.203:3000/home/archive/archives/new"
         
         let header: HTTPHeaders = [
-            "Content-Type" : "application/json"
+            "Content-Type" : "application/json",
+            "token" : UserDefaults.standard.string(forKey: "token")!
         ]
         
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
@@ -35,7 +36,7 @@ struct NewArchiveService {
                             case 200:
                                 do {
                                     //print("do")
-                                    print(value)
+//                                    print(value)
                                     
                                     let decoder = JSONDecoder()
                                     let result = try decoder.decode(ResponseArray<NewArchive>.self, from: value)

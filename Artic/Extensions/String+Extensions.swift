@@ -35,7 +35,7 @@ extension String {
     
     //생일 유효성 검사
     public func validateBirth() -> Bool {
-        let birthRegEx = "^([0-9]{2}) ([0-9]{2}) ([0-9]{2})*$"
+        let birthRegEx = "^([0-9]{4})-([0-9]{2})-([0-9]{2})$"
         
         let predicate = NSPredicate(format:"SELF MATCHES %@", birthRegEx)
         return predicate.evaluate(with: self)

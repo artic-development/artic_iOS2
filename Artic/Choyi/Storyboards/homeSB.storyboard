@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jg3-uo-ldq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qs4-KD-8B5">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -987,7 +987,7 @@
             </objects>
             <point key="canvasLocation" x="3300" y="-435"/>
         </scene>
-        <!--Home New Archive Detail-->
+        <!--새로운 아카이브-->
         <scene sceneID="UKP-GY-CaK">
             <objects>
                 <viewController storyboardIdentifier="HomeNewArchiveDetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gJt-ue-wO7" customClass="HomeNewArchiveDetail" customModule="Artic" customModuleProvider="target" sceneMemberID="viewController">
@@ -996,7 +996,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kO1-yy-AU9">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yWi-9k-6QM">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="116"/>
@@ -1032,7 +1032,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Ir-X4-065">
-                                        <rect key="frame" x="0.0" y="116" width="414" height="702"/>
+                                        <rect key="frame" x="0.0" y="116" width="414" height="658"/>
                                         <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableView>
                                 </subviews>
@@ -1047,6 +1047,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nX2-zX-BfS"/>
                     </view>
+                    <navigationItem key="navigationItem" title="새로운 아카이브" id="HN7-hd-AES"/>
                     <connections>
                         <outlet property="archiveDetailTableVIew" destination="6Ir-X4-065" id="z4n-cH-ag2"/>
                         <outlet property="archiveTitle" destination="GGC-v3-0UL" id="zL4-NY-4er"/>
@@ -1055,7 +1056,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HNb-hJ-XZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4072.4637681159425" y="-437.27678571428572"/>
+            <point key="canvasLocation" x="5892.753623188406" y="-437.27678571428572"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Sru-9S-upP">
@@ -1065,6 +1066,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="d4M-Af-095">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1178,7 +1180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcJ-2g-bhE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5316" y="-798"/>
+            <point key="canvasLocation" x="7136.2318840579719" y="-798.21428571428567"/>
         </scene>
         <!--Add Archive Container View-->
         <scene sceneID="Abf-xV-sv3">
@@ -1290,7 +1292,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X2e-pO-dIw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5692.753623188406" y="-179.46428571428569"/>
+            <point key="canvasLocation" x="7614" y="-284"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aXD-85-eSU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n5E-xn-Z66" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Mjz-3f-K7p">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gJt-ue-wO7" kind="relationship" relationship="rootViewController" id="aH7-YU-hB4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yf6-PP-3Gl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4982.608695652174" y="-437.27678571428572"/>
         </scene>
     </scenes>
     <resources>

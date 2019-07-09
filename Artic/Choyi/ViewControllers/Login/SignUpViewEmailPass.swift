@@ -13,6 +13,8 @@ class SignUpViewEmailPass: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passValiText: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
+    var emailOK = false
+    var passOK = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,19 +42,23 @@ class SignUpViewEmailPass: UIViewController, UITextFieldDelegate {
         if emailTextField.text?.validateEmail() == true {
             emailValiText.text = "사용하실 수 있는 이메일입니다"
             emailValiText.textColor = UIColor.colorWithRGBHex(hex: 0x4f80ff)
+            emailOK = true
             
         }else{
             emailValiText.text = "이메일 형식에 맞게 입력해주세요"
             emailValiText.textColor = UIColor.colorWithRGBHex(hex: 0xff1515)
+            emailOK = false
         }
         
         if passTextField.text?.validatePassword() == true {
             passValiText.text = "사용하실 수 있는 비밀번호입니다"
             passValiText.textColor = UIColor.colorWithRGBHex(hex: 0x4f80ff)
+            passOK = true
             
         }else{
             passValiText.text = "영문, 숫자 포함 8자리 이상의 비밀번호를 입력해주세요"
             passValiText.textColor = UIColor.colorWithRGBHex(hex: 0xff1515)
+            passOK = false
         }
     }
     
@@ -76,4 +82,18 @@ class SignUpViewEmailPass: UIViewController, UITextFieldDelegate {
         case left
     }
 
+    @IBAction func nextBtnClicked(_ sender: Any) {
+        
+        if( emailOK == true && passOK == true ){
+            guard let dvc = storyboard?.instantiateViewController(withIdentifier: "SignUpViewNameBirth") as? SignUpViewNameBirth
+                else {return}
+            
+            dvc.emailText = emailTextField.text
+            dvc.passText = passTextField.text
+            
+            navigationController?.pushViewController(dvc, animated: true)
+        }else{
+            self.simpleAlert(title: "양식에 맞지 않음", message: "양식이 틀려요")
+        }
+    }
 }
