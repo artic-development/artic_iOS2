@@ -12,6 +12,8 @@ class SignUpViewNameBirth: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var birthTextField: UITextField!
     @IBOutlet weak var nameValiText: UILabel!
+    var emailText: String!
+    var passText: String!
     
     @IBOutlet weak var birthValiText: UILabel!
     override func viewDidLoad() {
@@ -54,6 +56,40 @@ class SignUpViewNameBirth: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func completeBtnClicked(_ sender: Any) {
+        guard let email = emailText else {return}
+        guard let pass = passText else {return}
+        guard let birth = birthTextField.text else {return}
+        guard let name = nameTextField.text else {return}
+        
+        AuthService.shared.signUp(email, pass, birth, name){
+            
+            [weak self]
+            (data) in
+            
+            guard let `self` = self else { return }
+            
+            switch data {
+                
+            case .success(let result):
+                let _result = result as! Signup
+                print(_result)
+                
+            case .requestErr(let message):
+                print(message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+        
+        unwind()
+        
+    }
+    
     func addNavigationBarButton(imageName:String,direction:direction){
         var image = UIImage(named: imageName)
         image = image?.withRenderingMode(.alwaysOriginal)
@@ -72,6 +108,10 @@ class SignUpViewNameBirth: UIViewController, UITextFieldDelegate {
     enum direction {
         case right
         case left
+    }
+    
+    func unwind(){
+        performSegue(withIdentifier: "unwindLogin", sender: self)
     }
 
 }

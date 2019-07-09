@@ -14,7 +14,9 @@ protocol NewArchiveCellDelegate: class {
 }
 
 class NewArchiveCell: UITableViewCell {
-//    weak var delegates :NewArchiveCellDelegate?
+    weak var delegate:newArchiveProtocol? = nil
+    var myData:Int = 1
+
     
     @IBOutlet weak var newArchiveCV: UICollectionView!
     var newArchiveList: [NewArchive] = []
@@ -90,8 +92,11 @@ extension NewArchiveCell: UICollectionViewDataSource {
         if newArchive.category_all.count == 2{
             cell.categoryName.text = "\(newArchive.category_all[0].category_title)"
             cell.categoryName2.text = "\(newArchive.category_all[1].category_title)"
-        }else{
+        }else if newArchive.category_all.count == 1{
             cell.categoryName.text = "\(newArchive.category_all[0].category_title)"
+            cell.categoryName2.text = ""
+        }else{
+            cell.categoryName.text = ""
             cell.categoryName2.text = ""
         }
         
@@ -120,13 +125,7 @@ extension NewArchiveCell: UICollectionViewDataSource {
 extension NewArchiveCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-//        let storyboard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
-//        guard let dvc = storyboard.instantiateViewController(withIdentifier: "HomeNewArchiveDetail") as? HomeNewArchiveDetail
-//            else {return}
-//        self.present(dvc, animated: true)
-        
-//        if delegate != nil {
-//            delegate?.cellTapped()
+        delegate?.pushToNewView(withData: myData)
         
     }
 }

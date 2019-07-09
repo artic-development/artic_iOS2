@@ -11,17 +11,16 @@ import Alamofire
 
 struct RecentArticleService {
     
-    //파일이름수정해야함
-    
-    static let shared = NewArchiveService()
+    static let shared = RecentArticleService()
     
     // App Auth API
-    func getNewArchive(completion: @escaping (NetworkResult<Any>) -> Void) {
+    func getRecentArticle(completion: @escaping (NetworkResult<Any>) -> Void) {
         
         let URL = "http://15.164.11.203:3000/home/article/history"
         
         let header: HTTPHeaders = [
-            "Content-Type" : "application/json"
+            "Content-Type" : "application/json",
+            "token" : UserDefaults.standard.string(forKey: "token")!
         ]
         
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
@@ -36,11 +35,11 @@ struct RecentArticleService {
                             switch status {
                             case 200:
                                 do {
-                                    //print("do")
+                                    print("doㅏㅏ")
                                     print(value)
                                     
                                     let decoder = JSONDecoder()
-                                    let result = try decoder.decode(ResponseArray<NewArchive>.self, from: value)
+                                    let result = try decoder.decode(ResponseArray<RecentArticle>.self, from: value)
                                     
                                     //print("try")
                                     //print(result)

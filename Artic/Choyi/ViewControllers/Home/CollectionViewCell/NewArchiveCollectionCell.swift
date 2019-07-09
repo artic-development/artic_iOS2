@@ -8,11 +8,9 @@
 
 import UIKit
 
-//protocol NewArchiveCellDelegate:class {
-//    func cellTapped()
-//}
-
-//weak var delegate:NewArchiveCellDelegate? 
+protocol newArchiveProtocol:class {
+    func pushToNewView(withData:Int)
+}
 
 class NewArchiveCollectionCell: UICollectionViewCell {
 

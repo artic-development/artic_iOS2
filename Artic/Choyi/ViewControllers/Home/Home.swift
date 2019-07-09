@@ -8,12 +8,25 @@
 
 import UIKit
 
-class Home: UIViewController,UITableViewDelegate, UITableViewDataSource {
+
+class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArchiveProtocol {
+    
+    func pushToNewView(withData:Int) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "homeSB", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(withIdentifier: "HomeNewArchiveDetail") as? HomeNewArchiveDetail
+            else {return}
+        //self.present(dvc, animated: true, completion: nil)
+        //self.navigationController?.navigationBar.isHidden = false
+        //navigationController?.pushViewController(dvc, animated: true)
+        //self.push(dvc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(dvc, animated: true)
+    }
     
     @IBOutlet weak var homeTableView: UITableView!
     var categoriesAll = ["새로운 아카이브", "새로운 아티클", "최근 읽은 아티클"]
     var homeCateArchiveList: [HomeCateArchive] = []
     var categoriesHome: [Category] = []
+    var recentArticle: [RecentArticle] = []
     
     
     override func viewDidLoad() {
@@ -72,7 +85,7 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource {
             bgColorView.backgroundColor = UIColor.white
             cell.selectedBackgroundView = bgColorView
             
-            //cell.delegate = self
+            cell.delegate = self
             
             return cell
         }else if indexPath.section == 1{
@@ -87,6 +100,27 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource {
         }else if indexPath.section == 2{
             //최근 읽은 아티클
             let cell = tableView.dequeueReusableCell(withIdentifier: "RecentArticleCell") as! RecentArticleCell
+            //통신함수
+            getRecentArticle()
+            print(indexPath.row)
+            
+            if(recentArticle.count == 0){
+                return cell
+            }else{
+                let RecentArticle = recentArticle[indexPath.row]
+                
+                //썸네일
+                let recentImgUrl = URL(string: RecentArticle.thumnail)
+                cell.smallArchiveImg.kf.setImage(with: recentImgUrl)
+                
+                //제목
+                cell.articleTitle.text = RecentArticle.article_title
+                //웹라벨
+                cell.webLabel.text = RecentArticle.link
+            }
+        
+            
+            
             //cell 선택시 배경 색 지정
             var bgColorView = UIView()
             bgColorView.backgroundColor = UIColor.white
@@ -244,6 +278,37 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
                 self.homeTableView.reloadData()
                 //print(result)
+                
+            case .requestErr(let message):
+                print(message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+    
+    func getRecentArticle() {
+        
+        RecentArticleService.shared.getRecentArticle() {
+            
+            [weak self]
+            (data) in
+            
+            guard let `self` = self else { return }
+            
+            switch data {
+                
+            case .success(let result):
+                let _result = result as! [RecentArticle]
+                self.recentArticle = _result
+                
+                self.homeTableView.reloadData()
+                print("ㅏㅏ")
+                print(result)
                 
             case .requestErr(let message):
                 print(message)

@@ -67,6 +67,10 @@ class HomeNewArchiveDetail: UIViewController, UITableViewDataSource, UITableView
         })
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
     }
