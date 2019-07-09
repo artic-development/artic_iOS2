@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gJt-ue-wO7">
-
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qs4-KD-8B5">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -988,7 +987,7 @@
             </objects>
             <point key="canvasLocation" x="3300" y="-435"/>
         </scene>
-        <!--새로운 아카이브-->
+        <!--Home New Archive Detail-->
         <scene sceneID="UKP-GY-CaK">
             <objects>
                 <viewController storyboardIdentifier="HomeNewArchiveDetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gJt-ue-wO7" customClass="HomeNewArchiveDetail" customModule="Artic" customModuleProvider="target" sceneMemberID="viewController">
@@ -997,7 +996,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kO1-yy-AU9">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yWi-9k-6QM">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="116"/>
@@ -1033,15 +1032,13 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Ir-X4-065">
-                                        <rect key="frame" x="0.0" y="116" width="414" height="658"/>
+                                        <rect key="frame" x="0.0" y="116" width="414" height="702"/>
                                         <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableView>
                                 </subviews>
                             </stackView>
-
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KOL-9s-10L" userLabel="AddView">
                                 <rect key="frame" x="0.0" y="574" width="414" height="288"/>
-
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zdf-8u-e0f">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="288"/>
@@ -1139,7 +1136,6 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HNb-hJ-XZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-
             <point key="canvasLocation" x="4072.4637681159425" y="-437.27678571428572"/>
         </scene>
         <!--Navigation Controller-->
@@ -1159,7 +1155,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SnG-yg-2sZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="660.86956521739137" y="-434.59821428571428"/>
-
         </scene>
         <!--Add Archive Container View-->
         <scene sceneID="Abf-xV-sv3">
@@ -1271,9 +1266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X2e-pO-dIw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-
             <point key="canvasLocation" x="5475" y="-437"/>
-
         </scene>
     </scenes>
     <resources>

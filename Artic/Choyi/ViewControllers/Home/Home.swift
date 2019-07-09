@@ -22,11 +22,23 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
         self.navigationController?.pushViewController(dvc, animated: true)
     }
     
+    func pushToNewArchiveArticle(withData:Int) {
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "articleListSB", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(withIdentifier: "articleList") as? articleList
+            else {return}
+        
+        dvc.archiveIdx = withData
+        
+        self.navigationController?.pushViewController(dvc, animated: true)
+    }
+    
     @IBOutlet weak var homeTableView: UITableView!
     var categoriesAll = ["새로운 아카이브", "새로운 아티클", "최근 읽은 아티클"]
     var homeCateArchiveList: [HomeCateArchive] = []
     var categoriesHome: [Category] = []
     var recentArticle: [RecentArticle] = []
+    var archiveIdx = 999
     
     
     override func viewDidLoad() {
@@ -43,17 +55,24 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       
+
         //네비게이션 바 숨김
         self.navigationController?.navigationBar.isHidden = true
-        
+
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     func cellTapped(){
         //code for navigation
-                let storyboard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
-                guard let dvc = storyboard.instantiateViewController(withIdentifier: "HomeNewArchiveDetail") as? HomeNewArchiveDetail
+                let storyboard: UIStoryboard = UIStoryboard(name: "articleListSB", bundle: nil)
+                guard let dvc = storyboard.instantiateViewController(withIdentifier: "articleList") as? articleList
                     else {return}
+        
+                dvc.archiveIdx = archiveIdx
+        
                 self.present(dvc, animated: true)
     }
     
@@ -205,6 +224,8 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             //새로운 아카이브
+            //cellTapped()
+            //pushToNewArchiveArticle(withData: <#T##Int#>)
             
         }else if indexPath.section == 1{
             //새로운 아티클
@@ -223,7 +244,9 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
         guard let dvc = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController
             else {return}
         
-        self.present(dvc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(dvc, animated: true)
+        
+//        self.present(dvc, animated: true, completion: nil)
     }
     
     
@@ -243,12 +266,12 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
                 self.homeCateArchiveList = _result
 //                self.homeTableView.reloadData()
                 
-                print(result)
+                //print(result)
                 
             case .requestErr(let message):
                 print(message)
             case .pathErr:
-                print("pathErr")
+                print("pathErr at getHomeCateArchive")
             case .serverErr:
                 print("serverErr")
             case .networkFail:
@@ -282,7 +305,7 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
             case .requestErr(let message):
                 print(message)
             case .pathErr:
-                print("pathErr")
+                print("pathErr at getCategory")
             case .serverErr:
                 print("serverErr")
             case .networkFail:
@@ -313,7 +336,7 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
             case .requestErr(let message):
                 print(message)
             case .pathErr:
-                print("pathErr")
+                print("pathErr at getRecentArticle")
             case .serverErr:
                 print("serverErr")
             case .networkFail:

@@ -1,25 +1,26 @@
 //
-//  HomeCateArchive.swift
+//  ArticleService.swift
 //  Artic
 //
-//  Created by admin on 08/07/2019.
+//  Created by admin on 09/07/2019.
 //  Copyright © 2019 choyi. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-struct HomeCateArchiveService {
+struct ArticleService {
     
-    static let shared = HomeCateArchiveService()
+    static let shared = ArticleService()
     
     // App Auth API
-    func getHomeCateArchive(cateIdx: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func getArticle(archiveIdx: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
         
-        let URL = "http://15.164.11.203:3000/home/archive/category/\(cateIdx)"
+        let URL = "http://15.164.11.203:3000/home/archive/\(archiveIdx)"
         
         let header: HTTPHeaders = [
-            "Content-Type" : "application/x-www-form-urlencoded"
+            "Content-Type" : "application/x-www-form-urlencoded",
+            "token" : UserDefaults.standard.string(forKey: "token")!
         ]
         
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
@@ -34,14 +35,14 @@ struct HomeCateArchiveService {
                             switch status {
                             case 200:
                                 do {
-                                    //print("do")
-                                    //print(value)
+                                    print("do")
+                                    print(value)
                                     
                                     let decoder = JSONDecoder()
-                                    let result = try decoder.decode(ResponseArray<HomeCateArchive>.self, from: value)
+                                    let result = try decoder.decode(ResponseObject<ArticleListData>.self, from: value)
                                     
-                                    //print("try")
-                                    //print(result)
+                                    print("try")
+                                    print(result)
                                     
                                     switch result.success {
                                     case true:
@@ -50,7 +51,7 @@ struct HomeCateArchiveService {
                                         completion(.requestErr(result.message))
                                     }
                                 } catch {
-                                    print(".pathErr catch")
+                                    print(".pathErr catch in getArticle")
                                     completion(.pathErr)
                                 }
                             case 400:

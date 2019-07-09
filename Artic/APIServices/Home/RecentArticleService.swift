@@ -35,8 +35,8 @@ struct RecentArticleService {
                             switch status {
                             case 200:
                                 do {
-                                    print("doㅏㅏ")
-                                    print(value)
+                                    //print("doㅏㅏ")
+                                    //print(value)
                                     
                                     let decoder = JSONDecoder()
                                     let result = try decoder.decode(ResponseArray<RecentArticle>.self, from: value)
@@ -51,7 +51,7 @@ struct RecentArticleService {
                                         completion(.requestErr(result.message))
                                     }
                                 } catch {
-                                    print(".pathErr catch")
+                                    //print(".pathErr catch in getRecentArticle")
                                     completion(.pathErr)
                                 }
                             case 400:
