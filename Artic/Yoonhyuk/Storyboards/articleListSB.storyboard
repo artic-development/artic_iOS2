@@ -13,7 +13,7 @@
         <!--Article List-->
         <scene sceneID="B1u-Ig-6gO">
             <objects>
-                <viewController id="gCY-IF-qPk" customClass="articleList" customModule="Artic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="articleList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gCY-IF-qPk" customClass="articleList" customModule="Artic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t1W-94-bj1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
