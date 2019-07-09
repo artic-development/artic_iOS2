@@ -275,7 +275,7 @@
                                                                         <rect key="frame" x="20" y="0.0" width="78" height="78"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" translatesAutoresizingMaskIntoConstraints="NO" id="PpE-HT-bGZ">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="78" height="78.000000000000114"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
                                                                             </imageView>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
