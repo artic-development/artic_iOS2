@@ -8,7 +8,6 @@
 
 import Foundation
 
-/*
 struct ArchiveListData: Codable {
     let archive_idx: Int
     let user_idx: Int
@@ -17,6 +16,6 @@ struct ArchiveListData: Codable {
     let archive_img: String
     let category_idx: Int
     let article_cnt: Int
-    let category_all: [ ]
+    let category_all: [CategoryAll]
 }
-*/
+

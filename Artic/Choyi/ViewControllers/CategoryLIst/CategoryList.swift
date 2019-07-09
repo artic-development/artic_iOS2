@@ -13,6 +13,8 @@ class CategoryList: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     @IBOutlet weak var tableView: UITableView!
     var categories: [Category] = []
+    var cateIdx: Int = 999// cateIdx 초기화
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,8 +60,7 @@ class CategoryList: UIViewController, UITableViewDelegate, UITableViewDataSource
         }
     }
     
-
-    
+   
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -92,6 +93,14 @@ class CategoryList: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "categorySB", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(withIdentifier: "ArchiveList") as? ArchiveList
+            else {return}
+        
+        dvc.category_idx = indexPath.row
+        dvc.category_title = "\(categories[indexPath.row].category_title)"
+        self.present(dvc, animated: true)
+        
 }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
