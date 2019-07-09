@@ -17,8 +17,9 @@ class HomeNewArchiveDetail: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var cancelBtn: UIButton!
     
     var isStored = false
-    var archive_idx = 0
+
     var blackview: UIView!
+    
     //위 레이어 뷰
     
     
