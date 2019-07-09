@@ -92,8 +92,11 @@ extension NewArchiveCell: UICollectionViewDataSource {
         if newArchive.category_all.count == 2{
             cell.categoryName.text = "\(newArchive.category_all[0].category_title)"
             cell.categoryName2.text = "\(newArchive.category_all[1].category_title)"
-        }else{
+        }else if newArchive.category_all.count == 1{
             cell.categoryName.text = "\(newArchive.category_all[0].category_title)"
+            cell.categoryName2.text = ""
+        }else{
+            cell.categoryName.text = ""
             cell.categoryName2.text = ""
         }
         

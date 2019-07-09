@@ -32,7 +32,7 @@ class LoginViewEmail: UIViewController {
             switch data {
             case .success(let token):
                 let _token = token as! Signin
-                print(_token.token)
+                //print(_token.token)
                 
                 UserDefaults.standard.set(_token.token, forKey: "token")
                 

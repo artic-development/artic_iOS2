@@ -63,36 +63,30 @@ class SignUpViewNameBirth: UIViewController, UITextFieldDelegate {
         guard let name = nameTextField.text else {return}
         
         AuthService.shared.signUp(email, pass, birth, name){
-            data in
+            
+            [weak self]
+            (data) in
+            
+            guard let `self` = self else { return }
             
             switch data {
-            case .success(let token):
-                UserDefaults.standard.set(token, forKey: "token")
                 
-                let dvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainVC") as! UINavigationController
+            case .success(let result):
+                let _result = result as! Signup
+                print(_result)
                 
-                self.present(dvc, animated: true)
-                
-                break
-            case .requestErr(let err):
-                self.simpleAlert(title: "회원가입 실패", message: err as! String)
-                break
+            case .requestErr(let message):
+                print(message)
             case .pathErr:
-                // 대체로 경로를 잘못 쓴 경우입니다.
-                // 오타를 확인해보세요.
-                print("경로 에러")
-                break
+                print("pathErr")
             case .serverErr:
-                // 서버의 문제인 경우입니다.
-                // 여기에서 동작할 행동을 정의해주시면 됩니다.
-                print("서버 에러")
-                break
+                print("serverErr")
             case .networkFail:
-                self.simpleAlert(title: "통신 실패", message: "네트워크 상태를 확인하세요.")
-                break
+                print("networkFail")
             }
-            
         }
+        
+        unwind()
         
     }
     
@@ -114,6 +108,10 @@ class SignUpViewNameBirth: UIViewController, UITextFieldDelegate {
     enum direction {
         case right
         case left
+    }
+    
+    func unwind(){
+        performSegue(withIdentifier: "unwindLogin", sender: self)
     }
 
 }

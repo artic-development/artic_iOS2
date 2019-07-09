@@ -43,14 +43,14 @@ struct AuthService {
                             switch status {
                             case 200:
                                 do {
-                                    print("do")
-                                    print(value)
+                                    //print("do")
+                                    //print(value)
                                     
                                     let decoder = JSONDecoder()
                                     let result = try decoder.decode(ResponseObject<Signin>.self, from: value)
                                     
-                                    print("try")
-                                    print(result.data!.token)
+                                    //print("try")
+                                    //print(result.data!.token)
                                     
                                     switch result.success {
                                     case true:
@@ -85,6 +85,8 @@ struct AuthService {
         
     func signUp(_ id: String, _ pw: String, _ birth: String, _ name: String, completion: @escaping (NetworkResult<Any>) -> Void) {
         
+        let URL = "http://15.164.11.203:3000/auth/signup"
+        
         let body: Parameters = [
             "id" : id,
             "pw" : pw,
@@ -94,7 +96,7 @@ struct AuthService {
         
         print("\(body)sss")
         
-        Alamofire.request(APIConstants.SignupURL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header)
+        Alamofire.request(URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header)
             .responseData { response in
                 
                 switch response.result {
@@ -104,21 +106,31 @@ struct AuthService {
                         if let status = response.response?.statusCode {
                             
                             switch status {
-                            case 200:
+                            case 200, 201:
                                 do {
+                                    //print("do")
+                                    //print(value)
+                                    
                                     let decoder = JSONDecoder()
-                                    let result = try decoder.decode(ResponseArray<Signin>.self, from: value)
+                                    let result = try decoder.decode(ResponseObject<Signup>.self, from: value)
+                                    //print("send result.data22")
+                                    
+                                    //print("try")
+                                    //print(result)
                                     
                                     switch result.success {
                                     case true:
+                                        //print("send result.data")
                                         completion(.success(result.data))
                                     case false:
                                         completion(.requestErr(result.message))
                                     }
                                 } catch {
+                                    print(".pathErr catch")
                                     completion(.pathErr)
                                 }
                             case 400:
+                                print(".pathErr 400")
                                 completion(.pathErr)
                             case 500:
                                 completion(.serverErr)
@@ -135,7 +147,6 @@ struct AuthService {
                     completion(.networkFail)
                     break
                 }
-                    
-            }
         }
-    }
+}
+}
