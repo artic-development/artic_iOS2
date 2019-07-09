@@ -15,7 +15,8 @@ protocol NewArchiveCellDelegate: class {
 
 class NewArchiveCell: UITableViewCell {
     weak var delegate:newArchiveProtocol? = nil
-    var myData:Int = 1
+    var myData:Int = 999
+    var archiveIdx = 999
 
     
     @IBOutlet weak var newArchiveCV: UICollectionView!
@@ -104,6 +105,10 @@ extension NewArchiveCell: UICollectionViewDataSource {
         let url = URL(string: newArchive.archive_img)
         // this downloads the image asynchronously if it's not cached yet
         cell.backgroundImg.kf.setImage(with: url)
+        
+        
+        //무슨 아카이브 클릭한건지
+//        archiveIdx = newArchive.archive_idx
     
     
         //cell.backgroundImg.image = UIImage(named: <#T##String#>)
@@ -125,7 +130,10 @@ extension NewArchiveCell: UICollectionViewDataSource {
 extension NewArchiveCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        delegate?.pushToNewView(withData: myData)
+        archiveIdx = newArchiveList[indexPath.row].archive_idx
+        print(archiveIdx)
+        print("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ")
+        delegate?.pushToNewArchiveArticle(withData: archiveIdx)
         
     }
 }

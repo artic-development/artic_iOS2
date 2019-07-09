@@ -51,7 +51,7 @@ struct NewArchiveService {
                                         completion(.requestErr(result.message))
                                     }
                                 } catch {
-                                    print(".pathErr catch")
+                                    print(".pathErr catch in NewArchiveService")
                                     completion(.pathErr)
                                 }
                             case 400:
