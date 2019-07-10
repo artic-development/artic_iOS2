@@ -62,7 +62,7 @@ class ArchiveList: UIViewController, UITableViewDelegate, UITableViewDataSource 
             case .requestErr(let message):
                 print(message)
             case .pathErr:
-                print("pathErr")
+                print("개지랄")
             case .serverErr:
                 print("serverErr")
             case .networkFail:
@@ -81,13 +81,34 @@ class ArchiveList: UIViewController, UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let archives2 = archives[indexPath.row]
-       guard let cell = tableView
-        .dequeueReusableCell(withIdentifier: "ArchiveXibCell", for: indexPath) as? ArchiveXibCell else {return UITableViewCell()}
+        
+       guard let cell = tableView.dequeueReusableCell(withIdentifier: "ArchiveXibCell", for: indexPath) as? ArchiveXibCell else {return UITableViewCell()}
        
         cell.archiveTitle.text = "\(archives2.archive_title)"
+        cell.articleNumLabel.text = "\(archives2.article_cnt)개"
+        if archives2.category_all.count == 2{ cell.tagListView.addTags(["\(archives2.category_all[0].category_title)","\(archives2.category_all[1].category_title)"])
+        }
+        else{
+            cell.tagListView.addTag("\(archives2.category_all[0].category_title)")
+        
+        }
+//        if newArchive.category_all.count == 2{
+//            cell.categoryName.text = "\(newArchive.category_all[0].category_title)"
+//            cell.categoryName2.text = "\(newArchive.category_all[1].category_title)"
+//        }else if newArchive.category_all.count == 1{
+//            cell.categoryName.text = "\(newArchive.category_all[0].category_title)"
+//            cell.categoryName2.text = ""
+//        }else{
+//            cell.categoryName.text = ""
+//            cell.categoryName2.text = ""
+//        }
+        
+//        cell.tagList[1] = "\(archives3.category_all.category_title)"
+// index out of range
+        
         return cell
     }
-
+    
    
         // dvc.category_title = "\(categories[indexPath.row].category_title)"
 //        if (archiveTableViewData[indexPath.row].stored == true){
