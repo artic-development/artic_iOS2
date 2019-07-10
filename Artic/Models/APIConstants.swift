@@ -26,4 +26,5 @@ struct APIConstants {
     static let MyPageURL = BaseURL + "/mypage"
     
     static let NotiURL = BaseURL + "/notification"
+    static let ArchiveScrapURL = BaseURL + "/mypage/archive/scrap"
 }
