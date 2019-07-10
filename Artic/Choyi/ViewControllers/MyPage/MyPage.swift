@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MyPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -20,24 +21,28 @@ class MyPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var isScrapBtnClicked = true
     @IBOutlet weak var scrapBtn: UIButton!
     @IBOutlet weak var myBtn: UIButton!
-    @IBOutlet weak var plusBtn: UIButton!
-    var MypageList: MyPageData!
     
-    
+    var MypageList: MyPageData = MyPageData(userId: "id", userImg: "img", userIntro: "intro", userName: "name")
+
+    var ScrappedArchiveList: [ScrappedArchive] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        plusBtn.isHidden = true
+        
         myPageTableView.separatorStyle = .none
         
 //        scrapBtn.adjustsImageWhenHighlighted = false
 //        myBtn.adjustsImageWhenHighlighted = false
-        
+        let profileImgurl = URL(string: MypageList.userImg!)
+       
         myProfilePicView.makeRounded(cornerRadius: 36)
         //self.view.addSubview(myTextView)
-        myTextView.text = "\(MypageList.user_intro)"
-        
-        
+        myTextView.text = "\(MypageList.userIntro!)"
+        myNameLabel.text = "\(MypageList.userName!)"
+        myEmailLabel.text = "\(MypageList.userId!)"
+        myProfilePicImg.kf.setImage(with: profileImgurl)
+        //let url1 = URL(string: homeCateArchiveList[0].archive_img)
+       // cell.backImg1.kf.setImage(with: url1)
 //        myTextView.translatesAutoresizingMaskIntoConstraints = true
 //        myTextView.sizeToFit()
         myTextView.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -55,6 +60,8 @@ class MyPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
     
        getMyPage()
+    getArchiveScrap()
+    
     }
     
     func getMyPage() {
@@ -72,16 +79,54 @@ class MyPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 let _result = result as! MyPageData
                 self.MypageList = _result
                // self.myInfoView.reloadData()
+                
+                 let profileImgurl = URL(string: self.MypageList.userImg!)
+                self.myTextView.text = "\(self.MypageList.userIntro!)"
+                self.myNameLabel.text = "\(self.MypageList.userName!)"
+                self.myEmailLabel.text = "\(self.MypageList.userId!)"
+               self.myProfilePicImg.kf.setImage(with: profileImgurl)
+                
                 print(result)
                 
             case .requestErr(let message):
                 print(message)
             case .pathErr:
-                print("pathErr")
+                print("pathErr ddd")
             case .serverErr:
                 print("serverErr")
             case .networkFail:
                 print("networkFail")
+            }
+        }
+    }
+    
+    func getArchiveScrap() {
+        print("FUCK YOU")
+        ArchviescrapService.shared.getArchiveScrap(){
+        
+            [weak self]
+        (data) in
+        
+        guard let `self` = self else { return }
+        
+        switch data {
+            
+        case .success(let result):
+            let _result = result as! [ScrappedArchive]
+            self.ScrappedArchiveList = _result
+            // self.myInfoView.reloadData()
+            self.myPageTableView.reloadData()
+
+            print(result)
+            
+        case .requestErr(let message):
+            print(message)
+        case .pathErr:
+            print("pathErr ddd")
+        case .serverErr:
+            print("serverErr")
+        case .networkFail:
+            print("networkFail")
             }
         }
     }
@@ -98,14 +143,14 @@ class MyPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         
         myPageTableView.reloadData()
-        plusBtn.isHidden = true
+        
         
         
     }
     
     @IBAction func myBtnClicked(_ sender: UIButton) {
         
-        plusBtn.isHidden = false
+        
         
 //        scrapBtn.setBackgroundImage(UIImage(named: "blankScrap"), for: .normal)
 //        scrapBtn.setBackgroundImage(UIImage(named: "dotScrap"), for: .selected)
@@ -132,19 +177,42 @@ class MyPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
-        
+        print("\(ScrappedArchiveList.count)개")
+        if ScrappedArchiveList.count % 2 == 0{
+            
+            
+            
+            return ScrappedArchiveList.count/2
+        }
+        else if ScrappedArchiveList.count % 2 == 1{
+            return (ScrappedArchiveList.count+1)/2
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        
+        
+        
         if isScrapBtnClicked == true {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ScrapXibCell", for: indexPath) as! ScrapXibCell
+            if ScrappedArchiveList.count % 2 == 0{
+           
+            cell.leftArchiveTitle.text = "\(ScrappedArchiveList[indexPath.row*2].archive_title)"
+            cell.rightArchiveTitle.text = "\(ScrappedArchiveList[indexPath.row*2+1].archive_title)"
+            }
+            else {
+                if  (ScrappedArchiveList.count / 2 ) + 1  == (indexPath.row)  {
+                    print("홀수")
+                    cell.rightCellView.isHidden = true
+                
+            }
+            }
             
-        cell.leftArchiveTitle.text = "asdasd"
         //arr[indexPath.row]
         //cell.myImageView.image = UIImage(named: "zedd")
-        
+            
             cell.leftArchiveTitle.sizeToFit()
             
             return cell

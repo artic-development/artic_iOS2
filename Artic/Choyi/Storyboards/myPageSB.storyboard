@@ -132,20 +132,11 @@
                                                 <action selector="myBtnClicked:" destination="8nC-Fi-1Tn" eventType="touchUpInside" id="Npe-TJ-3KN"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdW-vp-Ufg">
-                                            <rect key="frame" x="368" y="247.5" width="21" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="21" id="5cQ-Tk-whv"/>
-                                                <constraint firstAttribute="height" constant="21" id="Xfe-cc-4nm"/>
-                                            </constraints>
-                                            <state key="normal" title="Button" image="btnPlus"/>
-                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="Mig-TS-UYo" firstAttribute="leading" secondItem="e7t-K5-qyQ" secondAttribute="trailing" constant="20" id="3Py-UQ-oWf"/>
                                         <constraint firstAttribute="trailing" secondItem="Ulh-l9-p9G" secondAttribute="trailing" constant="87" id="5Cx-6D-G1a"/>
-                                        <constraint firstItem="CdW-vp-Ufg" firstAttribute="centerY" secondItem="5hj-Jx-u76" secondAttribute="centerY" id="92R-Op-DTj"/>
                                         <constraint firstItem="bVT-KQ-iRf" firstAttribute="top" secondItem="e7t-K5-qyQ" secondAttribute="bottom" constant="25" id="C2U-mi-NfX"/>
                                         <constraint firstAttribute="trailing" secondItem="aco-0x-dtF" secondAttribute="trailing" id="C8Y-r8-Rwg"/>
                                         <constraint firstItem="qp4-2a-0Jm" firstAttribute="leading" secondItem="I6O-Im-UFp" secondAttribute="leading" id="CGh-vm-2Bf"/>
@@ -156,7 +147,6 @@
                                         <constraint firstItem="Ulh-l9-p9G" firstAttribute="leading" secondItem="bVT-KQ-iRf" secondAttribute="leading" constant="-5" id="WHk-96-eWW"/>
                                         <constraint firstItem="e7t-K5-qyQ" firstAttribute="leading" secondItem="I6O-Im-UFp" secondAttribute="leading" constant="20" id="YcG-O5-VSi"/>
                                         <constraint firstItem="Ulh-l9-p9G" firstAttribute="top" secondItem="bVT-KQ-iRf" secondAttribute="bottom" constant="11" id="drG-ay-EpP"/>
-                                        <constraint firstAttribute="trailing" secondItem="CdW-vp-Ufg" secondAttribute="trailing" constant="25" id="drG-xc-6nM"/>
                                         <constraint firstItem="Mig-TS-UYo" firstAttribute="centerY" secondItem="F1z-eV-eXy" secondAttribute="centerY" id="gir-Sa-06q"/>
                                         <constraint firstAttribute="bottom" secondItem="qp4-2a-0Jm" secondAttribute="bottom" constant="54" id="hjP-T4-64r"/>
                                         <constraint firstAttribute="bottom" secondItem="aco-0x-dtF" secondAttribute="bottom" constant="10" id="m1R-Ec-zDD"/>
@@ -195,7 +185,6 @@
                         <outlet property="myProfilePicImg" destination="F1z-eV-eXy" id="i50-nw-YAA"/>
                         <outlet property="myProfilePicView" destination="e7t-K5-qyQ" id="Woc-1T-2Yb"/>
                         <outlet property="myTextView" destination="Ulh-l9-p9G" id="REt-Xv-veJ"/>
-                        <outlet property="plusBtn" destination="CdW-vp-Ufg" id="jON-Bh-yic"/>
                         <outlet property="scrapBtn" destination="bO9-G2-TNb" id="9SM-uu-Qaj"/>
                     </connections>
                 </viewController>
@@ -561,7 +550,6 @@
     </scenes>
     <resources>
         <image name="blankMyarchive" width="82" height="32"/>
-        <image name="btnPlus" width="21" height="21"/>
         <image name="btnSetting" width="21" height="21"/>
         <image name="btnSettingRightarrow" width="21" height="21"/>
         <image name="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" width="852" height="479"/>
