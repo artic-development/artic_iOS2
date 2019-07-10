@@ -35,7 +35,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8uc-tG-AQT">
                                 <rect key="frame" x="0.0" y="44" width="414" height="140"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="디자인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFy-9H-ztd">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색중..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFy-9H-ztd">
                                         <rect key="frame" x="20" y="32" width="192" height="24.5"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="21"/>
                                         <nil key="textColor"/>
@@ -198,6 +198,7 @@
                         <outlet property="searchArchive" destination="4B9-oB-etS" id="sFQ-tQ-eC9"/>
                         <outlet property="searchArticle" destination="8qY-kb-5qQ" id="Bgc-OK-Ze1"/>
                         <outlet property="searchResult" destination="CS5-Tg-6R0" id="GPg-FK-grs"/>
+                        <outlet property="searchResultKeyword" destination="wFy-9H-ztd" id="rL9-Lr-G36"/>
                         <outlet property="searchResultNum" destination="sFd-UW-Ohd" id="nMK-Am-4sr"/>
                     </connections>
                 </viewController>
