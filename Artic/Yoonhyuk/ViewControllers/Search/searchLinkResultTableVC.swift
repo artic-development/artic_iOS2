@@ -27,6 +27,7 @@ class searchLinkResultTableVC: UIViewController,UITableViewDelegate, UITableView
     @IBOutlet weak var cancelBtn: UIButton!
     
     var searchNum : Int = 13
+    var keyword = ""
     
     override func viewDidLoad() {
        

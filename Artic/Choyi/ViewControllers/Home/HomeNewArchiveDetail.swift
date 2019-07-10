@@ -16,6 +16,8 @@ class HomeNewArchiveDetail: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var addView: UIStackView!
     @IBOutlet weak var cancelBtn: UIButton!
     
+    var archiveIdx = 999
+    var articlesData: ArticleListData = ArticleListData(archive_idx: 1, user_idx: 1, archive_title: "d", date: "d", archive_img: "d", category_idx: 1, articles: [Articles(archive_idx: 1, article_title: "s", thumnail: "s", link: "s", domain: "s", date: "s", hits: 1, pick: 1, like: true, like_cnt: 2)])
     var isStored = false
 
     var blackview: UIView!
@@ -39,7 +41,7 @@ class HomeNewArchiveDetail: UIViewController, UITableViewDataSource, UITableView
         archiveTitle.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         archiveTitle.sizeToFit()
         
-        
+        getArticles(archiveIdx2: archiveIdx)
         
     }
     func setBlackView() {
@@ -73,12 +75,24 @@ class HomeNewArchiveDetail: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return articlesData.articles!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
+        let cell = archiveDetailTableVIew.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
+        
+        
+        let article = articlesData.articles![indexPath.row]
+        cell.articleTitle.text = article.article_title!
+        
+        let url = URL(string: article.thumnail ?? "https://hyeongbucket.s3.ap-northeast-2.amazonaws.com/1562401485536.png")
+        cell.articleImg.kf.setImage(with: url)
+        
+        let domain = article.domain ?? ""
+        
+        cell.webLabel.text = domain
+        cell.likeNum.text = "\(article.like_cnt)"
         
         cell.likeFolder.tag = indexPath.row
         cell.likeFolder.addTarget(self, action: #selector(self.bookbtn1(_:)), for: .touchUpInside);
@@ -114,4 +128,35 @@ class HomeNewArchiveDetail: UIViewController, UITableViewDataSource, UITableView
         hideContainer()
     }
     
+    func getArticles(archiveIdx2: Int) {
+        
+        ArticleService.shared.getArticle(archiveIdx: archiveIdx2) {
+            
+            [weak self]
+            (data) in
+            
+            guard let `self` = self else { return }
+            
+            switch data {
+                
+            case .success(let result):
+                let _result = result as! ArticleListData
+                self.articlesData = _result
+                self.archiveDetailTableVIew.reloadData()
+                
+                print(result)
+                
+            case .requestErr(let message):
+                print(message)
+            case .pathErr:
+                print("pathErr at getArticles")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+    
 }
+
