@@ -9,7 +9,7 @@
 import UIKit
 import TagListView
 
-class SearchViewController: UIViewController, TagListViewDelegate {
+class SearchViewController: UIViewController, TagListViewDelegate, UITextFieldDelegate {
 
     
     @IBOutlet weak var SearchTF: UITextField!
@@ -32,7 +32,7 @@ class SearchViewController: UIViewController, TagListViewDelegate {
         SearchTF.keyboardType = .default
         SearchTF.setLeftPaddingPoints(50)
 
-
+        SearchTF.delegate = self
         
     }
     
@@ -44,13 +44,27 @@ class SearchViewController: UIViewController, TagListViewDelegate {
     }
     //뒤로 가기
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let storyboard = UIStoryboard(name: "searchLinkResultSB", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(withIdentifier: "searchLinkResultTableVC") as? searchLinkResultTableVC
+            else {return true}
+        
+        //dvc.searchKeyword = title
+        dvc.searchKeyword = SearchTF.text!
+        print(SearchTF.text!)
+        
+        self.navigationController?.pushViewController(dvc, animated: true)
+        return true
+    }
+    
     func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
         print("Tag pressed: \(title)")
         let storyboard = UIStoryboard(name: "searchLinkResultSB", bundle: nil)
         guard let dvc = storyboard.instantiateViewController(withIdentifier: "searchLinkResultTableVC") as? searchLinkResultTableVC
             else {return}
         
-        dvc.keyword = title
+        //dvc.searchKeyword = title
+        dvc.searchKeyword = "UX"
         
         self.navigationController?.pushViewController(dvc, animated: true)
     }
@@ -71,7 +85,7 @@ class SearchViewController: UIViewController, TagListViewDelegate {
                 //let _result = result as! [Recommend]
                 //self.recommend = _result
                 self.recommend = result as! [Recommend]
-                print(result)
+                //print(result)
                 
             self.Taglist.addTags([self.recommend[0].search_word,self.recommend[1].search_word,self.recommend[2].search_word])
                 

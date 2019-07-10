@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class HomeNewArchiveDetail: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -100,6 +101,19 @@ class HomeNewArchiveDetail: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
     
+    func tableView(_ tableview: UITableView,didSelectRowAt indexPath: IndexPath) {
+        
+       
+        guard let url = URL(string: articlesData.articles![indexPath.row].link!) else {
+            return
+        }
+        let safariview = SFSafariViewController(url: url)
+        present(safariview, animated: true, completion: nil)
+        
+        
+        
+    }
+    
     
     @objc func bookbtn1(_ sender : UIButton){
         // call your segue code here
@@ -142,6 +156,8 @@ class HomeNewArchiveDetail: UIViewController, UITableViewDataSource, UITableView
             case .success(let result):
                 let _result = result as! ArticleListData
                 self.articlesData = _result
+                
+                self.archiveTitle.text = _result.archive_title!
                 self.archiveDetailTableVIew.reloadData()
                 
                 print(result)

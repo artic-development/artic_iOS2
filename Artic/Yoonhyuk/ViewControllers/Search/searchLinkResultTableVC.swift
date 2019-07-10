@@ -27,7 +27,9 @@ class searchLinkResultTableVC: UIViewController,UITableViewDelegate, UITableView
     @IBOutlet weak var cancelBtn: UIButton!
     
     var searchNum : Int = 13
-    var keyword = ""
+    var searchKeyword = ""
+    var searchArchiveData : [SearchArchive] = []
+    var searchArticleData : [SearchArticle] = []
     
     override func viewDidLoad() {
        
@@ -58,6 +60,8 @@ class searchLinkResultTableVC: UIViewController,UITableViewDelegate, UITableView
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
+        getSearchArchive(searchKeyword: searchKeyword)
+        getSearchArticle(searchKeyword: searchKeyword)
         
     }
     
@@ -101,13 +105,24 @@ class searchLinkResultTableVC: UIViewController,UITableViewDelegate, UITableView
                 }
         searchResult.reloadData()
             }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return searchArchiveData.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if isClicked == false {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
+            
+            let searchedArticle = searchArticleData[indexPath.row]
+            cell.articleTitle.text = searchedArticle.article_title
+            let url = URL(string: searchedArticle.thumnail)
+            cell.articleImg.kf.setImage(with: url)
+            cell.likeNum.text = "\(searchedArticle.like_cnt)"
+            cell.webLabel.text = searchedArticle.domain
+            
+            
             cell.likeFolder.tag = indexPath.row
             cell.likeFolder.addTarget(self, action: #selector(self.book(_:)), for: .touchUpInside);
             
@@ -115,6 +130,28 @@ class searchLinkResultTableVC: UIViewController,UITableViewDelegate, UITableView
         }
         else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "ArchiveXibCell", for: indexPath) as! ArchiveXibCell
+            
+            let searchedArchive = searchArchiveData[indexPath.row]
+            
+            cell.archiveTitle.text = "\(searchedArchive.archive_title)"
+            cell.articleNumLabel.text = "\(searchedArchive.article_cnt)개"
+            
+            if searchedArchive.category_all.count == 2 {
+                cell.tagList = [searchedArchive.category_all[0].category_title,searchedArchive.category_all[1].category_title]
+                
+                cell.tagListView.removeAllTags()
+            cell.tagListView.addTags([searchedArchive.category_all[0].category_title,searchedArchive.category_all[1].category_title])
+                
+            }else if searchedArchive.category_all.count == 1 {
+                cell.tagList = [searchedArchive.category_all[0].category_title]
+                
+                cell.tagListView.removeAllTags()
+            cell.tagListView.addTag(searchedArchive.category_all[0].category_title)
+            }else{
+                cell.tagList = [""]
+            }
+            
+            
             return cell
             
         }
@@ -124,7 +161,7 @@ class searchLinkResultTableVC: UIViewController,UITableViewDelegate, UITableView
         showContainer()
     }
     func tableView(_ tableview: UITableView,didSelectRowAt indexPath: IndexPath) {
-        guard let url = URL(string: "https://brunch.co.kr/@candits/43") else {
+        guard let url = URL(string: searchArticleData[indexPath.row].link) else {
             return
         }
         let safariview = SFSafariViewController(url: url)
@@ -164,8 +201,67 @@ class searchLinkResultTableVC: UIViewController,UITableViewDelegate, UITableView
         hideContainer()
     }
     
-    
+    func getSearchArchive(searchKeyword: String) {
         
+        SearchArchiveService.shared.getSearchArchive(keyword: searchKeyword) {
+            
+            [weak self]
+            (data) in
+            
+            guard let `self` = self else { return }
+            
+            switch data {
+                
+            case .success(let result):
+                //let _result = result as! [Recommend]
+                //self.recommend = _result
+                self.searchArchiveData = result as! [SearchArchive]
+                self.searchResult.reloadData()
+                
+                //print(result)
+                
+            case .requestErr(let message):
+                print(message)
+            case .pathErr:
+                print("pathErr at getRecommend")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+    
+    func getSearchArticle(searchKeyword: String) {
+        
+        SearchArticleService.shared.getSearchArticle(keyword: searchKeyword) {
+            
+            [weak self]
+            (data) in
+            
+            guard let `self` = self else { return }
+            
+            switch data {
+                
+            case .success(let result):
+                //let _result = result as! [Recommend]
+                //self.recommend = _result
+                self.searchArticleData = result as! [SearchArticle]
+                self.searchResult.reloadData()
+                
+                //print(result)
+                
+            case .requestErr(let message):
+                print(message)
+            case .pathErr:
+                print("pathErr at getRecommend")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
     
     
     }
