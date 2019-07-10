@@ -24,8 +24,8 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
     
     func pushToNewArchiveArticle(withData:Int) {
         
-        let storyboard: UIStoryboard = UIStoryboard(name: "articleListSB", bundle: nil)
-        guard let dvc = storyboard.instantiateViewController(withIdentifier: "articleList") as? articleList
+        let storyboard: UIStoryboard = UIStoryboard(name: "homeSB", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(withIdentifier: "HomeNewArchiveDetail") as? HomeNewArchiveDetail
             else {return}
         
         dvc.archiveIdx = withData
@@ -67,8 +67,8 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
     
     func cellTapped(){
         //code for navigation
-                let storyboard: UIStoryboard = UIStoryboard(name: "articleListSB", bundle: nil)
-                guard let dvc = storyboard.instantiateViewController(withIdentifier: "articleList") as? articleList
+                let storyboard: UIStoryboard = UIStoryboard(name: "homeSB", bundle: nil)
+                guard let dvc = storyboard.instantiateViewController(withIdentifier: "HomeNewArchiveDetail") as? HomeNewArchiveDetail
                     else {return}
         
                 dvc.archiveIdx = archiveIdx
@@ -160,7 +160,7 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
             cell.archiveTitle1.text = "\(homeCateArchiveList[0].archive_title)"
             cell.archiveTitle2.text = "\(homeCateArchiveList[1].archive_title)"
             cell.archiveTitle3.text = "\(homeCateArchiveList[2].archive_title)"
-            cell.archiveTitle4.text = "\(homeCateArchiveList[3].archive_title)"
+            cell.archiveTitle4.text = "\(homeCateArchiveList[3].archive_title)" 
             
             let url1 = URL(string: homeCateArchiveList[0].archive_img)
             cell.backImg1.kf.setImage(with: url1)

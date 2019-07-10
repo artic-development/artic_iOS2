@@ -17,38 +17,22 @@ class SearchViewController: UIViewController, TagListViewDelegate {
     @IBOutlet weak var Taglist: TagListView!
     @IBOutlet weak var Taglist_2: TagListView!
     @IBOutlet weak var Taglist_3: TagListView!
+    var recommend : [Recommend] = [Recommend(search_word: ""),Recommend(search_word: ""),Recommend(search_word: ""),Recommend(search_word: ""),Recommend(search_word: ""),Recommend(search_word: ""),Recommend(search_word: ""),Recommend(search_word: ""),Recommend(search_word: "")]
+    var keywords : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Taglist.delegate = self
+        Taglist_2.delegate = self
+        Taglist_3.delegate = self
+        getRecommend()
 
         // Do any additional setup after loading the view.
         SearchTF.layer.cornerRadius = 25
         SearchTF.keyboardType = .default
         SearchTF.setLeftPaddingPoints(50)
-        
-        
-        
-        Taglist.addTags(["UX/UI 디자인","BX 디자인","브랜딩"])
-        
-        Taglist.textFont = UIFont(name: "NanumBarunGothic", size: 14.0)!
-        Taglist.paddingX = 18
-        Taglist.paddingY = 13
-        
-        
-        
-        Taglist_2.addTags(["서비스 디자인","편집디자인","브랜딩"])
-        Taglist_2.textFont = UIFont(name: "NanumBarunGothic", size: 14.0)!
-        Taglist_2.paddingX = 18
-        Taglist_2.paddingY = 13
-        
-        
-        
-        Taglist_3.addTags(["안드","아요","할로"])
-        Taglist_3.textFont = UIFont(name: "NanumBarunGothic", size: 14.0)!
-        Taglist_3.paddingX = 18
-        Taglist_3.paddingY = 13
-        
-     
+
+
         
     }
     
@@ -59,5 +43,66 @@ class SearchViewController: UIViewController, TagListViewDelegate {
          self.dismiss(animated: true)
     }
     //뒤로 가기
+    
+    func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
+        print("Tag pressed: \(title)")
+        let storyboard = UIStoryboard(name: "searchLinkResultSB", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(withIdentifier: "searchLinkResultTableVC") as? searchLinkResultTableVC
+            else {return}
+        
+        dvc.keyword = title
+        
+        self.navigationController?.pushViewController(dvc, animated: true)
+    }
+    
+    
+    func getRecommend() {
+        
+        RecommendService.shared.getRecommend() {
+            
+            [weak self]
+            (data) in
+            
+            guard let `self` = self else { return }
+            
+            switch data {
+                
+            case .success(let result):
+                //let _result = result as! [Recommend]
+                //self.recommend = _result
+                self.recommend = result as! [Recommend]
+                print(result)
+                
+            self.Taglist.addTags([self.recommend[0].search_word,self.recommend[1].search_word,self.recommend[2].search_word])
+                
+                self.Taglist.textFont = UIFont(name: "NanumBarunGothic", size: 14.0)!
+                self.Taglist.paddingX = 18
+                self.Taglist.paddingY = 13
+                
+            self.Taglist_2.addTags([self.recommend[3].search_word,self.recommend[4].search_word,self.recommend[5].search_word])
+                
+                self.Taglist_2.textFont = UIFont(name: "NanumBarunGothic", size: 14.0)!
+                self.Taglist_2.paddingX = 18
+                self.Taglist_2.paddingY = 13
+                
+            self.Taglist_3.addTags([self.recommend[6].search_word,self.recommend[7].search_word,self.recommend[8].search_word])
+                
+                self.Taglist_3.textFont = UIFont(name: "NanumBarunGothic", size: 14.0)!
+                self.Taglist_3.paddingX = 18
+                self.Taglist_3.paddingY = 13
+                
+                print(self.recommend[1].search_word)
+                
+            case .requestErr(let message):
+                print(message)
+            case .pathErr:
+                print("pathErr at getRecommend")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
     
 }
