@@ -16,14 +16,14 @@ class ArchiveXibCell: UITableViewCell {
     @IBOutlet weak var storeBtn: UIButton!
     @IBOutlet weak var articleNumLabel: UILabel!
     var isStored = true
-    
+    var tagList: [String] = ["",""]
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
         articleNumLabel.text = "3개"
         tagListView.textFont = UIFont(name: "NanumBarunGothic", size: 11.0)!
-        tagListView.addTags(["가", "two", "tags"])
+        //tagListView.addTags([tagList[0], tagList[1]])
         tagListView.paddingY = 5
         tagListView.paddingX = 11
     }
@@ -33,6 +33,8 @@ class ArchiveXibCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
     
     @IBAction func storeBtnClicked(_ sender: Any) {
         
