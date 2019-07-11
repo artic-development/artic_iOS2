@@ -9,7 +9,7 @@
 import UIKit
 
 protocol newArticleProtocol:class {
-    func pushToNewArticleLink(withLink:String)
+    func pushToNewArticleLink(withArticleIdx: Int)
 }
 
 class NewArticleCollectionCell: UICollectionViewCell {

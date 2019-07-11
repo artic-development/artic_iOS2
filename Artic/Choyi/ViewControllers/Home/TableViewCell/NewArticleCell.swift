@@ -15,7 +15,7 @@ protocol NewArticleCellDelegate: class {
 
 class NewArticleCell: UITableViewCell {
     weak var delegate2 :newArticleProtocol? = nil
-    var articleLink = ""
+    var articleIdx = 0
     
     var newArticleList: [NewArticle] = []
     @IBOutlet weak var newArticleCV: UICollectionView!
@@ -91,8 +91,8 @@ extension NewArticleCell: UICollectionViewDataSource {
 extension NewArticleCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        articleLink = newArticleList[indexPath.row].link
-        delegate2?.pushToNewArticleLink(withLink: articleLink)
+        articleIdx = newArticleList[indexPath.row].article_idx
+        delegate2?.pushToNewArticleLink(withArticleIdx: articleIdx)
         
         
     }

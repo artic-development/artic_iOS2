@@ -23,13 +23,20 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
         self.navigationController?.pushViewController(dvc, animated: true)
     }
     
-    func pushToNewArticleLink(withLink: String) {
+    func pushToNewArticleLink(withArticleIdx: Int) {
+
+        let storyboard = UIStoryboard(name: "homeSB", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(withIdentifier: "HomeNewLinkAbout") as? HomeNewLinkAbout
+            else {return}
+        dvc.articleIdx = withArticleIdx
         
-        guard let url = URL(string: withLink) else {
-            return
-        }
-        let safariview = SFSafariViewController(url: url)
-        self.present(safariview, animated: true, completion: nil)
+        self.navigationController?.pushViewController(dvc, animated: true)
+        
+//        guard let url = URL(string: withLink) else {
+//            return
+//        }
+//        let safariview = SFSafariViewController(url: url)
+//        self.present(safariview, animated: true, completion: nil)
     }
     
     @IBOutlet weak var homeTableView: UITableView!
@@ -288,11 +295,7 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
         }else if indexPath.section == 2{
             //최근 읽은 아티클
             
-//            let storyboard = UIStoryboard(name: "homeSB", bundle: nil)
-//            guard let dvc = storyboard.instantiateViewController(withIdentifier: "HomeNewLinkAbout") as? HomeNewLinkAbout
-//                else {return}
             
-//            self.navigationController?.pushViewController(dvc, animated: true)
             
         }else{
             //카테고리별
