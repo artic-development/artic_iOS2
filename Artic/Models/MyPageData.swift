@@ -8,15 +8,12 @@
 
 import Foundation
 struct MyPageData: Codable {
-    let user_idx: Int
-    let user_id: String
-    let user_pw: String
-    let user_img: String?
-    let user_type: String
-    let user_intro: String?
-    let user_birth: String
-    let user_name: String
-    let token: String
+   
+    let userId: String?
+    let userImg: String?
+    let userIntro: String?
+    let userName: String?
+    
     
     
     

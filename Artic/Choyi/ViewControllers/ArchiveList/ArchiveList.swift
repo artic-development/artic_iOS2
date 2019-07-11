@@ -41,6 +41,7 @@ class ArchiveList: UIViewController, UITableViewDelegate, UITableViewDataSource 
         print(category_idx)
         getArchive(cateidx: category_idx)
         
+        
     }
     func getArchive(cateidx: Int) {
         

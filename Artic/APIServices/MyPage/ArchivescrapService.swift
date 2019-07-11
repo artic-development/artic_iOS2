@@ -1,26 +1,26 @@
 //
-//  MyPageService.swift
+//  ArchivescrapService.swift
 //  Artic
 //
-//  Created by Jung Yoon Hyuk on 08/07/2019.
+//  Created by Jung Yoon Hyuk on 11/07/2019.
 //  Copyright © 2019 choyi. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-struct MyPageService {
+struct ArchviescrapService {
     
-    static let shared = MyPageService()
+    static let shared = ArchviescrapService()
     
     // App Auth API
-    func getMyPage(completion: @escaping (NetworkResult<Any>) -> Void) {
+    func getArchiveScrap(completion: @escaping (NetworkResult<Any>) -> Void) {
         
-        let URL = APIConstants.MyPageURL
+        let URL = APIConstants.ArchiveScrapURL
         
         let header: HTTPHeaders = [
             "Content-Type" : "application/json",
-            "token": UserDefaults.standard.string(forKey: "token")!
+            "token" : UserDefaults.standard.string(forKey: "token")!
         ]
         
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
@@ -35,14 +35,14 @@ struct MyPageService {
                             switch status {
                             case 200:
                                 do {
-                                    print("do")
-                                    print(value)
+                                    //print("do")
+                                    //print(value)
                                     
                                     let decoder = JSONDecoder()
-                                    let result = try decoder.decode(ResponseObject<MyPageData>.self, from: value)
+                                    let result = try decoder.decode(ResponseArray<ScrappedArchive>.self, from: value)
                                     
-                                    print("try")
-                                    print(result)
+                                    //print("try")
+                                    //print(result)
                                     
                                     switch result.success {
                                     case true:
@@ -51,7 +51,7 @@ struct MyPageService {
                                         completion(.requestErr(result.message))
                                     }
                                 } catch {
-                                    print(".pathErr catch")
+                                    print(".pathErr catch in ArchivscrapService")
                                     completion(.pathErr)
                                 }
                             case 400:
