@@ -110,7 +110,14 @@ class ArchiveList: UIViewController, UITableViewDelegate, UITableViewDataSource 
         return cell
     }
     
-   
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "homeSB", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(withIdentifier: "HomeNewArchiveDetail") as? HomeNewArchiveDetail
+            else {return}
+        
+        dvc.archiveIdx = archives[indexPath.row].archive_idx
+        self.present(dvc, animated: true)
+    }
         // dvc.category_title = "\(categories[indexPath.row].category_title)"
 //        if (archiveTableViewData[indexPath.row].stored == true){
 ////            cell.storedImageView.image = UIImage.init(named: "btnScrapFilledBig")
