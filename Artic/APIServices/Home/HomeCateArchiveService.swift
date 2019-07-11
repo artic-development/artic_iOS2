@@ -19,7 +19,8 @@ struct HomeCateArchiveService {
         let URL = "http://15.164.11.203:3000/home/archive/category/\(cateIdx)"
         
         let header: HTTPHeaders = [
-            "Content-Type" : "application/x-www-form-urlencoded"
+            "Content-Type" : "application/x-www-form-urlencoded",
+            "token": UserDefaults.standard.string(forKey: "token")!
         ]
         
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
@@ -34,8 +35,8 @@ struct HomeCateArchiveService {
                             switch status {
                             case 200:
                                 do {
-                                    //print("do")
-                                    //print(value)
+                                    print("do")
+                                    print(value)
                                     
                                     let decoder = JSONDecoder()
                                     let result = try decoder.decode(ResponseArray<HomeCateArchive>.self, from: value)
@@ -53,11 +54,15 @@ struct HomeCateArchiveService {
                                     print(".pathErr catch")
                                     completion(.pathErr)
                                 }
+                            case 204:
+                                print("안에 아카이브가 없어 시ㅡ발람앙!!")
                             case 400:
                                 print(".pathErr 400")
                                 completion(.pathErr)
                             case 500:
                                 completion(.serverErr)
+                            case 600:
+                                print("조회실패욘ㅋㅋ")
                                 
                             default:
                                 break

@@ -43,7 +43,7 @@ struct CateArchiveService{
                                     let result = try decoder.decode(ResponseArray<ArchiveListData>.self, from: value)
                                     
                                     print("try")
-                                    print(result)
+                                    //print(result)
                                     
                                     switch result.success {
                                     case true:

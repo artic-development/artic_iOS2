@@ -19,6 +19,7 @@ class searchLinkResultTableVC: UIViewController,UITableViewDelegate, UITableView
     var isClicked : Bool = true
     @IBOutlet weak var searchResult: UITableView!
     
+    @IBOutlet weak var searchResultKeyword: UILabel!
     @IBOutlet weak var searchResultNum: UILabel!
     @IBOutlet weak var searchArchive: UIButton!
     @IBOutlet weak var searchArticle: UIButton!
@@ -26,12 +27,14 @@ class searchLinkResultTableVC: UIViewController,UITableViewDelegate, UITableView
     
     @IBOutlet weak var cancelBtn: UIButton!
     
-    var searchNum : Int = 13
+    var searchNum : Int = 0
     var searchKeyword = ""
     var searchArchiveData : [SearchArchive] = []
     var searchArticleData : [SearchArticle] = []
     
     override func viewDidLoad() {
+        
+        searchResultKeyword.text = searchKeyword
        
         setBlackView()
         Container.transform = CGAffineTransform(translationX: 0, y: Container.frame.height)
@@ -216,6 +219,7 @@ class searchLinkResultTableVC: UIViewController,UITableViewDelegate, UITableView
                 //let _result = result as! [Recommend]
                 //self.recommend = _result
                 self.searchArchiveData = result as! [SearchArchive]
+                self.searchResultNum.text = "\(self.searchArchiveData.count)"
                 self.searchResult.reloadData()
                 
                 //print(result)

@@ -9,7 +9,6 @@
 import UIKit
 
 protocol newArchiveProtocol:class {
-    func pushToNewView(withData:Int)
     func pushToNewArchiveArticle(withData:Int)
 }
 

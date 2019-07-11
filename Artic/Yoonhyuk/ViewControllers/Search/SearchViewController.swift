@@ -64,7 +64,8 @@ class SearchViewController: UIViewController, TagListViewDelegate, UITextFieldDe
             else {return}
         
         //dvc.searchKeyword = title
-        dvc.searchKeyword = "UX"
+//        dvc.searchResultKeyword.text = title
+        dvc.searchKeyword = title
         
         self.navigationController?.pushViewController(dvc, animated: true)
     }

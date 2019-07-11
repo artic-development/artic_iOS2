@@ -73,7 +73,7 @@ class SignUpViewNameBirth: UIViewController, UITextFieldDelegate {
                 
             case .success(let result):
                 let _result = result as! Signup
-                print(_result)
+                //print(_result)
                 
             case .requestErr(let message):
                 print(message)

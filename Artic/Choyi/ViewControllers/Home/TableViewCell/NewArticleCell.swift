@@ -9,7 +9,13 @@
 import UIKit
 import Kingfisher
 
+protocol NewArticleCellDelegate: class {
+    func cellTappedNewArticle(selectedObject: AnyObject)
+}
+
 class NewArticleCell: UITableViewCell {
+    weak var delegate2 :newArticleProtocol? = nil
+    var articleLink = ""
     
     var newArticleList: [NewArticle] = []
     @IBOutlet weak var newArticleCV: UICollectionView!
@@ -79,5 +85,15 @@ extension NewArticleCell: UICollectionViewDataSource {
         cell.webLabel.text? = "\(newArticle.link)"
         
         return cell
+    }
+}
+
+extension NewArticleCell: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        articleLink = newArticleList[indexPath.row].link
+        delegate2?.pushToNewArticleLink(withLink: articleLink)
+        
+        
     }
 }
