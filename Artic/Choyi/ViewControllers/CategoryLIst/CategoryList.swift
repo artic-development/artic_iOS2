@@ -31,6 +31,18 @@ class CategoryList: UIViewController, UITableViewDelegate, UITableViewDataSource
         getCategory()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //네비게이션 바 숨김
+        self.navigationController?.navigationBar.isHidden = true
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
     func getCategory() {
         
         CategoryService.shared.getCategory() {
@@ -99,7 +111,8 @@ class CategoryList: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         dvc.category_idx = indexPath.row
         dvc.category_title = "\(categories[indexPath.row].category_title)"
-        self.present(dvc, animated: true)
+        dvc.navigationController?.title = "zzz"
+        self.navigationController?.pushViewController(dvc, animated: true)
         
 }
     

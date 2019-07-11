@@ -116,7 +116,8 @@ class ArchiveList: UIViewController, UITableViewDelegate, UITableViewDataSource 
             else {return}
         
         dvc.archiveIdx = archives[indexPath.row].archive_idx
-        self.present(dvc, animated: true)
+        //self.present(dvc, animated: true)
+        self.navigationController?.pushViewController(dvc, animated: true)
     }
         // dvc.category_title = "\(categories[indexPath.row].category_title)"
 //        if (archiveTableViewData[indexPath.row].stored == true){
