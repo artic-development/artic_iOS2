@@ -179,7 +179,12 @@ class MyPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("\(ScrappedArchiveList.count)개")
         if ScrappedArchiveList.count % 2 == 0{
-            
+            if ScrappedArchiveList.count == 0{
+                tableView.setEmptyView(mesaageimageview: UIImage(named: "mypageCharacter")!, message: "스크랩한 아카이브가 없어요")
+
+                
+                return ScrappedArchiveList.count
+            }
             
             
             return ScrappedArchiveList.count/2
@@ -188,6 +193,7 @@ class MyPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
             return (ScrappedArchiveList.count+1)/2
         }
         return 0
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -224,3 +230,56 @@ class MyPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
 }
+extension UITableView {
+    func setEmptyView(mesaageimageview: UIImage, message: String) {
+        let emptyView = UIView(frame: CGRect(x: self.center.x, y: self.center.y, width: self.bounds.size.width, height: 358))
+        
+        let imageview = UIImageView()
+        let messageLabel = UILabel()
+        
+        
+        messageLabel.translatesAutoresizingMaskIntoConstraints = false
+        imageview.translatesAutoresizingMaskIntoConstraints = false
+       
+        messageLabel.textColor = UIColor.lightGray
+        messageLabel.font = UIFont(name: "NanumBarunGothic", size: 14)
+        imageview.image = UIImage(named: "mypageCharacter")
+        emptyView.addSubview(imageview)
+        emptyView.addSubview(messageLabel)
+        
+       
+        imageview.centerYAnchor.constraint(equalTo: emptyView.centerYAnchor, constant: 60).isActive = true
+        imageview.centerXAnchor.constraint(equalTo: emptyView.centerXAnchor).isActive = true
+        
+        messageLabel.topAnchor.constraint(equalTo: imageview.bottomAnchor, constant: 20).isActive = true
+        messageLabel.leftAnchor.constraint(equalTo: emptyView.leftAnchor, constant: 20).isActive = true
+        messageLabel.rightAnchor.constraint(equalTo: emptyView.rightAnchor, constant: -20).isActive = true
+        
+        imageview.image = mesaageimageview
+        messageLabel.text = message
+        messageLabel.numberOfLines = 0
+        messageLabel.textAlignment = .center
+        // The only tricky part is here:
+        UIView.animate(withDuration: 1, animations: {
+            
+            imageview.transform = CGAffineTransform(rotationAngle: .pi / 10)
+        }, completion: { (finish) in
+            UIView.animate(withDuration: 1, animations: {
+                imageview.transform = CGAffineTransform(rotationAngle: -1 * (.pi / 10))
+            }, completion: { (finishh) in
+                UIView.animate(withDuration: 1, animations: {
+                    imageview.transform = CGAffineTransform.identity
+                })
+            })
+            
+        })
+        self.backgroundView = emptyView
+        self.separatorStyle = .none
+    }
+    func restore() {
+        self.backgroundView = nil
+        self.separatorStyle = .singleLine
+    }
+    
+}
+
