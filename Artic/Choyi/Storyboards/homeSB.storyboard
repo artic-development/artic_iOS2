@@ -22,6 +22,9 @@
         <array key="NanumSquareExtraBold.ttf">
             <string>NanumSquareEB</string>
         </array>
+        <array key="NanumSquareRegular.ttf">
+            <string>NanumSquareR</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Home-->
@@ -568,15 +571,19 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="1072"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PzK-Jg-lWO">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1153"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1133"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nIS-M8-zg4">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acE-LK-lDr">
-                                                        <rect key="frame" x="23" y="30" width="311" height="64"/>
+                                                        <rect key="frame" x="23" y="30" width="371" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="595-rB-cAS"/>
+                                                        </constraints>
+
                                                         <attributedString key="attributedText">
-                                                            <fragment content="Lorem ipsum dolor sit er elit lamet, consecteta">
+                                                            <fragment content="Lorem ipsum ">
                                                                 <attributes>
                                                                     <font key="NSFont" size="20" name="NanumBarunGothicLight"/>
                                                                 </attributes>
@@ -589,60 +596,86 @@
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="acE-LK-lDr" secondAttribute="bottom" constant="30" id="DvY-Vp-T5p"/>
                                                     <constraint firstItem="acE-LK-lDr" firstAttribute="leading" secondItem="nIS-M8-zg4" secondAttribute="leading" constant="23" id="cHG-gv-tIT"/>
-                                                    <constraint firstAttribute="trailing" secondItem="acE-LK-lDr" secondAttribute="trailing" constant="80" id="dCl-2D-Znh"/>
+                                                    <constraint firstAttribute="trailing" secondItem="acE-LK-lDr" secondAttribute="trailing" constant="20" id="dCl-2D-Znh"/>
                                                     <constraint firstItem="acE-LK-lDr" firstAttribute="top" secondItem="nIS-M8-zg4" secondAttribute="top" constant="30" id="hse-JG-uO4"/>
                                                     <constraint firstItem="acE-LK-lDr" firstAttribute="centerY" secondItem="nIS-M8-zg4" secondAttribute="centerY" id="nFE-BH-gpC"/>
                                                 </constraints>
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" translatesAutoresizingMaskIntoConstraints="NO" id="rWD-b6-1A1">
+
                                                 <rect key="frame" x="0.0" y="124" width="414" height="223"/>
+
                                                 <constraints>
+                                                    <constraint firstAttribute="width" secondItem="rWD-b6-1A1" secondAttribute="height" multiplier="414:223" id="TCD-la-7My"/>
                                                     <constraint firstAttribute="height" constant="223" id="qr0-1e-bXP"/>
+                                                    <constraint firstAttribute="width" constant="414" id="wTG-39-ble"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label.co.kr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dit-Qn-pDY">
-                                                <rect key="frame" x="30" y="368" width="354" height="16.5"/>
+
+                                                <rect key="frame" x="30" y="344" width="354" height="17"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="17" id="5xJ-LS-He9"/>
+                                                </constraints>
+
                                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
                                                 <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Lorem ipsum dolor si" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POu-zq-jMo">
-                                                <rect key="frame" x="24" y="392.5" width="359" height="35.5"/>
+
+                                                <rect key="frame" x="24" y="369" width="359" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="xS4-wK-Dqh"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQx-xO-xeT">
-                                                <rect key="frame" x="20" y="455" width="374" height="46"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hO-5f-zKT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="46"/>
-                                                        <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="15"/>
-                                                        <state key="normal" title="아티클 읽기"/>
-                                                        <connections>
-                                                            <action selector="readArticleBtnClicked:" destination="0Sb-vg-DgR" eventType="touchUpInside" id="ldN-ke-mLt"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4JV-KY-oCF">
+                                                <rect key="frame" x="24" y="428" width="20" height="20"/>
+
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="0hO-5f-zKT" secondAttribute="trailing" id="3Ba-S1-cHn"/>
-                                                    <constraint firstItem="0hO-5f-zKT" firstAttribute="top" secondItem="qQx-xO-xeT" secondAttribute="top" id="9rY-Ap-eqS"/>
-                                                    <constraint firstAttribute="height" constant="46" id="Aoa-t7-znw"/>
-                                                    <constraint firstAttribute="bottom" secondItem="0hO-5f-zKT" secondAttribute="bottom" id="ih9-zZ-Xit"/>
-                                                    <constraint firstItem="0hO-5f-zKT" firstAttribute="leading" secondItem="qQx-xO-xeT" secondAttribute="leading" id="skc-92-e0N"/>
+                                                    <constraint firstAttribute="height" constant="20" id="H5K-2v-yeP"/>
+                                                    <constraint firstAttribute="width" constant="20" id="xg2-qk-X2Q"/>
                                                 </constraints>
-                                            </view>
+                                                <state key="normal" image="btnLike"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AR4-Jl-jHm">
+                                                <rect key="frame" x="49" y="430" width="8" height="16"/>
+                                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="13"/>
+                                                <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAI-b3-Ct9">
+                                                <rect key="frame" x="77" y="428" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="BOl-HP-o2X"/>
+                                                    <constraint firstAttribute="height" constant="20" id="R9n-1p-Ro8"/>
+                                                </constraints>
+                                                <state key="normal" image="btnFolder"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="담기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbD-SS-gGf">
+                                                <rect key="frame" x="102" y="430" width="24" height="16"/>
+                                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="13"/>
+                                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QUg-mr-mZ9">
-                                                <rect key="frame" x="0.0" y="521" width="414" height="607"/>
+
+                                                <rect key="frame" x="0.0" y="473" width="414" height="635"/>
+
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아카이브의 다른 아티클" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h5-I0-8SU">
-                                                        <rect key="frame" x="23" y="25" width="368" height="16.5"/>
+                                                        <rect key="frame" x="23" y="25" width="368" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="24" id="EVL-vK-QId"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0HQ-Fn-y37">
-                                                        <rect key="frame" x="23" y="67.5" width="368" height="184.5"/>
+                                                        <rect key="frame" x="23" y="75" width="368" height="184.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTc-uJ-rko">
                                                                 <rect key="frame" x="0.0" y="0.0" width="179" height="184.5"/>
@@ -752,7 +785,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tz6-Nw-gBZ">
-                                                        <rect key="frame" x="23" y="265" width="368" height="184.5"/>
+                                                        <rect key="frame" x="23" y="272.5" width="368" height="184.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vj6-96-S6K">
                                                                 <rect key="frame" x="0.0" y="0.0" width="179" height="184.5"/>
@@ -862,7 +895,10 @@
                                                         </constraints>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBo-1P-x06">
-                                                        <rect key="frame" x="20" y="477.5" width="374" height="30"/>
+                                                        <rect key="frame" x="20" y="485" width="374" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="tdi-CB-rp4"/>
+                                                        </constraints>
                                                         <state key="normal" title="전체 보기"/>
                                                     </button>
                                                 </subviews>
@@ -871,7 +907,7 @@
                                                     <constraint firstItem="tz6-Nw-gBZ" firstAttribute="top" secondItem="0HQ-Fn-y37" secondAttribute="bottom" constant="13" id="1Ox-Nq-y99"/>
                                                     <constraint firstAttribute="trailing" secondItem="rBo-1P-x06" secondAttribute="trailing" constant="20" id="28R-VU-Wt9"/>
                                                     <constraint firstItem="1h5-I0-8SU" firstAttribute="top" secondItem="QUg-mr-mZ9" secondAttribute="top" constant="25" id="G32-FM-B7c"/>
-                                                    <constraint firstAttribute="bottom" secondItem="rBo-1P-x06" secondAttribute="bottom" constant="99.5" id="KvH-j9-Q2o"/>
+                                                    <constraint firstAttribute="bottom" secondItem="rBo-1P-x06" secondAttribute="bottom" constant="120" id="KvH-j9-Q2o"/>
                                                     <constraint firstItem="0HQ-Fn-y37" firstAttribute="leading" secondItem="1h5-I0-8SU" secondAttribute="leading" id="Ldg-AR-Pm3"/>
                                                     <constraint firstItem="tz6-Nw-gBZ" firstAttribute="leading" secondItem="0HQ-Fn-y37" secondAttribute="leading" id="Lob-n5-TN8"/>
                                                     <constraint firstItem="tz6-Nw-gBZ" firstAttribute="trailing" secondItem="0HQ-Fn-y37" secondAttribute="trailing" id="NwW-ZA-4Mb"/>
@@ -886,25 +922,34 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="AR4-Jl-jHm" firstAttribute="centerY" secondItem="4JV-KY-oCF" secondAttribute="centerY" id="09i-4H-YPS"/>
                                             <constraint firstItem="POu-zq-jMo" firstAttribute="top" secondItem="dit-Qn-pDY" secondAttribute="bottom" constant="8" id="0Hr-Cj-jU8"/>
+                                            <constraint firstItem="4JV-KY-oCF" firstAttribute="leading" secondItem="POu-zq-jMo" secondAttribute="leading" id="2cb-hB-qm5"/>
                                             <constraint firstItem="dit-Qn-pDY" firstAttribute="leading" secondItem="PzK-Jg-lWO" secondAttribute="leading" constant="30" id="3e7-dL-EoS"/>
                                             <constraint firstItem="rWD-b6-1A1" firstAttribute="top" secondItem="nIS-M8-zg4" secondAttribute="bottom" id="4Fl-b4-DgH"/>
                                             <constraint firstAttribute="trailing" secondItem="rWD-b6-1A1" secondAttribute="trailing" id="4qh-uz-Sz5"/>
                                             <constraint firstAttribute="trailing" secondItem="nIS-M8-zg4" secondAttribute="trailing" id="5FJ-Bo-cjD"/>
                                             <constraint firstAttribute="trailing" secondItem="POu-zq-jMo" secondAttribute="trailing" constant="31" id="5Qd-3p-eAo"/>
                                             <constraint firstItem="POu-zq-jMo" firstAttribute="leading" secondItem="PzK-Jg-lWO" secondAttribute="leading" constant="24" id="AET-et-ANm"/>
+                                            <constraint firstItem="4JV-KY-oCF" firstAttribute="top" secondItem="POu-zq-jMo" secondAttribute="bottom" constant="24" id="AYq-Do-YAf"/>
                                             <constraint firstAttribute="bottom" secondItem="QUg-mr-mZ9" secondAttribute="bottom" constant="25" id="Emb-2B-ila"/>
                                             <constraint firstItem="rWD-b6-1A1" firstAttribute="leading" secondItem="PzK-Jg-lWO" secondAttribute="leading" id="FzB-ry-I7v"/>
                                             <constraint firstItem="nIS-M8-zg4" firstAttribute="leading" secondItem="PzK-Jg-lWO" secondAttribute="leading" id="OE9-md-beu"/>
                                             <constraint firstAttribute="trailing" secondItem="dit-Qn-pDY" secondAttribute="trailing" constant="30" id="Q0F-p3-Bee"/>
-                                            <constraint firstAttribute="trailing" secondItem="qQx-xO-xeT" secondAttribute="trailing" constant="20" id="ach-o0-ycs"/>
-                                            <constraint firstItem="qQx-xO-xeT" firstAttribute="top" secondItem="POu-zq-jMo" secondAttribute="bottom" constant="27" id="bNi-JF-Cbp"/>
+                                            <constraint firstItem="HbD-SS-gGf" firstAttribute="centerY" secondItem="hAI-b3-Ct9" secondAttribute="centerY" id="RvB-LR-41l"/>
+                                            <constraint firstItem="AR4-Jl-jHm" firstAttribute="baseline" secondItem="HbD-SS-gGf" secondAttribute="baseline" id="Ske-Vq-unC"/>
+                                            <constraint firstAttribute="height" priority="750" constant="1150" id="cq6-D7-NKi"/>
                                             <constraint firstItem="QUg-mr-mZ9" firstAttribute="leading" secondItem="PzK-Jg-lWO" secondAttribute="leading" id="edG-Xs-NUP"/>
-                                            <constraint firstItem="QUg-mr-mZ9" firstAttribute="top" secondItem="qQx-xO-xeT" secondAttribute="bottom" constant="20" id="mLm-Xj-ugS"/>
-                                            <constraint firstItem="qQx-xO-xeT" firstAttribute="leading" secondItem="PzK-Jg-lWO" secondAttribute="leading" constant="20" id="nXK-j5-Voo"/>
+                                            <constraint firstItem="AR4-Jl-jHm" firstAttribute="leading" secondItem="4JV-KY-oCF" secondAttribute="trailing" constant="5" id="fSb-xz-etb"/>
+                                            <constraint firstItem="QUg-mr-mZ9" firstAttribute="top" secondItem="4JV-KY-oCF" secondAttribute="bottom" constant="25" id="hGm-2b-45H"/>
+                                            <constraint firstItem="hAI-b3-Ct9" firstAttribute="leading" secondItem="AR4-Jl-jHm" secondAttribute="trailing" constant="20" id="kJ1-pd-lMf"/>
+                                            <constraint firstItem="hAI-b3-Ct9" firstAttribute="centerY" secondItem="AR4-Jl-jHm" secondAttribute="centerY" id="mWl-lr-0Oe"/>
                                             <constraint firstAttribute="trailing" secondItem="QUg-mr-mZ9" secondAttribute="trailing" id="pfi-4M-8qv"/>
                                             <constraint firstItem="dit-Qn-pDY" firstAttribute="top" secondItem="rWD-b6-1A1" secondAttribute="bottom" constant="21" id="sIa-L1-qLR"/>
+                                            <constraint firstItem="HbD-SS-gGf" firstAttribute="leading" secondItem="hAI-b3-Ct9" secondAttribute="trailing" constant="5" id="sdX-D9-UVu"/>
                                             <constraint firstItem="nIS-M8-zg4" firstAttribute="top" secondItem="PzK-Jg-lWO" secondAttribute="top" id="tjN-DU-Xuq"/>
+                                            <constraint firstItem="rWD-b6-1A1" firstAttribute="top" secondItem="PzK-Jg-lWO" secondAttribute="top" priority="750" constant="122" id="vJX-6i-zO0"/>
+                                            <constraint firstItem="AR4-Jl-jHm" firstAttribute="top" secondItem="POu-zq-jMo" secondAttribute="bottom" constant="26" id="zeF-Hx-WzD"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -931,12 +976,12 @@
                     <connections>
                         <outlet property="archiveTitle" destination="acE-LK-lDr" id="P6x-Hr-rQD"/>
                         <outlet property="archiveTitleView" destination="nIS-M8-zg4" id="GMc-SG-7cd"/>
+                        <outlet property="articleBigImg" destination="rWD-b6-1A1" id="roY-OM-iJ3"/>
                         <outlet property="articleTitle" destination="POu-zq-jMo" id="joW-DC-1lY"/>
                         <outlet property="backView1" destination="fTc-uJ-rko" id="c5b-tg-iO0"/>
                         <outlet property="backView2" destination="4x4-cf-81K" id="dnf-0o-4m5"/>
                         <outlet property="backView3" destination="Vj6-96-S6K" id="bQQ-Uq-hk4"/>
                         <outlet property="backView4" destination="bt8-oN-OlO" id="wsG-P4-b30"/>
-                        <outlet property="buttonView" destination="0hO-5f-zKT" id="lwQ-Bd-1pr"/>
                         <outlet property="otherArticleImg1" destination="QGk-To-oQW" id="LwJ-hi-bVk"/>
                         <outlet property="otherArticleImg2" destination="wkD-af-oP3" id="4qM-Cl-hMy"/>
                         <outlet property="otherArticleImg3" destination="RAi-Yp-Gck" id="1Bh-g5-zKa"/>
@@ -955,7 +1000,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DGj-ee-e47" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2448" y="-351"/>
+            <point key="canvasLocation" x="2447.826086956522" y="-351.5625"/>
         </scene>
         <!--Home New Link-->
         <scene sceneID="gXK-uA-bA6">
@@ -1271,7 +1316,9 @@
     </scenes>
     <resources>
         <image name="articLogo" width="86" height="30.5"/>
+        <image name="btnFolder" width="20" height="20"/>
         <image name="btnHomeSearch" width="335" height="50"/>
+        <image name="btnLike" width="20" height="20"/>
         <image name="btnScrapBig" width="24" height="24"/>
         <image name="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" width="852" height="479"/>
         <image name="homeCharacter" width="185" height="85"/>
