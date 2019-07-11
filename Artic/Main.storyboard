@@ -190,7 +190,7 @@
         <!--homeSB-->
         <scene sceneID="V5P-PI-IPg">
             <objects>
-                <viewControllerPlaceholder storyboardName="homeSB" id="4bJ-6w-nY7" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="homeSB" storyboardName="homeSB" id="4bJ-6w-nY7" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="ngfxg" image="tabNotice" selectedImage="tabHomeFilled" id="pLg-G3-WtM"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lbn-5U-91f" userLabel="First Responder" sceneMemberID="firstResponder"/>

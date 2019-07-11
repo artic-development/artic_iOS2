@@ -13,6 +13,7 @@ struct RecentArticle: Codable {
     let article_title: String
     let thumnail: String
     let link: String
+    let domain: String
     let date: String
     let hits, pick: Int
 }

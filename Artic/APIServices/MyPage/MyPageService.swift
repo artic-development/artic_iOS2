@@ -42,7 +42,7 @@ struct MyPageService {
                                     let result = try decoder.decode(ResponseObject<MyPageData>.self, from: value)
                                     
                                     print("try")
-                                    print(result)
+                                    //print(result)
                                     
                                     switch result.success {
                                     case true:

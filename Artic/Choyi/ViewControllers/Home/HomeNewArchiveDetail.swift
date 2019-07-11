@@ -160,7 +160,7 @@ class HomeNewArchiveDetail: UIViewController, UITableViewDataSource, UITableView
                 self.archiveTitle.text = _result.archive_title!
                 self.archiveDetailTableVIew.reloadData()
                 
-                print(result)
+                //print(result)
                 
             case .requestErr(let message):
                 print(message)

@@ -27,7 +27,7 @@
         <!--Home-->
         <scene sceneID="ZkG-rT-bQj">
             <objects>
-                <viewController id="Jg3-uo-ldq" customClass="Home" customModule="Artic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jg3-uo-ldq" customClass="Home" customModule="Artic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ANY-ht-t1m">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -960,7 +960,7 @@
         <!--Home New Link-->
         <scene sceneID="gXK-uA-bA6">
             <objects>
-                <viewController id="vVQ-wK-61D" customClass="HomeNewLink" customModule="Artic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeNewLink" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vVQ-wK-61D" customClass="HomeNewLink" customModule="Artic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NED-Qh-Wcb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

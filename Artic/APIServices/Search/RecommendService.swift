@@ -42,7 +42,7 @@ struct RecommendService {
                                     let result = try decoder.decode(ResponseArray<Recommend>.self, from: value)
                                     
                                     print("try")
-                                    print(result)
+                                    //print(result)
                                     
                                     switch result.success {
                                     case true:

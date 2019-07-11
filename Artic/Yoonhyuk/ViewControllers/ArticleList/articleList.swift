@@ -72,7 +72,7 @@ class articleList: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 self.articlesData = _result
                 self.articleTable.reloadData()
                 
-                print(result)
+                //print(result)
                 
             case .requestErr(let message):
                 print(message)

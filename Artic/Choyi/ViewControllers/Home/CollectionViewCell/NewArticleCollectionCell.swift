@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol newArticleProtocol:class {
+    func pushToNewArticleLink(withLink:String)
+}
+
 class NewArticleCollectionCell: UICollectionViewCell {
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var newArticleImg: UIImageView!

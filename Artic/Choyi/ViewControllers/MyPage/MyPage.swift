@@ -86,7 +86,7 @@ class MyPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 self.myEmailLabel.text = "\(self.MypageList.userId!)"
                self.myProfilePicImg.kf.setImage(with: profileImgurl)
                 
-                print(result)
+                //print(result)
                 
             case .requestErr(let message):
                 print(message)
@@ -117,7 +117,7 @@ class MyPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
             // self.myInfoView.reloadData()
             self.myPageTableView.reloadData()
 
-            print(result)
+            //print(result)
             
         case .requestErr(let message):
             print(message)

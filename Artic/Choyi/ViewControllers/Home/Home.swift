@@ -7,20 +7,10 @@
 //
 
 import UIKit
+import SafariServices
 
 
-class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArchiveProtocol {
-    
-    func pushToNewView(withData:Int) {
-        let storyboard: UIStoryboard = UIStoryboard(name: "homeSB", bundle: nil)
-        guard let dvc = storyboard.instantiateViewController(withIdentifier: "HomeNewArchiveDetail") as? HomeNewArchiveDetail
-            else {return}
-        //self.present(dvc, animated: true, completion: nil)
-        //self.navigationController?.navigationBar.isHidden = false
-        //navigationController?.pushViewController(dvc, animated: true)
-        //self.push(dvc, animated: true, completion: nil)
-        self.navigationController?.pushViewController(dvc, animated: true)
-    }
+class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArchiveProtocol, newArticleProtocol {
     
     func pushToNewArchiveArticle(withData:Int) {
         
@@ -33,9 +23,22 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
         self.navigationController?.pushViewController(dvc, animated: true)
     }
     
+    func pushToNewArticleLink(withLink: String) {
+        
+        guard let url = URL(string: withLink) else {
+            return
+        }
+        let safariview = SFSafariViewController(url: url)
+        self.present(safariview, animated: true, completion: nil)
+    }
+    
     @IBOutlet weak var homeTableView: UITableView!
     var categoriesAll = ["새로운 아카이브", "새로운 아티클", "최근 읽은 아티클"]
-    var homeCateArchiveList: [HomeCateArchive] = []
+    var homeCateArchiveList: [HomeCateArchive] = [
+        HomeCateArchive(category_title: "카테고리명", archive_idx: 0, user_idx: 0, archive_title: "아카이브명", date: "2019-07-09T22:55:20.000Z", archive_img: "https://hyeongbucket.s3.ap-northeast-2.amazonaws.com/artic/archivedefault.png", category_idx: 99, article_cnt: 0),
+        HomeCateArchive(category_title: "카테고리명", archive_idx: 0, user_idx: 0, archive_title: "아카이브명", date: "2019-07-09T22:55:20.000Z", archive_img: "https://hyeongbucket.s3.ap-northeast-2.amazonaws.com/artic/archivedefault.png", category_idx: 99, article_cnt: 0),
+        HomeCateArchive(category_title: "카테고리명", archive_idx: 0, user_idx: 0, archive_title: "아카이브명", date: "2019-07-09T22:55:20.000Z", archive_img: "https://hyeongbucket.s3.ap-northeast-2.amazonaws.com/artic/archivedefault.png", category_idx: 99, article_cnt: 0),
+        HomeCateArchive(category_title: "카테고리명", archive_idx: 0, user_idx: 0, archive_title: "아카이브명", date: "2019-07-09T22:55:20.000Z", archive_img: "https://hyeongbucket.s3.ap-northeast-2.amazonaws.com/artic/archivedefault.png", category_idx: 99, article_cnt: 0)]
     var categoriesHome: [Category] = []
     var recentArticle: [RecentArticle] = []
     var archiveIdx = 999
@@ -49,7 +52,7 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
         homeTableView.separatorStyle = .none
         homeTableView.sectionIndexBackgroundColor = UIColor.white
         getCategory()
-        
+        getRecentArticle()
         
     }
     
@@ -80,10 +83,12 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
         return categoriesHome.count
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        getHomeCateArchive(cateIdx: section)
-        return homeCateArchiveList[0].archive_title
-    }
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        print(section)
+//        print("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ")
+//        getHomeCateArchive(cateIdx2: section)
+//        return homeCateArchiveList[0].archive_title
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 2{
@@ -110,6 +115,7 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
         }else if indexPath.section == 1{
             //새로운 아티클
             let cell = tableView.dequeueReusableCell(withIdentifier: "NewArticleCell") as! NewArticleCell
+            cell.delegate2 = self
             //cell 선택시 배경 색 지정
             var bgColorView = UIView()
             bgColorView.backgroundColor = UIColor.white
@@ -119,9 +125,7 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
         }else if indexPath.section == 2{
             //최근 읽은 아티클
             let cell = tableView.dequeueReusableCell(withIdentifier: "RecentArticleCell") as! RecentArticleCell
-            //통신함수
-            getRecentArticle()
-            print(indexPath.row)
+            //print(indexPath.row)
             
             if(recentArticle.count == 0){
                 return cell
@@ -135,7 +139,7 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
                 //제목
                 cell.articleTitle.text = RecentArticle.article_title
                 //웹라벨
-                cell.webLabel.text = RecentArticle.link
+                cell.webLabel.text = RecentArticle.domain
             }
         
             
@@ -153,30 +157,83 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
             var bgColorView = UIView()
             bgColorView.backgroundColor = UIColor.white
             cell.selectedBackgroundView = bgColorView
+
+            getHomeCateArchive(cateIdx2: indexPath.section + 2)
             
+            if homeCateArchiveList.count == 4 {
+                cell.archiveTitle1.text = "\(homeCateArchiveList[0].archive_title ?? "")"
+                cell.archiveTitle2.text = "\(homeCateArchiveList[1].archive_title ?? "")"
+                cell.archiveTitle3.text = "\(homeCateArchiveList[2].archive_title ?? "")"
+                cell.archiveTitle4.text = "\(homeCateArchiveList[3].archive_title ?? "")"
+                
+                let url1 = URL(string: homeCateArchiveList[0].archive_img ?? "")
+                cell.backImg1.kf.setImage(with: url1)
+                let url2 = URL(string: homeCateArchiveList[1].archive_img ?? "")
+                cell.backImg2.kf.setImage(with: url2)
+                let url3 = URL(string: homeCateArchiveList[2].archive_img ?? "")
+                cell.backImg3.kf.setImage(with: url3)
+                let url4 = URL(string: homeCateArchiveList[3].archive_img ?? "")
+                cell.backImg4.kf.setImage(with: url4)
+                
+                //매개변수 바꿔야됨
+                cell.numLabel1.text = "아티클 \(homeCateArchiveList[0].article_cnt ?? 0)개"
+                cell.numLabel2.text = "아티클 \(homeCateArchiveList[1].article_cnt ?? 0)개"
+                cell.numLabel3.text = "아티클 \(homeCateArchiveList[2].article_cnt ?? 0)개"
+                cell.numLabel4.text = "아티클 \(homeCateArchiveList[3].article_cnt ?? 0)개"
+            }else if homeCateArchiveList.count == 3 {
+                cell.archiveTitle1.text = "\(homeCateArchiveList[0].archive_title ?? "")"
+                cell.archiveTitle2.text = "\(homeCateArchiveList[1].archive_title ?? "")"
+                cell.archiveTitle3.text = "\(homeCateArchiveList[2].archive_title ?? "")"
+                cell.archiveTitle4.text = ""
+                
+                let url1 = URL(string: homeCateArchiveList[0].archive_img ?? "")
+                cell.backImg1.kf.setImage(with: url1)
+                let url2 = URL(string: homeCateArchiveList[1].archive_img ?? "")
+                cell.backImg2.kf.setImage(with: url2)
+                let url3 = URL(string: homeCateArchiveList[2].archive_img ?? "")
+                cell.backImg3.kf.setImage(with: url3)
+
+                
+                //매개변수 바꿔야됨
+                cell.numLabel1.text = "아티클 \(homeCateArchiveList[0].article_cnt ?? 0)개"
+                cell.numLabel2.text = "아티클 \(homeCateArchiveList[1].article_cnt ?? 0)개"
+                cell.numLabel3.text = "아티클 \(homeCateArchiveList[2].article_cnt ?? 0)개"
+                cell.numLabel4.text = "아티클 0개"
+            }else if homeCateArchiveList.count == 2 {
+                cell.archiveTitle1.text = "\(homeCateArchiveList[0].archive_title ?? "")"
+                cell.archiveTitle2.text = "\(homeCateArchiveList[1].archive_title ?? "")"
+                cell.archiveTitle3.text = ""
+                cell.archiveTitle4.text = ""
+                
+                let url1 = URL(string: homeCateArchiveList[0].archive_img ?? "")
+                cell.backImg1.kf.setImage(with: url1)
+                let url2 = URL(string: homeCateArchiveList[1].archive_img ?? "")
+                cell.backImg2.kf.setImage(with: url2)
+                
+                //매개변수 바꿔야됨
+                cell.numLabel1.text = "아티클 \(homeCateArchiveList[0].article_cnt ?? 0)개"
+                cell.numLabel2.text = "아티클 \(homeCateArchiveList[1].article_cnt ?? 0)개"
+                cell.numLabel3.text = "아티클 0개"
+                cell.numLabel4.text = "아티클 0개"
+            }else if homeCateArchiveList.count == 1 {
+                cell.archiveTitle1.text = "\(homeCateArchiveList[0].archive_title ?? "")"
+                cell.archiveTitle2.text = ""
+                cell.archiveTitle3.text = ""
+                cell.archiveTitle4.text = ""
+                
+                let url1 = URL(string: homeCateArchiveList[0].archive_img ?? "")
+                cell.backImg1.kf.setImage(with: url1)
+                //매개변수 바꿔야됨
+                cell.numLabel1.text = "아티클 \(homeCateArchiveList[0].article_cnt ?? 0)개"
+                cell.numLabel2.text = "아티클 0개"
+                cell.numLabel3.text = "아티클 0개"
+                cell.numLabel4.text = "아티클 0개"
+            }else{
+                
+            }
+
             
-            getHomeCateArchive(cateIdx: indexPath.section)
-            
-            cell.archiveTitle1.text = "\(homeCateArchiveList[0].archive_title)"
-            cell.archiveTitle2.text = "\(homeCateArchiveList[1].archive_title)"
-            cell.archiveTitle3.text = "\(homeCateArchiveList[2].archive_title)"
-            cell.archiveTitle4.text = "\(homeCateArchiveList[3].archive_title)" 
-            
-            let url1 = URL(string: homeCateArchiveList[0].archive_img)
-            cell.backImg1.kf.setImage(with: url1)
-            let url2 = URL(string: homeCateArchiveList[1].archive_img)
-            cell.backImg2.kf.setImage(with: url2)
-            let url3 = URL(string: homeCateArchiveList[2].archive_img)
-            cell.backImg3.kf.setImage(with: url3)
-            let url4 = URL(string: homeCateArchiveList[3].archive_img)
-            cell.backImg4.kf.setImage(with: url4)
-            
-            //매개변수 바꿔야됨
-            cell.numLabel1.text = "아티클 \(homeCateArchiveList[0].article_cnt)개"
-            cell.numLabel2.text = "아티클 \(homeCateArchiveList[1].article_cnt)개"
-            cell.numLabel3.text = "아티클 \(homeCateArchiveList[2].article_cnt)개"
-            cell.numLabel4.text = "아티클 \(homeCateArchiveList[3].article_cnt)개"
-            
+
             return cell
         }
     }
@@ -197,8 +254,7 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
         view.backgroundColor = UIColor.white
-        
-        getHomeCateArchive(cateIdx: section)
+
         let titleLabel = UILabel()
         
         titleLabel.text = "\(categoriesAll[section])"
@@ -225,13 +281,18 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
         if indexPath.section == 0 {
             //새로운 아카이브
             //cellTapped()
-            //pushToNewArchiveArticle(withData: <#T##Int#>)
             
         }else if indexPath.section == 1{
             //새로운 아티클
             
         }else if indexPath.section == 2{
             //최근 읽은 아티클
+            
+//            let storyboard = UIStoryboard(name: "homeSB", bundle: nil)
+//            guard let dvc = storyboard.instantiateViewController(withIdentifier: "HomeNewLinkAbout") as? HomeNewLinkAbout
+//                else {return}
+            
+//            self.navigationController?.pushViewController(dvc, animated: true)
             
         }else{
             //카테고리별
@@ -250,9 +311,9 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
     }
     
     
-    func getHomeCateArchive(cateIdx: Int) {
+    func getHomeCateArchive(cateIdx2: Int) {
         
-        HomeCateArchiveService.shared.getHomeCateArchive(cateIdx: cateIdx) {
+        HomeCateArchiveService.shared.getHomeCateArchive(cateIdx: cateIdx2) {
             
             [weak self]
             (data) in
@@ -330,8 +391,8 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
                 self.recentArticle = _result
                 
                 self.homeTableView.reloadData()
-                print("ㅏㅏ")
-                print(result)
+//                print("ㅏㅏ")
+//                print(result)
                 
             case .requestErr(let message):
                 print(message)
