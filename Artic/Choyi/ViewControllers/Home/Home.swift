@@ -165,80 +165,38 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
             bgColorView.backgroundColor = UIColor.white
             cell.selectedBackgroundView = bgColorView
 
-            getHomeCateArchive(cateIdx2: indexPath.section + 2)
+            getHomeCateArchive(cateIdx2: indexPath.section - 1)
             
-            if homeCateArchiveList.count == 4 {
-                cell.archiveTitle1.text = "\(homeCateArchiveList[0].archive_title ?? "")"
-                cell.archiveTitle2.text = "\(homeCateArchiveList[1].archive_title ?? "")"
-                cell.archiveTitle3.text = "\(homeCateArchiveList[2].archive_title ?? "")"
-                cell.archiveTitle4.text = "\(homeCateArchiveList[3].archive_title ?? "")"
-                
-                let url1 = URL(string: homeCateArchiveList[0].archive_img ?? "")
-                cell.backImg1.kf.setImage(with: url1)
-                let url2 = URL(string: homeCateArchiveList[1].archive_img ?? "")
-                cell.backImg2.kf.setImage(with: url2)
-                let url3 = URL(string: homeCateArchiveList[2].archive_img ?? "")
-                cell.backImg3.kf.setImage(with: url3)
-                let url4 = URL(string: homeCateArchiveList[3].archive_img ?? "")
-                cell.backImg4.kf.setImage(with: url4)
-                
-                //매개변수 바꿔야됨
-                cell.numLabel1.text = "아티클 \(homeCateArchiveList[0].article_cnt ?? 0)개"
-                cell.numLabel2.text = "아티클 \(homeCateArchiveList[1].article_cnt ?? 0)개"
-                cell.numLabel3.text = "아티클 \(homeCateArchiveList[2].article_cnt ?? 0)개"
-                cell.numLabel4.text = "아티클 \(homeCateArchiveList[3].article_cnt ?? 0)개"
-            }else if homeCateArchiveList.count == 3 {
-                cell.archiveTitle1.text = "\(homeCateArchiveList[0].archive_title ?? "")"
-                cell.archiveTitle2.text = "\(homeCateArchiveList[1].archive_title ?? "")"
-                cell.archiveTitle3.text = "\(homeCateArchiveList[2].archive_title ?? "")"
-                cell.archiveTitle4.text = ""
-                
-                let url1 = URL(string: homeCateArchiveList[0].archive_img ?? "")
-                cell.backImg1.kf.setImage(with: url1)
-                let url2 = URL(string: homeCateArchiveList[1].archive_img ?? "")
-                cell.backImg2.kf.setImage(with: url2)
-                let url3 = URL(string: homeCateArchiveList[2].archive_img ?? "")
-                cell.backImg3.kf.setImage(with: url3)
-
-                
-                //매개변수 바꿔야됨
-                cell.numLabel1.text = "아티클 \(homeCateArchiveList[0].article_cnt ?? 0)개"
-                cell.numLabel2.text = "아티클 \(homeCateArchiveList[1].article_cnt ?? 0)개"
-                cell.numLabel3.text = "아티클 \(homeCateArchiveList[2].article_cnt ?? 0)개"
-                cell.numLabel4.text = "아티클 0개"
-            }else if homeCateArchiveList.count == 2 {
-                cell.archiveTitle1.text = "\(homeCateArchiveList[0].archive_title ?? "")"
-                cell.archiveTitle2.text = "\(homeCateArchiveList[1].archive_title ?? "")"
-                cell.archiveTitle3.text = ""
-                cell.archiveTitle4.text = ""
-                
-                let url1 = URL(string: homeCateArchiveList[0].archive_img ?? "")
-                cell.backImg1.kf.setImage(with: url1)
-                let url2 = URL(string: homeCateArchiveList[1].archive_img ?? "")
-                cell.backImg2.kf.setImage(with: url2)
-                
-                //매개변수 바꿔야됨
-                cell.numLabel1.text = "아티클 \(homeCateArchiveList[0].article_cnt ?? 0)개"
-                cell.numLabel2.text = "아티클 \(homeCateArchiveList[1].article_cnt ?? 0)개"
-                cell.numLabel3.text = "아티클 0개"
-                cell.numLabel4.text = "아티클 0개"
-            }else if homeCateArchiveList.count == 1 {
-                cell.archiveTitle1.text = "\(homeCateArchiveList[0].archive_title ?? "")"
-                cell.archiveTitle2.text = ""
-                cell.archiveTitle3.text = ""
-                cell.archiveTitle4.text = ""
-                
-                let url1 = URL(string: homeCateArchiveList[0].archive_img ?? "")
-                cell.backImg1.kf.setImage(with: url1)
-                //매개변수 바꿔야됨
-                cell.numLabel1.text = "아티클 \(homeCateArchiveList[0].article_cnt ?? 0)개"
-                cell.numLabel2.text = "아티클 0개"
-                cell.numLabel3.text = "아티클 0개"
-                cell.numLabel4.text = "아티클 0개"
-            }else{
-                
+            if homeCateArchiveList.count >= 0 {
+                if homeCateArchiveList.count >= 1 {
+                    cell.archiveTitle1.text = "\(homeCateArchiveList[0].archive_title ?? "")"
+                    let url1 = URL(string: homeCateArchiveList[0].archive_img ?? "")
+                    cell.backImg1.kf.setImage(with: url1)
+                    cell.numLabel1.text = "아티클 \(homeCateArchiveList[0].article_cnt ?? 0)개"
+                    
+                    if homeCateArchiveList.count >= 2 {
+                        cell.archiveTitle2.text = "\(homeCateArchiveList[1].archive_title ?? "")"
+                        let url2 = URL(string: homeCateArchiveList[1].archive_img ?? "")
+                        cell.backImg2.kf.setImage(with: url2)
+                        cell.numLabel2.text = "아티클 \(homeCateArchiveList[1].article_cnt ?? 0)개"
+                        
+                        if homeCateArchiveList.count >= 3 {
+                            cell.archiveTitle3.text = "\(homeCateArchiveList[2].archive_title ?? "")"
+                            let url3 = URL(string: homeCateArchiveList[2].archive_img ?? "")
+                            cell.backImg3.kf.setImage(with: url3)
+                            cell.numLabel3.text = "아티클 \(homeCateArchiveList[2].article_cnt ?? 0)개"
+                            
+                            if homeCateArchiveList.count >= 4 {
+                                cell.archiveTitle4.text = "\(homeCateArchiveList[3].archive_title ?? "")"
+                                let url4 = URL(string: homeCateArchiveList[3].archive_img ?? "")
+                                cell.backImg4.kf.setImage(with: url4)
+                                cell.numLabel4.text = "아티클 \(homeCateArchiveList[3].article_cnt ?? 0)개"
+                            }
+                        }
+                    }
+                }
             }
-
+            
             
 
             return cell
@@ -294,7 +252,11 @@ class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArch
             
         }else if indexPath.section == 2{
             //최근 읽은 아티클
-            
+            guard let url = URL(string: recentArticle[indexPath.row].link) else {
+                return
+            }
+            let safariview = SFSafariViewController(url: url)
+            present(safariview, animated: true, completion: nil)
             
             
         }else{

@@ -44,6 +44,9 @@ class ArchiveXibCell: UITableViewCell {
             //저장하기
             storeBtn.setImage(UIImage(named: "btnScrapBig"), for: .normal)
             isStored = true
+            
+            
+            
         }else{
             //저장 취소
             storeBtn.setImage(UIImage(named: "btnScrapFilledBig"), for: .normal)

@@ -75,39 +75,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pYw-U4-Wfh">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N4d-gD-47x">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="Rks-Um-aln">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="commonBackBlack" id="zyV-sz-10r">
-                                            <connections>
-                                                <action selector="Backbtn:" destination="Ird-62-9w2" id="Ln6-Q7-3gm"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="N4d-gD-47x" firstAttribute="top" secondItem="Hgw-gR-iID" secondAttribute="top" id="0Do-fO-gTO"/>
-                            <constraint firstItem="N4d-gD-47x" firstAttribute="trailing" secondItem="Hgw-gR-iID" secondAttribute="trailing" id="6Bu-1b-KiR"/>
+                            <constraint firstItem="pYw-U4-Wfh" firstAttribute="top" secondItem="Hgw-gR-iID" secondAttribute="top" id="6x1-jg-Ond"/>
                             <constraint firstItem="pYw-U4-Wfh" firstAttribute="leading" secondItem="Hgw-gR-iID" secondAttribute="leading" id="Jha-fw-BQG"/>
                             <constraint firstItem="Hgw-gR-iID" firstAttribute="trailing" secondItem="pYw-U4-Wfh" secondAttribute="trailing" id="PdK-Lf-QIk"/>
                             <constraint firstItem="Hgw-gR-iID" firstAttribute="bottom" secondItem="pYw-U4-Wfh" secondAttribute="bottom" id="gBb-TK-hVC"/>
-                            <constraint firstItem="pYw-U4-Wfh" firstAttribute="top" secondItem="N4d-gD-47x" secondAttribute="bottom" id="gvN-Vf-jUO"/>
-                            <constraint firstItem="N4d-gD-47x" firstAttribute="leading" secondItem="Hgw-gR-iID" secondAttribute="leading" id="nYa-Sx-Q8L"/>
-                            <constraint firstItem="pYw-U4-Wfh" firstAttribute="top" secondItem="N4d-gD-47x" secondAttribute="bottom" id="sAV-5x-AcB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hgw-gR-iID"/>
                     </view>
                     <connections>
                         <outlet property="archiveTable" destination="pYw-U4-Wfh" id="Dpf-Ld-UFz"/>
-                        <outlet property="backbtn" destination="zyV-sz-10r" id="5cp-bN-klr"/>
-                        <outlet property="navigationBar" destination="N4d-gD-47x" id="Roj-ga-qve"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hF-mJ-W1d" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -133,7 +115,4 @@
             <point key="canvasLocation" x="605.79710144927537" y="97.767857142857139"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="commonBackBlack" width="24" height="24"/>
-    </resources>
 </document>

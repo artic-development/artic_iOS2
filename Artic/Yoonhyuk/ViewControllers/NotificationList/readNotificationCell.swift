@@ -10,6 +10,7 @@ import UIKit
 
 class readNotificationCell: UITableViewCell {
     @IBOutlet weak var ReadNotiTitle: UITextView!
+    @IBOutlet weak var dateText: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

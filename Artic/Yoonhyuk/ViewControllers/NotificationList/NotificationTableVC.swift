@@ -14,6 +14,12 @@ class NotificationTableVC:UIViewController,UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var notiTable: UITableView!
     let arr = ["a","b","c"]
     var isImageCell = true
+    var notification : [Notification] = []
+    
+    
+    //섹션별 row의 개수
+    var newNotiNum = 0
+    var readNotiNum = 0
 
     
     override func viewDidLoad() {
@@ -25,7 +31,7 @@ class NotificationTableVC:UIViewController,UITableViewDelegate, UITableViewDataS
         notiTable.estimatedRowHeight = 150.0
         notiTable.rowHeight = UITableView.automaticDimension
         
-        
+        getNoti()
       
 
         // Uncomment the following line to preserve selection between presentations
@@ -56,10 +62,11 @@ class NotificationTableVC:UIViewController,UITableViewDelegate, UITableViewDataS
 
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        
         if section == 0 {
-            return 4
+            return newNotiNum
         }else if section == 1{
-            return arr.count
+            return readNotiNum
         }else{
             return 0
         }
@@ -70,32 +77,63 @@ class NotificationTableVC:UIViewController,UITableViewDelegate, UITableViewDataS
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.white
+        
         if indexPath.section == 0{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationCell", for: indexPath)
+            
+            if UInt(notification[indexPath.row].notification_type) == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationCell", for: indexPath) as! NotificationCell
+                
+                cell.NotiTitle.text = "'\(notification[indexPath.row].articles[0].archive_title)'에 새로운 아티클이 추가되었습니다"
+                
+                cell.selectedBackgroundView = bgColorView
+                return cell
+            }else if (UInt(notification[indexPath.row].notification_type) == 1){
+                let cell = tableView.dequeueReusableCell(withIdentifier: "recoNotification", for: indexPath) as! recoNotificationCell
+                
+                cell.RecoNotiTitle.text = "회원님이 좋아하실만한 아티클을 추천해드려요!"
+                
+                let url1 = URL(string: notification[indexPath.row].articles[0].thumnail)
+                cell.img1.kf.setImage(with: url1)
+                let url2 = URL(string: notification[indexPath.row].articles[1].thumnail)
+                cell.img2.kf.setImage(with: url2)
+                let url3 = URL(string: notification[indexPath.row].articles[2].thumnail)
+                cell.img3.kf.setImage(with: url3)
+                
+                cell.selectedBackgroundView = bgColorView
+                return cell
+            }else{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "readNotification", for: indexPath) as! readNotificationCell
+                
+                cell.ReadNotiTitle.text = "회원님이 스크랩 하신 '\(notification[indexPath.row].articles[0].archive_title)'에 \(notification[indexPath.row].articles.count)개 아티클을 읽지 않으셨습니다"
+                
+                cell.selectedBackgroundView = bgColorView
+                return cell
+            }
             
             //cell.textLabel?.text = arr[indexPath.row]
-            let bgColorView = UIView()
-            bgColorView.backgroundColor = UIColor.white
-            cell.selectedBackgroundView = bgColorView
-            return cell
+           
         }
         else {
             
-            if isImageCell == true{
-                let cell3 = tableView.dequeueReusableCell(withIdentifier: "recoNotification", for: indexPath) as! recoNotificationCell
+            if UInt(notification[indexPath.row].notification_type) == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationCell", for: indexPath)
                 
-                let bgColorView = UIView()
-                bgColorView.backgroundColor = UIColor.white
-                cell3.selectedBackgroundView = bgColorView
-                return cell3
+                cell.selectedBackgroundView = bgColorView
+                return cell
+            }else if (UInt(notification[indexPath.row].notification_type) == 1){
+                let cell = tableView.dequeueReusableCell(withIdentifier: "recoNotification", for: indexPath)
+                
+                cell.selectedBackgroundView = bgColorView
+                return cell
             }else{
-                let cell2 = tableView.dequeueReusableCell(withIdentifier: "readNotification", for: indexPath) as! readNotificationCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "readNotification", for: indexPath)
                 
-                let bgColorView = UIView()
-                bgColorView.backgroundColor = UIColor.white
-                cell2.selectedBackgroundView = bgColorView
-                return cell2
+                cell.selectedBackgroundView = bgColorView
+                return cell
             }
+            
             
         }
         
@@ -103,13 +141,46 @@ class NotificationTableVC:UIViewController,UITableViewDelegate, UITableViewDataS
         
         
     }
-    /*override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0: return "Today"
-        case 1: return "Yesterday"
-        default: return nil
-        }
-    }*/
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            
+            if UInt(notification[indexPath.row].notification_type) == 0 {
+                //새로운 아티클이 추가되었습니다
+                let storyboard: UIStoryboard = UIStoryboard(name: "homeSB", bundle: nil)
+                guard let dvc = storyboard.instantiateViewController(withIdentifier: "HomeNewArchiveDetail") as? HomeNewArchiveDetail
+                    else {return}
+                
+                dvc.archiveIdx = notification[indexPath.row].articles[0].archive_idx
+                
+                self.navigationController?.pushViewController(dvc, animated: true)
+                
+            }else if (UInt(notification[indexPath.row].notification_type) == 1){
+                //아티클을 추천해드려요! with images
+                    let storyboard: UIStoryboard = UIStoryboard(name: "homeSB", bundle: nil)
+                    guard let dvc = storyboard.instantiateViewController(withIdentifier: "HomeNewArchiveDetail") as? HomeNewArchiveDetail
+                        else {return}
+                    
+                    dvc.archiveIdx = notification[indexPath.row].articles[0].archive_idx
+                    
+                    self.navigationController?.pushViewController(dvc, animated: true)
+                
+                
+            }else{
+                //n개 아티클을 읽지 않으셔씁니다
+                        let storyboard: UIStoryboard = UIStoryboard(name: "homeSB", bundle: nil)
+                        guard let dvc = storyboard.instantiateViewController(withIdentifier: "HomeNewArchiveDetail") as? HomeNewArchiveDetail
+                            else {return}
+                        
+                        dvc.archiveIdx = notification[indexPath.row].articles[0].archive_idx
+                        
+                        self.navigationController?.pushViewController(dvc, animated: true)
+                
+            }
+                
+            
+            //cell.textLabel?.text = arr[indexPath.row]
+    }
+    
      func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
         view.backgroundColor = UIColor.white
@@ -134,50 +205,49 @@ class NotificationTableVC:UIViewController,UITableViewDelegate, UITableViewDataS
     
     
   
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    func getNoti() {
+        
+        NotiService.shared.getNoti() {
+            
+            [weak self]
+            (data) in
+            
+            guard let `self` = self else { return }
+            
+            switch data {
+                
+            case .success(let result):
+                let _result = result as! [Notification]
+                self.notification = _result
+//                self.tableView.reloadData()
+                print(result)
+                
+                //섹션나누기
+                for num in 0 ... self.notification.count-1 {
+                    
+                    //안읽은알림
+                    if(self.notification[num].isRead == false){
+                        self.newNotiNum += 1
+                    }else if(self.notification[num].isRead == true){
+                        self.readNotiNum += 1
+                    }
+                    
+                    self.notiTable.reloadData()
+    
+                    
+                }
+                
+            case .requestErr(let message):
+                print(message)
+            case .pathErr:
+                print("pathErr in getNoti")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+

@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import SafariServices
 
 class HomeNewLinkAbout: UIViewController {
     var newArticleOne : NewArticleOne = NewArticleOne(article_idx: 0, article_title: "", thumnail: "https://t1.daumcdn.net/thumb/R1280x0/?fname=http://t1.daumcdn.net/brunch/service/user/1RQb/image/q4eYwbcylf3Rjp3L0HGcAb5eCRQ.jpeg", link: "", domain: "", date: "", hits: 0, pick: 0, archive_idx: 0, archive_title: "", like: false)
@@ -90,9 +91,58 @@ class HomeNewLinkAbout: UIViewController {
         
     }
     
-    @IBAction func readArticleBtnClicked(_ sender: Any) {
-        //아티클 읽기 버튼 클릭시
+    @IBAction func articleTitleTapped(_ sender: Any) {
         
+        guard let url = URL(string: newArticleOne.link) else {
+            return
+        }
+        let safariview = SFSafariViewController(url: url)
+        present(safariview, animated: true, completion: nil)
+        
+        
+    }
+    
+    @IBAction func otherArticleTapped1(_ sender: Any) {
+        guard let url = URL(string: articlesData.articles![0].link!) else {
+            return
+        }
+        let safariview = SFSafariViewController(url: url)
+        present(safariview, animated: true, completion: nil)
+    }
+    
+    @IBAction func otherArticleTapped2(_ sender: Any) {
+        guard let url = URL(string: articlesData.articles![1].link!) else {
+            return
+        }
+        let safariview = SFSafariViewController(url: url)
+        present(safariview, animated: true, completion: nil)
+    }
+    
+    @IBAction func otherArticleTapped3(_ sender: Any) {
+        guard let url = URL(string: articlesData.articles![2].link!) else {
+            return
+        }
+        let safariview = SFSafariViewController(url: url)
+        present(safariview, animated: true, completion: nil)
+    }
+    
+    @IBAction func otherArticleTapped4(_ sender: Any) {
+        guard let url = URL(string: articlesData.articles![3].link!) else {
+            return
+        }
+        let safariview = SFSafariViewController(url: url)
+        present(safariview, animated: true, completion: nil)
+    }
+    
+    @IBAction func viewAllBtnClicked(_ sender: Any) {
+        //전체보기 버튼 클릭
+        let storyboard: UIStoryboard = UIStoryboard(name: "homeSB", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(withIdentifier: "HomeNewArchiveDetail") as? HomeNewArchiveDetail
+            else {return}
+        
+        dvc.archiveIdx = newArticleOne.archive_idx
+        
+        self.navigationController?.pushViewController(dvc, animated: true)
     }
     
     func getNewArticleOne(articleIdx: Int) {

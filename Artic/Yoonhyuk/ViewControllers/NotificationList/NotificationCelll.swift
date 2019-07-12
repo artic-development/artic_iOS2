@@ -8,9 +8,10 @@
 
 import UIKit
 
-class NotificationCelll: UITableViewCell {
+class NotificationCell: UITableViewCell {
 
     @IBOutlet weak var NotiTitle: UITextView!
+    @IBOutlet weak var dateText: UILabel!
     @IBOutlet weak var viewRounding: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()

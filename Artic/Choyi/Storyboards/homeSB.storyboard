@@ -550,7 +550,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AVU-cO-Ewe"/>
                     </view>
-                    <navigationItem key="navigationItem" id="jjL-ZY-ihI"/>
+                    <navigationItem key="navigationItem" id="jjL-ZY-ihI">
+                        <barButtonItem key="backBarButtonItem" title="\" id="JHF-Ps-Gzl"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="homeTableView" destination="Wy4-H6-A1x" id="LnV-PG-JGK"/>
                     </connections>
@@ -581,7 +583,6 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="595-rB-cAS"/>
                                                         </constraints>
-
                                                         <attributedString key="attributedText">
                                                             <fragment content="Lorem ipsum ">
                                                                 <attributes>
@@ -602,9 +603,7 @@
                                                 </constraints>
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="design-museum-exhibition-fear-and-love-credit-luke-hayes-news_dezeen_hero-852x479" translatesAutoresizingMaskIntoConstraints="NO" id="rWD-b6-1A1">
-
-                                                <rect key="frame" x="0.0" y="124" width="414" height="223"/>
-
+                                                <rect key="frame" x="0.0" y="100" width="414" height="223"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="rWD-b6-1A1" secondAttribute="height" multiplier="414:223" id="TCD-la-7My"/>
                                                     <constraint firstAttribute="height" constant="223" id="qr0-1e-bXP"/>
@@ -612,28 +611,28 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label.co.kr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dit-Qn-pDY">
-
                                                 <rect key="frame" x="30" y="344" width="354" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="17" id="5xJ-LS-He9"/>
                                                 </constraints>
-
                                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
                                                 <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Lorem ipsum dolor si" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POu-zq-jMo">
-
                                                 <rect key="frame" x="24" y="369" width="359" height="35"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="xS4-wK-Dqh"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="ouh-wf-Oi7" appends="YES" id="KTk-jy-KlW"/>
+                                                </connections>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4JV-KY-oCF">
                                                 <rect key="frame" x="24" y="428" width="20" height="20"/>
-
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="H5K-2v-yeP"/>
                                                     <constraint firstAttribute="width" constant="20" id="xg2-qk-X2Q"/>
@@ -641,13 +640,13 @@
                                                 <state key="normal" image="btnLike"/>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AR4-Jl-jHm">
-                                                <rect key="frame" x="49" y="430" width="8" height="16"/>
+                                                <rect key="frame" x="49" y="430" width="7.5" height="16"/>
                                                 <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="13"/>
                                                 <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAI-b3-Ct9">
-                                                <rect key="frame" x="77" y="428" width="20" height="20"/>
+                                                <rect key="frame" x="76.5" y="428" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="BOl-HP-o2X"/>
                                                     <constraint firstAttribute="height" constant="20" id="R9n-1p-Ro8"/>
@@ -655,15 +654,13 @@
                                                 <state key="normal" image="btnFolder"/>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="담기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbD-SS-gGf">
-                                                <rect key="frame" x="102" y="430" width="24" height="16"/>
+                                                <rect key="frame" x="101.5" y="430" width="22.5" height="16"/>
                                                 <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="13"/>
                                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QUg-mr-mZ9">
-
                                                 <rect key="frame" x="0.0" y="473" width="414" height="635"/>
-
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아카이브의 다른 아티클" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h5-I0-8SU">
                                                         <rect key="frame" x="23" y="25" width="368" height="24"/>
@@ -689,12 +686,16 @@
                                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iW-mo-bgG">
                                                                                 <rect key="frame" x="8" y="12" width="158" height="32"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <gestureRecognizers/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="32" id="lEE-I2-nQP"/>
                                                                                 </constraints>
                                                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
                                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                                <connections>
+                                                                                    <outletCollection property="gestureRecognizers" destination="wNa-ZQ-LeP" appends="YES" id="0zZ-5U-Tju"/>
+                                                                                </connections>
                                                                             </textView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label.co.kr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7A-NV-Gz1">
                                                                                 <rect key="frame" x="13" y="53" width="153" height="15"/>
@@ -740,12 +741,16 @@
                                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1w-Vo-p72">
                                                                                 <rect key="frame" x="8" y="12" width="158" height="32"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <gestureRecognizers/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="32" id="3Kf-3W-n0f"/>
                                                                                 </constraints>
                                                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
                                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                                <connections>
+                                                                                    <outletCollection property="gestureRecognizers" destination="9Xh-au-i4E" appends="YES" id="qo9-5W-a1d"/>
+                                                                                </connections>
                                                                             </textView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="brunch.co.kr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbz-GU-gKp">
                                                                                 <rect key="frame" x="13" y="53" width="153" height="15"/>
@@ -799,12 +804,16 @@
                                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VmO-d3-7XZ">
                                                                                 <rect key="frame" x="8" y="12" width="158" height="32"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <gestureRecognizers/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="32" id="KK2-Tl-Ltc"/>
                                                                                 </constraints>
                                                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
                                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                                <connections>
+                                                                                    <outletCollection property="gestureRecognizers" destination="AFa-nO-RHO" appends="YES" id="jvk-qj-TC1"/>
+                                                                                </connections>
                                                                             </textView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmA-wF-6jn">
                                                                                 <rect key="frame" x="13" y="53" width="153" height="15"/>
@@ -850,12 +859,16 @@
                                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NI8-Ov-OF5">
                                                                                 <rect key="frame" x="8" y="12" width="158" height="32"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <gestureRecognizers/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="32" id="anW-yd-iFi"/>
                                                                                 </constraints>
                                                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
                                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                                <connections>
+                                                                                    <outletCollection property="gestureRecognizers" destination="SqI-w6-x6q" appends="YES" id="4jl-O8-s9D"/>
+                                                                                </connections>
                                                                             </textView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZi-J5-Emi">
                                                                                 <rect key="frame" x="13" y="53" width="153" height="15"/>
@@ -900,6 +913,9 @@
                                                             <constraint firstAttribute="height" constant="30" id="tdi-CB-rp4"/>
                                                         </constraints>
                                                         <state key="normal" title="전체 보기"/>
+                                                        <connections>
+                                                            <action selector="viewAllBtnClicked:" destination="0Sb-vg-DgR" eventType="touchUpInside" id="jGp-GT-FM0"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
@@ -999,6 +1015,31 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DGj-ee-e47" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ouh-wf-Oi7">
+                    <connections>
+                        <action selector="articleTitleTapped:" destination="0Sb-vg-DgR" id="bcV-D0-ft5"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="wNa-ZQ-LeP">
+                    <connections>
+                        <action selector="otherArticleTapped1:" destination="0Sb-vg-DgR" id="ohw-SB-LS4"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="9Xh-au-i4E">
+                    <connections>
+                        <action selector="otherArticleTapped2:" destination="0Sb-vg-DgR" id="2Kt-J0-D8u"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="AFa-nO-RHO">
+                    <connections>
+                        <action selector="otherArticleTapped3:" destination="0Sb-vg-DgR" id="8lW-ww-Gqc"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="SqI-w6-x6q">
+                    <connections>
+                        <action selector="otherArticleTapped4:" destination="0Sb-vg-DgR" id="03M-sm-5eD"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2447.826086956522" y="-351.5625"/>
         </scene>
