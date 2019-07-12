@@ -424,7 +424,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0V8-qZ-4iP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="703" y="124"/>
+            <point key="canvasLocation" x="349" y="124"/>
         </scene>
         <!--Sign Up View Name Birth-->
         <scene sceneID="V7W-rN-6JC">

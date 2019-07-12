@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lottie
 
 class LoginFirstView: UIViewController {
 
@@ -27,12 +28,16 @@ class LoginFirstView: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.colorWithRGBHex(hex: 0xcdcdcd)
         
         self.navigationController?.navigationBar.barTintColor = .white
+        
+       
+       
 
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
+        
         
     }
     
@@ -41,5 +46,9 @@ class LoginFirstView: UIViewController {
     }
     
         @IBAction func unwindLogin(segue: UIStoryboardSegue) {    }
+    
+    
+    
+    
 
 }
