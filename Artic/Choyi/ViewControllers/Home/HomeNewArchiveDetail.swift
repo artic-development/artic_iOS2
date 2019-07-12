@@ -44,6 +44,13 @@ class HomeNewArchiveDetail: UIViewController, UITableViewDataSource, UITableView
         
         getArticles(archiveIdx2: archiveIdx)
         
+        if isStored == true {
+            storeBtn.setImage(UIImage(named: "btnScrapFilledBig"), for: .normal)
+            
+        }else{
+            storeBtn.setImage(UIImage(named: "btnScrapBig"), for: .normal)
+        }
+        
     }
     func setBlackView() {
         
@@ -83,6 +90,9 @@ class HomeNewArchiveDetail: UIViewController, UITableViewDataSource, UITableView
         
         let cell = archiveDetailTableVIew.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
         
+        var bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.white
+        cell.selectedBackgroundView = bgColorView
         
         let article = articlesData.articles![indexPath.row]
         cell.articleTitle.text = article.article_title!
@@ -93,7 +103,7 @@ class HomeNewArchiveDetail: UIViewController, UITableViewDataSource, UITableView
         let domain = article.domain ?? ""
         
         cell.webLabel.text = domain
-        cell.likeNum.text = "\(article.like_cnt)"
+        cell.likeNum.text = "\(article.like_cnt!)"
         
         cell.likeFolder.tag = indexPath.row
         cell.likeFolder.addTarget(self, action: #selector(self.bookbtn1(_:)), for: .touchUpInside);
@@ -112,6 +122,7 @@ class HomeNewArchiveDetail: UIViewController, UITableViewDataSource, UITableView
         
         
         
+        
     }
     
     
@@ -127,13 +138,14 @@ class HomeNewArchiveDetail: UIViewController, UITableViewDataSource, UITableView
         isStored = !isStored
         
         if isStored == true {
-            
-            
-            
             storeBtn.setImage(UIImage(named: "btnScrapFilledBig"), for: .normal)
+            addArchive(archiveIdx: articlesData.archive_idx!)
+            print(isStored)
+            
         }else{
-            print("ss")
             storeBtn.setImage(UIImage(named: "btnScrapBig"), for: .normal)
+            addArchive(archiveIdx: articlesData.archive_idx!)
+            print(isStored)
         }
         
     }
@@ -170,6 +182,35 @@ class HomeNewArchiveDetail: UIViewController, UITableViewDataSource, UITableView
                 print("serverErr")
             case .networkFail:
                 print("networkFail")
+            }
+        }
+    }
+    
+    func addArchive(archiveIdx: Int){
+        AddArchiveService.shared.addArchive(archiveIdx: archiveIdx) {
+            data in
+            
+            switch data {
+            case .success(let token):
+                let _token = token as! AddArchive
+                //print(_token.token)
+                print("우악")
+                
+                break
+            case .requestErr(let err):
+                break
+            case .pathErr:
+                // 대체로 경로를 잘못 쓴 경우입니다.
+                // 오타를 확인해보세요.
+                print("경로 에러")
+                break
+            case .serverErr:
+                // 서버의 문제인 경우입니다.
+                // 여기에서 동작할 행동을 정의해주시면 됩니다.
+                print("서버 에러")
+                break
+            case .networkFail:
+                break
             }
         }
     }

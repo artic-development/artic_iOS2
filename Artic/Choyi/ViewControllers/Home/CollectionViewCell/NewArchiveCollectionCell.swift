@@ -9,7 +9,7 @@
 import UIKit
 
 protocol newArchiveProtocol:class {
-    func pushToNewArchiveArticle(withData:Int)
+    func pushToNewArchiveArticle(withData:Int, isScrap: Bool)
 }
 
 class NewArchiveCollectionCell: UICollectionViewCell {

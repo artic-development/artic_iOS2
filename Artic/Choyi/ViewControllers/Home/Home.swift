@@ -12,12 +12,12 @@ import SafariServices
 
 class Home: UIViewController,UITableViewDelegate, UITableViewDataSource, newArchiveProtocol, newArticleProtocol {
     
-    func pushToNewArchiveArticle(withData:Int) {
+    func pushToNewArchiveArticle(withData:Int, isScrap: Bool) {
         
         let storyboard: UIStoryboard = UIStoryboard(name: "homeSB", bundle: nil)
         guard let dvc = storyboard.instantiateViewController(withIdentifier: "HomeNewArchiveDetail") as? HomeNewArchiveDetail
             else {return}
-        
+        dvc.isStored = isScrap
         dvc.archiveIdx = withData
         
         self.navigationController?.pushViewController(dvc, animated: true)
