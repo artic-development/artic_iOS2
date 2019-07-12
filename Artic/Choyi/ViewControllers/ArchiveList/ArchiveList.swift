@@ -82,6 +82,8 @@ class ArchiveList: UIViewController, UITableViewDelegate, UITableViewDataSource 
         let archives2 = archives[indexPath.row]
         
        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ArchiveXibCell", for: indexPath) as? ArchiveXibCell else {return UITableViewCell()}
+        
+        cell.archiveIdxNum = archives2.category_idx
        
         cell.archiveTitle.text = "\(archives2.archive_title)"
         cell.articleNumLabel.text = "\(archives2.article_cnt)개"

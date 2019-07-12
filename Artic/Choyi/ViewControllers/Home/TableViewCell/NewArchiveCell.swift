@@ -17,6 +17,7 @@ class NewArchiveCell: UITableViewCell {
     weak var delegate:newArchiveProtocol? = nil
     var myData:Int = 999
     var archiveIdx = 999
+    var isScrap = false
 
     
     @IBOutlet weak var newArchiveCV: UICollectionView!
@@ -131,7 +132,8 @@ extension NewArchiveCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         archiveIdx = newArchiveList[indexPath.row].archive_idx
-        delegate?.pushToNewArchiveArticle(withData: archiveIdx)
+        isScrap = newArchiveList[indexPath.row].scrap
+        delegate?.pushToNewArchiveArticle(withData: archiveIdx, isScrap: isScrap)
         
     }
 }

@@ -17,6 +17,7 @@ struct NewArchive: Codable  {
     let category_idx: Int
     let article_cnt: Int
     let category_all: [CategoryAll]
+    let scrap: Bool
 }
 
 
