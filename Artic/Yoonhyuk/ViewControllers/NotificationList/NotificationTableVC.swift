@@ -30,6 +30,7 @@ class NotificationTableVC:UIViewController,UITableViewDelegate, UITableViewDataS
         
         notiTable.estimatedRowHeight = 150.0
         notiTable.rowHeight = UITableView.automaticDimension
+        notiTable.separatorStyle = .none
         
         getNoti()
       
