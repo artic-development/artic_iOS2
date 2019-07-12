@@ -94,12 +94,22 @@ class NotificationTableVC:UIViewController,UITableViewDelegate, UITableViewDataS
                 
                 cell.RecoNotiTitle.text = "회원님이 좋아하실만한 아티클을 추천해드려요!"
                 
-                let url1 = URL(string: notification[indexPath.row].articles[0].thumnail)
-                cell.img1.kf.setImage(with: url1)
-                let url2 = URL(string: notification[indexPath.row].articles[1].thumnail)
-                cell.img2.kf.setImage(with: url2)
-                let url3 = URL(string: notification[indexPath.row].articles[2].thumnail)
-                cell.img3.kf.setImage(with: url3)
+                if notification[indexPath.row].articles.count >= 0 {
+                    if notification[indexPath.row].articles.count >= 1 {
+                        let url1 = URL(string: notification[indexPath.row].articles[0].thumnail ?? "https://hyeongbucket.s3.ap-northeast-2.amazonaws.com/artic/archivedefault.png" )
+                        cell.img1.kf.setImage(with: url1)
+                        
+                        if notification[indexPath.row].articles.count >= 2 {
+                            let url2 = URL(string: notification[indexPath.row].articles[1].thumnail ?? "https://hyeongbucket.s3.ap-northeast-2.amazonaws.com/artic/archivedefault.png")
+                            cell.img2.kf.setImage(with: url2)
+                            
+                            if notification[indexPath.row].articles.count >= 3 {
+                                let url3 = URL(string: notification[indexPath.row].articles[2].thumnail ?? "https://hyeongbucket.s3.ap-northeast-2.amazonaws.com/artic/archivedefault.png")
+                                cell.img3.kf.setImage(with: url3)
+                            }
+                        }
+                    }
+                }
                 
                 cell.selectedBackgroundView = bgColorView
                 return cell
@@ -118,17 +128,42 @@ class NotificationTableVC:UIViewController,UITableViewDelegate, UITableViewDataS
         else {
             
             if UInt(notification[indexPath.row].notification_type) == 0 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationCell", for: indexPath)
+                let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationCell", for: indexPath) as! NotificationCell
+                
+                cell.NotiTitle.text = "'\(notification[indexPath.row].articles[0].archive_title!)'에 새로운 아티클이 추가되었습니다"
                 
                 cell.selectedBackgroundView = bgColorView
                 return cell
             }else if (UInt(notification[indexPath.row].notification_type) == 1){
-                let cell = tableView.dequeueReusableCell(withIdentifier: "recoNotification", for: indexPath)
+                let cell = tableView.dequeueReusableCell(withIdentifier: "recoNotification", for: indexPath) as! recoNotificationCell
+                
+                cell.RecoNotiTitle.text = "회원님이 좋아하실만한 아티클을 추천해드려요!"
+                
+                if notification[indexPath.row].articles.count >= 0 {
+                    if notification[indexPath.row].articles.count >= 1 {
+                        let url1 = URL(string: notification[indexPath.row].articles[0].thumnail ?? "https://hyeongbucket.s3.ap-northeast-2.amazonaws.com/artic/archivedefault.png" )
+                        cell.img1.kf.setImage(with: url1)
+                        
+                        if notification[indexPath.row].articles.count >= 2 {
+                            let url2 = URL(string: notification[indexPath.row].articles[1].thumnail ?? "https://hyeongbucket.s3.ap-northeast-2.amazonaws.com/artic/archivedefault.png")
+                            cell.img2.kf.setImage(with: url2)
+                            
+                            if notification[indexPath.row].articles.count >= 3 {
+                                let url3 = URL(string: notification[indexPath.row].articles[2].thumnail ?? "https://hyeongbucket.s3.ap-northeast-2.amazonaws.com/artic/archivedefault.png")
+                                cell.img3.kf.setImage(with: url3)
+                            }
+                        }
+                    }
+                }
+                
+                
                 
                 cell.selectedBackgroundView = bgColorView
                 return cell
             }else{
-                let cell = tableView.dequeueReusableCell(withIdentifier: "readNotification", for: indexPath)
+                let cell = tableView.dequeueReusableCell(withIdentifier: "readNotification", for: indexPath) as! readNotificationCell
+                
+                cell.ReadNotiTitle.text = "회원님이 스크랩 하신 '\(notification[indexPath.row].articles[0].archive_title!)'에 \(notification[indexPath.row].articles.count)개 아티클을 읽지 않으셨습니다"
                 
                 cell.selectedBackgroundView = bgColorView
                 return cell
@@ -150,7 +185,7 @@ class NotificationTableVC:UIViewController,UITableViewDelegate, UITableViewDataS
                 guard let dvc = storyboard.instantiateViewController(withIdentifier: "HomeNewArchiveDetail") as? HomeNewArchiveDetail
                     else {return}
                 
-                dvc.archiveIdx = notification[indexPath.row].articles[0].archive_idx
+                dvc.archiveIdx = notification[indexPath.row].articles[0].archive_idx!
                 
                 self.navigationController?.pushViewController(dvc, animated: true)
                 
@@ -160,7 +195,7 @@ class NotificationTableVC:UIViewController,UITableViewDelegate, UITableViewDataS
                     guard let dvc = storyboard.instantiateViewController(withIdentifier: "HomeNewArchiveDetail") as? HomeNewArchiveDetail
                         else {return}
                     
-                    dvc.archiveIdx = notification[indexPath.row].articles[0].archive_idx
+                dvc.archiveIdx = notification[indexPath.row].articles[0].archive_idx!
                     
                     self.navigationController?.pushViewController(dvc, animated: true)
                 
@@ -171,7 +206,7 @@ class NotificationTableVC:UIViewController,UITableViewDelegate, UITableViewDataS
                         guard let dvc = storyboard.instantiateViewController(withIdentifier: "HomeNewArchiveDetail") as? HomeNewArchiveDetail
                             else {return}
                         
-                        dvc.archiveIdx = notification[indexPath.row].articles[0].archive_idx
+                dvc.archiveIdx = notification[indexPath.row].articles[0].archive_idx!
                         
                         self.navigationController?.pushViewController(dvc, animated: true)
                 

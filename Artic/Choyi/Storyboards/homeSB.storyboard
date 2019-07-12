@@ -283,7 +283,7 @@
                                         <rect key="frame" x="0.0" y="820" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aJV-hc-ZNy" id="OQg-QE-UOL">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label.co.kr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="90E-Kp-byV">
@@ -342,7 +342,7 @@
                                         <rect key="frame" x="0.0" y="910" width="414" height="343"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="edw-cg-QZN" id="GmM-sB-MYD">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="342.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="343"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BIZ-Cl-5OC">
@@ -440,7 +440,7 @@
                                         <rect key="frame" x="0.0" y="1253" width="414" height="287"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uT3-ca-PEa" id="Yib-yL-lbS">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="286.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="287"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NcT-vi-mrV">
@@ -551,7 +551,7 @@
                         <viewLayoutGuide key="safeArea" id="AVU-cO-Ewe"/>
                     </view>
                     <navigationItem key="navigationItem" id="jjL-ZY-ihI">
-                        <barButtonItem key="backBarButtonItem" title="\" id="JHF-Ps-Gzl"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="JHF-Ps-Gzl"/>
                     </navigationItem>
                     <connections>
                         <outlet property="homeTableView" destination="Wy4-H6-A1x" id="LnV-PG-JGK"/>
