@@ -10,10 +10,6 @@ import UIKit
 
 class ArchiveList: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var backbtn: UIBarButtonItem!
-    
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    
     
     @IBOutlet weak var archiveTable: UITableView!
     var category_idx = 0//초기화
@@ -34,9 +30,11 @@ class ArchiveList: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         archiveTable.register(nibName, forCellReuseIdentifier: "ArchiveXibCell")
        
-        navigationBar.topItem?.title = "\(category_title)"
-        navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont(name: "NanumBarunGothic", size: 20.0)!]
-        navigationBar.barTintColor = UIColor.colorWithRGBHex(hex: 0xffffff9)
+        self.navigationController?.navigationBar.topItem?.title = "\(category_title)"
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont(name: "NanumBarunGothic", size: 20.0)!]
+        self.navigationController?.navigationBar.barTintColor = UIColor.colorWithRGBHex(hex: 0xffffff9)
         
         print(category_idx)
         getArchive(cateidx: category_idx)

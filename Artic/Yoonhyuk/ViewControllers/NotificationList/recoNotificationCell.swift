@@ -14,6 +14,13 @@ class recoNotificationCell: UITableViewCell {
     @IBOutlet weak var viewRounding: UIView!
     
     @IBOutlet weak var RecoNotiTitle: UITextView!
+    @IBOutlet weak var img1: UIImageView!
+    @IBOutlet weak var img2: UIImageView!
+    @IBOutlet weak var img3: UIImageView!
+    @IBOutlet weak var dateText: UILabel!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

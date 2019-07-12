@@ -28,7 +28,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationCell" rowHeight="106" id="dBz-3l-nCj" customClass="NotificationCelll" customModule="Artic" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationCell" rowHeight="106" id="dBz-3l-nCj" customClass="NotificationCell" customModule="Artic" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="40" width="414" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dBz-3l-nCj" id="grG-dQ-dLL">
@@ -85,7 +85,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="NotiTitle" destination="QOg-fI-4sT" id="6s9-VI-LiA"/>
+                                            <outlet property="NotiTitle" destination="QOg-fI-4sT" id="fJh-rg-Gjx"/>
+                                            <outlet property="dateText" destination="eEa-Pt-d5G" id="5FJ-le-bcQ"/>
                                             <outlet property="viewRounding" destination="2jU-hO-sVY" id="L1r-KW-vpm"/>
                                         </connections>
                                     </tableViewCell>
@@ -146,6 +147,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="ReadNotiTitle" destination="CMl-8X-Wv4" id="xfi-xL-DlS"/>
+                                            <outlet property="dateText" destination="xYb-Ne-UiR" id="om2-eO-XhR"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recoNotification" rowHeight="159" id="yXt-0z-Bs0" userLabel="recoNotificationCell" customClass="recoNotificationCell" customModule="Artic" customModuleProvider="target">
@@ -261,6 +263,10 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="RecoNotiTitle" destination="ahD-FY-up0" id="tc8-uZ-gUu"/>
+                                            <outlet property="dateText" destination="yoq-eB-jDe" id="ERm-sW-Ubk"/>
+                                            <outlet property="img1" destination="0rG-Kc-bN8" id="lMT-db-CQU"/>
+                                            <outlet property="img2" destination="vht-fZ-Plu" id="Ywd-2K-hGc"/>
+                                            <outlet property="img3" destination="nuq-G3-lWW" id="joX-bn-SrW"/>
                                             <outlet property="viewRounding" destination="4ZT-R1-uPx" id="2qp-FV-hrP"/>
                                         </connections>
                                     </tableViewCell>
